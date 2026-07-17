@@ -1,0 +1,19 @@
+{
+  "name": "DentaLine Clinic — Estetică dentară și Implantologie",
+  "short_name": "DentaLine",
+  "description": "Clinică stomatologică în Galați: implant dentar, coroane zirconiu, fațete, endodonție la microscop, stomatologie pentru copii.",
+  "lang": "ro",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBFAFD",
+  "theme_color": "#7B5EA7",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
