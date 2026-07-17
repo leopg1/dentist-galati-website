@@ -157,7 +157,7 @@ export default function Implantologie() {
           <div className="mx-auto w-full max-w-[300px]">
             <VideoLoop
               src="/media/videos/caz-implant.mp4"
-              poster="/media/cases/inainte-dupa-implant.jpg"
+              poster="/media/videos/posters/caz-implant.jpg"
               ariaLabel="Videoclip: caz de reabilitare totală pe implanturi, înainte și după"
               className="aspect-[9/16] max-h-[560px] w-full rounded-3xl bg-plum-950 shadow-lift"
             />

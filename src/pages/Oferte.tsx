@@ -66,7 +66,7 @@ export default function Oferte() {
       <section className="section-pad">
         <div className="container-site">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum-600 via-plum-700 to-plum-900 text-white shadow-lift">
+            <div className="isolate relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum-600 via-plum-700 to-plum-900 text-white shadow-lift">
               <div
                 className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-coral-600/25 blur-3xl"
                 aria-hidden="true"
@@ -105,8 +105,7 @@ export default function Oferte() {
                     complete — în clinică sau la telefon.
                   </p>
                   <a href={site.phoneHref} className="btn-primary mt-7">
-                    <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte:{' '}
-                    {site.phone}
+                    <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte
                   </a>
                 </div>
                 <div className="flex items-center justify-center">

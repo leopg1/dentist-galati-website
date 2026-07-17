@@ -113,7 +113,7 @@ export default function StomatologieCopii() {
         <Reveal>
           <VideoLoop
             src="/media/videos/copii-tratament.mp4"
-            poster="/media/services/copil-tratament.jpg"
+            poster="/media/videos/posters/copii-tratament.jpg"
             ariaLabel="Videoclip: tratament stomatologic pentru copii în cabinetul DentaLine"
             className="mx-auto aspect-[9/16] max-h-[560px] w-full rounded-3xl shadow-lift"
           />

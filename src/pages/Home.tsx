@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight,
@@ -8,11 +8,7 @@ import {
   Handshake,
   HeartHandshake,
   Microscope,
-  Pause,
   Phone,
-  Play,
-  Volume2,
-  VolumeX,
   ShieldCheck,
   Star,
   Trophy,
@@ -79,40 +75,13 @@ function GoldStars() {
 
 export default function Home() {
   const heroVideoRef = useRef<HTMLVideoElement>(null)
-  const [heroPlaying, setHeroPlaying] = useState(true)
-  const [heroMuted, setHeroMuted] = useState(true)
 
-  // WCAG 2.2.2: nu porni videoclipul de fundal pentru utilizatorii cu prefers-reduced-motion
+  // nu pornim videoclipul de fundal pentru utilizatorii cu prefers-reduced-motion
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       heroVideoRef.current?.pause()
-      setHeroPlaying(false)
     }
   }, [])
-
-  const toggleHeroSound = () => {
-    const v = heroVideoRef.current
-    if (!v) return
-    v.muted = !v.muted
-    setHeroMuted(v.muted)
-    // politica de autoplay poate opri redarea la unmute — reluăm explicit
-    if (heroPlaying) {
-      void v.play().catch(() => {})
-      setHeroPlaying(true)
-    }
-  }
-
-  const toggleHeroVideo = () => {
-    const v = heroVideoRef.current
-    if (!v) return
-    if (v.paused) {
-      void v.play()
-      setHeroPlaying(true)
-    } else {
-      v.pause()
-      setHeroPlaying(false)
-    }
-  }
 
   usePageMeta(
     'DentaLine Clinic — Dentist Galați · Implant & Estetică dentară',
@@ -122,7 +91,7 @@ export default function Home() {
   return (
     <>
       {/* ── 1. HERO cu video de fundal ─────────────────────────────────────── */}
-      <section className="relative flex min-h-[88svh] items-center overflow-hidden bg-plum-950">
+      <section className="relative flex min-h-[calc(100svh-76px)] items-center overflow-hidden bg-plum-950 lg:min-h-[88svh]">
         <video
           ref={heroVideoRef}
           className="absolute inset-0 h-full w-full object-cover"
@@ -140,40 +109,24 @@ export default function Home() {
           className="absolute inset-0 bg-gradient-to-r from-plum-950/85 via-plum-950/60 to-plum-950/30"
           aria-hidden="true"
         />
-        <div className="absolute bottom-5 right-5 z-20 flex items-center gap-2.5">
-          <button
-            type="button"
-            onClick={toggleHeroSound}
-            aria-label={heroMuted ? 'Pornește sunetul videoclipului' : 'Oprește sunetul videoclipului'}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-plum-950/60 text-white backdrop-blur transition hover:bg-plum-950/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            {heroMuted ? <VolumeX className="h-4 w-4" aria-hidden="true" /> : <Volume2 className="h-4 w-4" aria-hidden="true" />}
-          </button>
-          <button
-            type="button"
-            onClick={toggleHeroVideo}
-            aria-label={heroPlaying ? 'Oprește videoclipul de fundal' : 'Pornește videoclipul de fundal'}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-plum-950/60 text-white backdrop-blur transition hover:bg-plum-950/80 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-          >
-            {heroPlaying ? <Pause className="h-4 w-4" aria-hidden="true" /> : <Play className="h-4 w-4" aria-hidden="true" />}
-          </button>
-        </div>
+        {/* strat suplimentar pe mobil: textul acoperă toată lățimea, deci overlay uniform */}
+        <div className="absolute inset-0 bg-plum-950/35 lg:hidden" aria-hidden="true" />
         <div
           className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-plum-950/80 to-transparent"
           aria-hidden="true"
         />
 
-        <div className="container-site relative py-24 md:py-32">
+        <div className="container-site relative py-10 md:py-32">
           <Reveal>
             <p className="eyebrow !text-teal-300">Estetică dentară & Implantologie · Galați</p>
-            <h1 className="h-display mt-4 max-w-3xl text-5xl !text-white md:text-6xl lg:text-7xl">
+            <h1 className="h-display mt-3 max-w-3xl text-[40px] !text-white sm:text-5xl md:mt-4 md:text-6xl lg:text-7xl">
               Zâmbetul tău începe aici.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/85 md:text-xl">
+            <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-white/85 md:mt-6 md:text-xl">
               Estetică dentară și implantologie în Galați. O echipă de medici dedicate, tehnologie
               digitală de ultimă generație și grija de care ai nevoie la fiecare vizită.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
+            <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-9 md:gap-4">
               <a href={site.phoneHref} className="btn-primary">
                 <Phone className="h-4 w-4" aria-hidden="true" /> Programează-te: {site.phone}
               </a>
@@ -185,7 +138,7 @@ export default function Home() {
 
           {/* Trust bar */}
           <Reveal delay={0.2}>
-            <ul className="mt-14 flex max-w-4xl flex-wrap items-center gap-x-10 gap-y-4 border-t border-white/15 pt-7 text-[14px] font-semibold text-white/85">
+            <ul className="mt-8 flex max-w-4xl flex-wrap items-center gap-x-8 gap-y-3 border-t border-white/15 pt-5 text-[13.5px] font-semibold text-white/85 md:mt-14 md:gap-x-10 md:gap-y-4 md:pt-7 md:text-[14px]">
               <li className="inline-flex items-center gap-2.5">
                 <Star className="h-5 w-5 fill-gold-400 text-gold-400" aria-hidden="true" />
                 {site.rating}/5 din {site.reviewCount} de recenzii Google
@@ -370,7 +323,7 @@ export default function Home() {
       <section className="section-pad">
         <div className="container-site">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-plum-900 via-plum-800 to-coral-800 shadow-lift">
+            <div className="isolate relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-plum-900 via-plum-800 to-coral-800 shadow-lift">
               <div
                 className="pointer-events-none absolute -left-24 -top-24 h-80 w-80 rounded-full bg-plum-500/30 blur-3xl"
                 aria-hidden="true"
@@ -422,10 +375,9 @@ export default function Home() {
                   <div className="flex flex-wrap gap-4">
                     <a
                       href={site.phoneHref}
-                      className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-bold text-plum-900 shadow-lift transition hover:bg-plum-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 text-[14px] font-bold text-plum-900 sm:px-7 sm:py-3.5 sm:text-[15px] shadow-lift transition hover:bg-plum-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:scale-[0.98]"
                     >
-                      <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte:{' '}
-                      {site.phone}
+                      <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte
                     </a>
                     <Link to="/oferte" className="btn-ghost-light">
                       Vezi toate ofertele

@@ -119,7 +119,7 @@ export default function Aligneri() {
         <Reveal delay={0.1}>
           <VideoLoop
             src="/media/videos/aligneri.mp4"
-            poster="/media/services/tratament-lila.jpg"
+            poster="/media/videos/posters/aligneri.jpg"
             ariaLabel="Videoclip: alignerii transparenți, prezentare din cabinet"
             className="mx-auto aspect-[9/16] max-h-[560px] w-full rounded-3xl shadow-lift"
           />

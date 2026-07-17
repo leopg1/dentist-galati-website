@@ -103,7 +103,7 @@ export default function EsteticaDentara() {
           <div className="mx-auto w-full max-w-[280px]">
             <VideoLoop
               src="/media/videos/fatete-proba.mp4"
-              poster="/media/cases/colaj-zambete-bw.jpg"
+              poster="/media/videos/posters/fatete-proba.jpg"
               ariaLabel="Videoclip: proba fațetelor ceramice pe zâmbetul pacientului"
               className="aspect-[9/16] max-h-[560px] w-full rounded-3xl bg-plum-900 shadow-lift"
             />

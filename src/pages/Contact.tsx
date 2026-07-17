@@ -228,7 +228,7 @@ export default function Contact() {
       <section className="pb-16 md:pb-24">
         <div className="container-site">
           <Reveal>
-            <div className="relative overflow-hidden rounded-3xl border border-coral-100 bg-coral-50 px-6 py-12 text-center md:px-16 md:py-16">
+            <div className="isolate relative overflow-hidden rounded-3xl border border-coral-100 bg-coral-50 px-6 py-12 text-center md:px-16 md:py-16">
               <div
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-coral-200/50 blur-3xl"
                 aria-hidden="true"

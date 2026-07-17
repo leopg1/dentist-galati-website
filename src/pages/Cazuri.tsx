@@ -65,6 +65,7 @@ export default function Cazuri() {
                 />
                 <CaseVideo
                   src="/media/videos/caz-implant.mp4"
+                  poster="/media/videos/posters/caz-implant.jpg"
                   ariaLabel="Videoclip cu un caz înainte și după reabilitare totală pe implanturi"
                 />
               </div>
@@ -172,6 +173,7 @@ export default function Cazuri() {
             media={
               <CaseVideo
                 src="/media/videos/fatete-proba.mp4"
+                poster="/media/videos/posters/fatete-proba.jpg"
                 ariaLabel="Videoclip: proba fațetelor ceramice — momentul în care pacientul își vede noul zâmbet"
               />
             }

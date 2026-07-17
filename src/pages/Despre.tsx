@@ -222,8 +222,7 @@ export default function Despre() {
             <VideoLoop
               src="/media/videos/dr-vasiliu-consultatie.mp4"
               ariaLabel="Video: Dr. Camelia Vasiliu prezintă cum decurge o consultație la DentaLine"
-              poster="/media/team/portret-masca.jpg"
-              autoplay={false}
+              poster="/media/videos/posters/dr-vasiliu-consultatie.jpg"
               className="aspect-[9/16] max-h-[560px] rounded-3xl shadow-lift ring-1 ring-white/15"
             />
           </Reveal>

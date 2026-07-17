@@ -3,15 +3,15 @@ import VideoLoop from '../VideoLoop'
 type Props = {
   src: string
   ariaLabel: string
+  poster: string
   className?: string
-  poster?: string
 }
 
 /**
- * Video vertical de caz clinic (9/16, max ~560px înălțime) — redare continuă
- * în buclă, fără sunet, cu buton custom de sunet/pauză (fără controale native).
+ * Video vertical de caz clinic (9/16, max ~560px înălțime) — redare automată
+ * în buclă, fără sunet, cu un singur buton (sunet). Posterul = primul cadru.
  */
-export default function CaseVideo({ src, ariaLabel, className = '', poster }: Props) {
+export default function CaseVideo({ src, ariaLabel, poster, className = '' }: Props) {
   return (
     <VideoLoop
       src={src}
