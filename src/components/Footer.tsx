@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo light />
-          <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/70">
+          <p className="mt-5 max-w-xs text-base leading-relaxed text-white/70">
             „Implant, Zirconia sau Ceramică: zâmbetul tău începe aici." Estetică dentară și
             implantologie, în inima Galațiului.
           </p>
@@ -55,16 +55,16 @@ export default function Footer() {
 
         <nav aria-label="Servicii">
           <h2 className="font-display text-xl font-semibold">Servicii</h2>
-          <ul className="mt-5 space-y-2.5 text-[15px] text-white/70">
+          <ul className="mt-4 space-y-0.5 text-base text-white/70">
             {services.slice(0, 7).map((s) => (
               <li key={s.slug}>
-                <Link to={`/servicii/${s.slug}`} className="transition hover:text-coral-300">
+                <Link to={`/servicii/${s.slug}`} className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">
                   {s.menuTitle}
                 </Link>
               </li>
             ))}
             <li>
-              <Link to="/servicii" className="font-semibold text-teal-300 transition hover:text-teal-200">
+              <Link to="/servicii" className="inline-block py-2 font-semibold text-teal-300 transition hover:text-teal-200 active:opacity-70">
                 Toate serviciile →
               </Link>
             </li>
@@ -73,19 +73,19 @@ export default function Footer() {
 
         <nav aria-label="Meniu">
           <h2 className="font-display text-xl font-semibold">Clinica</h2>
-          <ul className="mt-5 space-y-2.5 text-[15px] text-white/70">
-            <li><Link to="/despre" className="transition hover:text-coral-300">Despre noi</Link></li>
-            <li><Link to="/echipa" className="transition hover:text-coral-300">Echipa medicală</Link></li>
-            <li><Link to="/cazuri" className="transition hover:text-coral-300">Cazuri — Înainte / După</Link></li>
-            <li><Link to="/testimoniale" className="transition hover:text-coral-300">Testimoniale</Link></li>
-            <li><Link to="/oferte" className="transition hover:text-coral-300">Oferte & facilități</Link></li>
-            <li><Link to="/contact" className="transition hover:text-coral-300">Contact & programare</Link></li>
+          <ul className="mt-4 space-y-0.5 text-base text-white/70">
+            <li><Link to="/despre" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Despre noi</Link></li>
+            <li><Link to="/echipa" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Echipa medicală</Link></li>
+            <li><Link to="/cazuri" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Cazuri — Înainte / După</Link></li>
+            <li><Link to="/testimoniale" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Testimoniale</Link></li>
+            <li><Link to="/oferte" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Oferte & facilități</Link></li>
+            <li><Link to="/contact" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Contact & programare</Link></li>
           </ul>
         </nav>
 
         <div>
           <h2 className="font-display text-xl font-semibold">Contact</h2>
-          <ul className="mt-5 space-y-3.5 text-[15px] text-white/70">
+          <ul className="mt-5 space-y-3.5 text-base text-white/70">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-teal-300" aria-hidden="true" />
               <span>
@@ -119,7 +119,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-[13px] text-white/50 md:flex-row">
+        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/50 md:flex-row">
           <p>
             © {new Date().getFullYear()} {site.legalName} · {site.cui} · {site.regCom}
           </p>

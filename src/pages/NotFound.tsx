@@ -60,10 +60,6 @@ export default function NotFound() {
         className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-plum-100 blur-3xl"
         aria-hidden="true"
       />
-      <div
-        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-coral-100/70 blur-3xl"
-        aria-hidden="true"
-      />
       <div className="container-site relative py-20 text-center">
         <Reveal>
           <div className="relative mx-auto flex h-52 max-w-md items-center justify-center md:h-60">

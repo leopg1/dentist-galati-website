@@ -21,16 +21,8 @@ export default function Echipa() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -left-40 -top-40 h-[440px] w-[440px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-coral-200/30 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-16 text-center md:py-24">
+      <section className="bg-plum-50">
+        <div className="container-site hero-pad text-center">
           <Reveal>
             <p className="eyebrow justify-center">Echipa</p>
             <h1 className="h-display mx-auto mt-3 max-w-3xl text-4xl md:text-[52px]">
@@ -43,7 +35,7 @@ export default function Echipa() {
               {heroBadges.map((badge) => (
                 <li
                   key={badge.label}
-                  className="inline-flex items-center gap-2 rounded-full border border-plum-100 bg-white px-4 py-2 text-[13.5px] font-bold text-plum-800 shadow-soft"
+                  className="inline-flex items-center gap-2 rounded-full border border-plum-100 bg-white px-4 py-2 text-xs font-bold text-plum-800 shadow-soft"
                 >
                   <badge.icon className="h-4 w-4 text-coral-600" aria-hidden="true" />
                   {badge.label}
@@ -63,7 +55,7 @@ export default function Echipa() {
             title="Medicii noștri"
             intro="Una pune implanturi de peste zece ani, alta e medicul preferat al copiilor — împreună acoperă tot ce are nevoie o familie."
           />
-          <div className="mt-14 grid gap-7 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:gap-8">
             {doctors.map((doctor, i) => (
               <DoctorCard key={doctor.slug} doctor={doctor} index={i} />
             ))}
@@ -79,32 +71,24 @@ export default function Echipa() {
             title="Asistentele noastre"
             intro="Ele răspund la telefon, pregătesc cabinetele și au grijă să nu aștepți mai mult decât trebuie."
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16 lg:grid-cols-3 lg:gap-8">
             {assistants.map((assistant, i) => (
               <Reveal key={assistant.slug} delay={0.08 * i} className="h-full">
-                <article className="card-surface group flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-lift">
-                  <div className="px-6 pt-6">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-t-full rounded-b-3xl bg-plum-100">
+                <article className="card-surface flex h-full flex-col transition hover:border-plum-200">
+                  <div className="card-pad flex flex-1 flex-col">
+                    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-plum-100 ring-1 ring-plum-100">
                       <img
                         src={assistant.photo}
                         alt={`${assistant.name}, ${assistant.role.toLowerCase()} la clinica DentaLine din Galați`}
-                        className="h-[122%] w-full object-cover object-top"
+                        className="h-full w-full object-cover object-top"
                         loading="lazy"
                       />
-                      <div
-                        className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent"
-                        aria-hidden="true"
-                      />
                     </div>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="font-display text-2xl font-semibold text-plum-950">
-                      {assistant.name}
-                    </h3>
-                    <p className="mt-1 text-[12px] font-bold uppercase tracking-[0.16em] text-teal-700">
+                    <h3 className="card-title mt-5">{assistant.name}</h3>
+                    <p className="mt-1 text-xs font-bold uppercase tracking-[0.16em] text-teal-700">
                       {assistant.role}
                     </p>
-                    <p className="mt-3 text-[14.5px] leading-relaxed text-plum-900/70">
+                    <p className="mt-3 text-sm leading-relaxed text-plum-900/70">
                       {assistant.bio}
                     </p>
                   </div>
@@ -128,6 +112,14 @@ export default function Echipa() {
               partener de tehnică dentară și oamenii care au grijă ca totul să fie steril, curat și
               pregătit pentru tine.
             </p>
+          </Reveal>
+          <Reveal delay={0.1} className="mx-auto mt-12 max-w-4xl md:mt-16">
+            <img
+              src="/media/team/echipa-completa.jpg"
+              alt="Echipa completă DentaLine Clinic Galați — medici și asistente, în cabinet"
+              loading="lazy"
+              className="w-full rounded-3xl object-cover shadow-lift"
+            />
           </Reveal>
         </div>
       </section>

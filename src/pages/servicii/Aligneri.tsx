@@ -2,6 +2,7 @@ import { CalendarCheck, EyeOff, UtensilsCrossed } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
+import MedicServiciu from '../../components/servicii/MedicServiciu'
 
 const pasi = [
   {
@@ -52,9 +53,9 @@ export default function Aligneri() {
           Aparat dentar invizibil — <span className="text-coral-600">îndreaptă-ți dinții discret</span>
         </>
       }
-      intro="Gutierele transparente (alignerii) îndreaptă dinții fără bracket-uri metalice: sunt detașabile, aproape invizibile și confortabile — soluția preferată de adulți și adolescenți."
-      heroImage="/media/services/tratament-lila.jpg"
-      heroImageAlt="Tratament ortodontic modern în cabinetul DentaLine din Galați"
+      intro="Gutierele transparente (alignerii) îndreaptă dinții fără bracket-uri metalice: sunt detașabile, aproape invizibile și confortabile — soluția preferată de adulți și adolescenți. La DentaLine, tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban, atât pentru adulți, cât și pentru copii."
+      heroImage="/media/services/medic-serban-la-lucru.jpg"
+      heroImageAlt="Dr. Diana Șerban în timpul unui tratament, în clinica DentaLine din Galați"
       badge="Plan 3D cu rezultatul vizibil de la început"
       highlights={[
         'Aproape invizibili — nimeni nu îi observă',
@@ -68,7 +69,7 @@ export default function Aligneri() {
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Patru pași până la un zâmbet drept</h2>
         </Reveal>
-        <ol className="mt-9">
+        <ol className="mt-7">
           {pasi.map((p, i) => (
             <li key={p.title} className="relative pb-9 pl-16 last:pb-0">
               {i < pasi.length - 1 && (
@@ -81,8 +82,8 @@ export default function Aligneri() {
                 <span className="absolute left-0 top-0 inline-flex h-11 w-11 items-center justify-center rounded-full bg-plum-100 font-display text-xl font-semibold text-plum-700">
                   {i + 1}
                 </span>
-                <h3 className="pt-1.5 font-display text-xl font-semibold text-plum-950">{p.title}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-relaxed text-plum-900/70">{p.text}</p>
+                <h3 className="pt-1.5 card-title">{p.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-plum-900/70">{p.text}</p>
               </Reveal>
             </li>
           ))}
@@ -93,14 +94,14 @@ export default function Aligneri() {
       <Reveal>
         <div className="rounded-3xl bg-plum-50 p-7 md:p-9">
           <h2 className="h-display text-3xl md:text-4xl">Avantajele față de aparatul clasic</h2>
-          <div className="mt-7 grid gap-5 sm:grid-cols-3">
+          <div className="mt-7 grid gap-6 sm:grid-cols-3 lg:gap-8">
             {avantaje.map((a) => (
-              <div key={a.title} className="rounded-2xl bg-white p-5 shadow-soft transition hover:-translate-y-1">
+              <div key={a.title} className="rounded-2xl bg-white p-5 shadow-soft">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-600">
                   <a.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-3.5 font-display text-lg font-semibold text-plum-950">{a.title}</h3>
-                <p className="mt-1.5 text-[13.5px] leading-relaxed text-plum-900/70">{a.text}</p>
+                <h3 className="mt-3.5 card-title">{a.title}</h3>
+                <p className="mt-1.5 text-xs leading-relaxed text-plum-900/70">{a.text}</p>
               </div>
             ))}
           </div>
@@ -111,7 +112,7 @@ export default function Aligneri() {
       <div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(0,300px)]">
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Vezi alignerii în acțiune</h2>
-          <p className="mt-4 text-[15.5px] leading-relaxed text-plum-900/75">
+          <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             Subțiri, transparenți și croiți milimetric pe dinții tăi. În clinică îți arătăm planul digital 3D și
             simularea rezultatului final — știi exact ce urmează, înainte să începi tratamentul.
           </p>
@@ -125,6 +126,29 @@ export default function Aligneri() {
           />
         </Reveal>
       </div>
+
+      {/* Medicul care se ocupă de aligneri */}
+      <Reveal>
+        <MedicServiciu
+          name="Dr. Diana Șerban"
+          role="Medic stomatolog · Aligneri copii și adulți"
+          photo="/media/team/dr-diana-serban.jpg"
+          photoAlt="Dr. Diana Șerban, medic stomatolog la DentaLine Clinic Galați"
+          quote="Am avut onoarea de a fi pacientul dnei dr. Diana Șerban, fiind plăcut impresionat de profesionalismul, grija și empatia față de actul medical și pacient."
+          quoteAuthor="Daniel C., recenzie Google"
+        >
+          <p>
+            Tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban — atât pentru adulți, cât și
+            pentru copii și adolescenți. Totul pornește de la o scanare intraorală 3D, fără pastă de
+            amprentă, pe baza căreia construim planul digital și vezi rezultatul final încă de la prima
+            ședință.
+          </p>
+          <p>
+            Tot ea urmărește fiecare etapă a tratamentului, ca gutierele să lucreze exact cum au fost
+            planificate.
+          </p>
+        </MedicServiciu>
+      </Reveal>
     </ServiceLayout>
   )
 }

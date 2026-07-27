@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
+import FaqItem from '../../components/contact/FaqItem'
 
 const probleme = [
   {
@@ -83,17 +84,14 @@ export default function Implantologie() {
           <h2 id="implant-rezolvam" className="h-display text-3xl md:text-4xl">
             Soluții pentru orice dinte lipsă
           </h2>
-          <div className="mt-7 grid gap-5 sm:grid-cols-2">
+          <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
             {probleme.map((p, i) => (
-              <div
-                key={p.title}
-                className="card-surface p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift"
-              >
+              <div key={p.title} className="card-surface card-pad transition hover:border-plum-200">
                 <span className="font-display text-3xl font-semibold text-plum-300" aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-2 font-display text-[22px] font-semibold text-plum-950">{p.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-plum-900/70">{p.text}</p>
+                <h3 className="mt-2 card-title">{p.title}</h3>
+                <p className="mt-2 text-base leading-relaxed text-plum-900/70">{p.text}</p>
               </div>
             ))}
           </div>
@@ -106,7 +104,7 @@ export default function Implantologie() {
           <h2 id="implant-proces" className="h-display text-3xl md:text-4xl">
             Drumul tău, pas cu pas
           </h2>
-          <ol className="mt-8 space-y-0">
+          <ol className="mt-7 space-y-0">
             {pasi.map((pas, i) => (
               <li key={pas.title} className="relative flex gap-5 pb-8 last:pb-0">
                 {i < pasi.length - 1 && (
@@ -119,8 +117,8 @@ export default function Implantologie() {
                   {i + 1}
                 </span>
                 <div className="pt-1.5">
-                  <h3 className="font-display text-[22px] font-semibold text-plum-950">{pas.title}</h3>
-                  <p className="mt-1.5 max-w-xl text-[15px] leading-relaxed text-plum-900/70">{pas.text}</p>
+                  <h3 className="card-title">{pas.title}</h3>
+                  <p className="mt-1.5 max-w-xl text-base leading-relaxed text-plum-900/70">{pas.text}</p>
                 </div>
               </li>
             ))}
@@ -144,7 +142,7 @@ export default function Implantologie() {
           </p>
           <Link
             to="/cazuri"
-            className="mt-7 inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-[15px] font-bold text-white transition hover:border-white hover:bg-white/10"
+            className="mt-7 inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
           >
             Vezi cazurile înainte/după <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
@@ -166,12 +164,12 @@ export default function Implantologie() {
             <h2 id="implant-caz" className="h-display text-3xl md:text-4xl">
               Reabilitare totală pe implanturi
             </h2>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-plum-900/75">
+            <p className="mt-4 text-base leading-relaxed text-plum-900/75">
               Pacientul a venit cu o proteză mobilă și a plecat cu dinți ficși: o mandibulă fără
               dinți, reabilitată cu o lucrare protetică fixă completă pe implanturi, într-un singur
               plan de tratament. Urmărește transformarea în videoclipul alăturat.
             </p>
-            <p className="mt-4 text-[13px] leading-relaxed text-plum-900/70">
+            <p className="mt-4 text-xs leading-relaxed text-plum-900/70">
               Caz tratat în clinica noastră, publicat cu acordul pacientului. Rezultatele diferă în
               funcție de fiecare caz.
             </p>
@@ -187,15 +185,9 @@ export default function Implantologie() {
           </h2>
           <div className="mt-7 space-y-4">
             {faq.map((item) => (
-              <details key={item.q} className="group card-surface px-6 py-5">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-bold text-plum-950 [&::-webkit-details-marker]:hidden">
-                  {item.q}
-                  <span className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-plum-50 text-coral-600 transition group-open:rotate-180">
-                    <ChevronDown className="h-4.5 w-4.5" aria-hidden="true" />
-                  </span>
-                </summary>
-                <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-plum-900/70">{item.a}</p>
-              </details>
+              <FaqItem key={item.q} question={item.q}>
+                {item.a}
+              </FaqItem>
             ))}
           </div>
         </section>

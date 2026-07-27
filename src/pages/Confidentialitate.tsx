@@ -8,7 +8,7 @@ function LegalSection({ title, children }: { title: string; children: ReactNode 
   return (
     <section>
       <h2 className="font-display text-2xl font-semibold text-plum-950 md:text-3xl">{title}</h2>
-      <div className="mt-3.5 space-y-3.5 text-[15.5px] leading-relaxed text-plum-900/75">
+      <div className="mt-3.5 space-y-3.5 text-base leading-relaxed text-plum-900/75">
         {children}
       </div>
     </section>
@@ -33,12 +33,8 @@ export default function Confidentialitate() {
   return (
     <>
       {/* Antet */}
-      <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[420px] w-[420px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-14 md:py-20">
+      <section className="bg-plum-50">
+        <div className="container-site hero-pad">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">Informații legale</p>
             <h1 className="h-display mt-3 text-4xl md:text-5xl">Politica de confidențialitate</h1>
@@ -47,7 +43,7 @@ export default function Confidentialitate() {
               transparență. Mai jos găsești, pe scurt, cum prelucrăm datele pe care ni le trimiți
               prin acest site.
             </p>
-            <p className="mt-4 text-[13.5px] font-semibold text-plum-900/50">
+            <p className="mt-4 text-xs font-semibold text-plum-900/50">
               Ultima actualizare: iulie 2026
             </p>
           </Reveal>
@@ -58,7 +54,7 @@ export default function Confidentialitate() {
       <section className="section-pad">
         <div className="container-site">
           <Reveal className="mx-auto max-w-3xl">
-            <div className="flex items-start gap-3.5 rounded-3xl border border-plum-200 bg-plum-50 p-5 text-[14.5px] leading-relaxed text-plum-900/80">
+            <div className="flex items-start gap-3.5 rounded-3xl border border-plum-200 bg-plum-50 p-5 text-sm leading-relaxed text-plum-900/80">
               <Info className="mt-0.5 h-5 w-5 shrink-0 text-plum-500" aria-hidden="true" />
               <p>
                 <strong className="font-bold text-plum-950">Notă:</strong> acest document este o

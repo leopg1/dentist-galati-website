@@ -1,6 +1,7 @@
-import { MapPin, Phone, Star } from 'lucide-react'
+import { MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { site } from '../lib/site'
+import RatingBadge from './RatingBadge'
 import Reveal from './Reveal'
 
 type Props = {
@@ -42,11 +43,8 @@ export default function CTABand({
               Cere o programare online
             </Link>
           </div>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[14px] font-medium text-white/65">
-            <span className="inline-flex items-center gap-1.5">
-              <Star className="h-4 w-4 fill-gold-400 text-gold-400" aria-hidden="true" />
-              {site.rating}/5 · {site.reviewCount} de recenzii Google
-            </span>
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/65">
+            <RatingBadge light variant="star" />
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="h-4 w-4 text-teal-300" aria-hidden="true" />
               {site.addressShort} · {site.schedule}

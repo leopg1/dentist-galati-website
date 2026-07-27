@@ -2,6 +2,7 @@ import { BadgePercent, HeartHandshake, Phone, Sparkles, Star, Waves, Wind } from
 import { Link } from 'react-router-dom'
 import ServiceLayout from '../../components/ServiceLayout'
 import Reveal from '../../components/Reveal'
+import MedicServiciu from '../../components/servicii/MedicServiciu'
 import { site } from '../../lib/site'
 
 const include = [
@@ -44,7 +45,7 @@ export default function Igienizare() {
           Igienizare profesională — <span className="text-coral-600">fundația oricărui zâmbet sănătos</span>
         </>
       }
-      intro="Detartrajul și periajul profesional la 6 luni previn caria, boala parodontală și respirația neplăcută — și mențin rezultatele oricărui tratament. Este cea mai bună investiție pe care o poți face în dinții tăi."
+      intro="Detartrajul și periajul profesional la 6 luni previn caria, boala parodontală și respirația neplăcută — și mențin rezultatele oricărui tratament. Este cea mai bună investiție pe care o poți face în dinții tăi, iar la DentaLine e în grija Dr. Liliana Barbu."
       heroImage="/media/services/detartraj-macro.jpg"
       heroImageAlt="Detartraj profesional cu ultrasunete, prim-plan macro"
       badge="Detartraj + AirFlow gratuite pentru abonații MedLife"
@@ -60,15 +61,15 @@ export default function Igienizare() {
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">O ședință completă, pas cu pas</h2>
         </Reveal>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {include.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06} className={i === include.length - 1 ? 'sm:col-span-2' : ''}>
-              <div className="card-surface h-full p-6 transition hover:-translate-y-1">
+              <div className="card-surface h-full card-pad transition hover:border-plum-200">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
                   <s.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-display text-xl font-semibold text-plum-950">{s.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-plum-900/70">{s.text}</p>
+                <h3 className="mt-4 card-title">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-plum-900/70">{s.text}</p>
               </div>
             </Reveal>
           ))}
@@ -79,7 +80,7 @@ export default function Igienizare() {
       <div>
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Igienizarea, la DentaLine</h2>
-          <p className="mt-4 max-w-2xl text-[15.5px] leading-relaxed text-plum-900/75">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-plum-900/75">
             Instrumentar modern, mâini blânde și atenție la fiecare detaliu — igienizarea profesională nu doar
             curăță, ci și menține rezultatele tratamentelor tale pe termen lung.
           </p>
@@ -104,27 +105,46 @@ export default function Igienizare() {
         </div>
       </div>
 
+      {/* Medicul care se ocupă de prevenție și estetica din compozit */}
+      <Reveal>
+        <MedicServiciu
+          name="Dr. Liliana Barbu"
+          role="Medic stomatolog · Prevenție și estetică din compozit"
+          photo="/media/team/dr-liliana-barbu-cabinet.jpg"
+          photoAlt="Dr. Liliana Barbu, medic stomatolog la DentaLine Clinic Galați, în cabinet"
+          quote="Am simțit grijă și respect pe tot parcursul tratamentului, iar explicațiile au fost clare și liniștitoare!"
+          quoteAuthor="Valentin C., recenzie Google"
+        >
+          <p>
+            Igienizarea, AirFlow-ul și albirea dentară sunt partea ei de clinică. Dr. Liliana Barbu
+            lucrează pe prevenție: găsește problemele cât sunt mici, îți arată exact unde se adună
+            placa și te învață cum să nu ajungi acolo din nou.
+          </p>
+          <p>
+            Tot ea se ocupă de estetica din compozit — reconstrucții și fațete modelate direct pe
+            dinte, strat cu strat, până când forma și culoarea intră în rând cu dinții tăi. Și tot la
+            ea ajung pacienții cu abonament MedLife.
+          </p>
+        </MedicServiciu>
+      </Reveal>
+
       {/* Banda MedLife */}
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-plum-950 p-8 text-white md:p-10">
-          <div
-            className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-coral-600/25 blur-3xl"
-            aria-hidden="true"
-          />
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-teal-50 via-white to-plum-50 p-8 ring-1 ring-teal-100 md:p-10">
           <div className="relative">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-teal-300">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
               <BadgePercent className="h-6 w-6" aria-hidden="true" />
             </span>
-            <h2 className="h-display mt-5 text-3xl !text-white md:text-4xl">Bonus MedLife</h2>
-            <p className="mt-3 max-w-xl text-[15.5px] leading-relaxed text-white/80">
-              Abonații MedLife beneficiază de <strong className="font-semibold text-white">detartraj și AirFlow
-              gratuit</strong>. <span className="text-white/60">(condiții în clinică)</span>
+            <h2 className="h-display mt-5 text-3xl md:text-4xl">Bonus MedLife</h2>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-plum-900/75">
+              Abonații MedLife beneficiază de <strong className="font-semibold text-plum-950">detartraj și AirFlow
+              gratuit</strong>. <span className="text-plum-500">(condiții în clinică)</span>
             </p>
             <div className="mt-6 flex flex-wrap gap-3.5">
               <a href={site.phoneHref} className="btn-primary">
                 <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
               </a>
-              <Link to="/oferte" className="btn-ghost-light">
+              <Link to="/oferte" className="btn-secondary">
                 Vezi toate ofertele
               </Link>
             </div>

@@ -17,27 +17,19 @@ export default function Testimoniale() {
     <>
       {/* Hero cu rating mare */}
       <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -right-32 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-16 text-center md:py-24">
+        <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Testimoniale</p>
             <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[56px]">
               Ce spun pacienții despre noi
             </h1>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-7">
-              <p className="font-display bg-gradient-to-r from-plum-600 to-coral-600 bg-clip-text text-8xl font-semibold leading-none text-transparent md:text-9xl">
+              <p className="font-display text-8xl font-semibold leading-none text-plum-950 md:text-9xl">
                 {site.rating}
               </p>
               <div className="flex flex-col items-center gap-2.5 sm:items-start">
                 <Stars starClassName="h-6 w-6" />
-                <p className="text-[15px] font-semibold text-plum-900/70">
+                <p className="text-base font-semibold text-plum-900/70">
                   din {site.reviewCount} de recenzii pe Google
                 </p>
               </div>
@@ -54,14 +46,14 @@ export default function Testimoniale() {
       <section className="section-pad">
         <div className="container-site">
           <h2 className="sr-only">Recenziile pacienților</h2>
-          <div className="columns-1 gap-6 md:columns-2 lg:columns-3">
+          <div className="columns-1 gap-6 md:columns-2 lg:columns-3 lg:gap-8">
             {testimonials.map((t, i) => {
               /* Două carduri închise la culoare — puncte de ancorare vizuală în grilă. */
               const dark = i === 1 || i === 6
               return (
-                <Reveal key={t.author} delay={Math.min(i * 0.05, 0.25)} className="mb-6 break-inside-avoid">
+                <Reveal key={t.author} delay={Math.min(i * 0.05, 0.25)} className="mb-6 break-inside-avoid lg:mb-8">
                   <figure
-                    className={`relative rounded-3xl p-7 transition hover:-translate-y-1 ${
+                    className={`relative card-pad rounded-3xl transition ${
                       dark ? 'bg-plum-950 shadow-soft' : 'card-surface'
                     }`}
                   >
@@ -75,7 +67,7 @@ export default function Testimoniale() {
                     </span>
                     <Stars />
                     <blockquote
-                      className={`relative mt-4 text-[15.5px] leading-relaxed ${
+                      className={`relative mt-4 text-base leading-relaxed ${
                         dark ? 'text-white/90' : 'text-plum-900/80'
                       }`}
                     >
@@ -96,12 +88,12 @@ export default function Testimoniale() {
                       </span>
                       <span>
                         <span
-                          className={`block text-[14.5px] font-bold ${dark ? 'text-white' : 'text-plum-950'}`}
+                          className={`block text-sm font-bold ${dark ? 'text-white' : 'text-plum-950'}`}
                         >
                           {t.author}
                         </span>
                         <span
-                          className={`block text-[12.5px] font-medium ${
+                          className={`block text-xs font-medium ${
                             dark ? 'text-white/60' : 'text-plum-900/70'
                           }`}
                         >
@@ -152,7 +144,7 @@ export default function Testimoniale() {
 
       {/* Notă normalizare diacritice */}
       <div className="container-site pb-14">
-        <p className="mx-auto max-w-2xl text-center text-[12.5px] leading-relaxed text-plum-900/70">
+        <p className="mx-auto max-w-2xl text-center text-xs leading-relaxed text-plum-900/70">
           Citatele sunt preluate din recenziile publice Google ale clinicii; diacriticele și punctuația au
           fost ușor normalizate pentru afișarea pe site, iar „…" marchează trunchierile din Google. Sensul
           recenziilor este neatins, iar originalele pot fi consultate integral pe fișa Google DentaLine

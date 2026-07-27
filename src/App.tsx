@@ -29,8 +29,14 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <a
+        href="#continut"
+        className="btn-primary sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100]"
+      >
+        Sari la conținut
+      </a>
       <Header />
-      <main className="flex-1">
+      <main id="continut" tabIndex={-1} className="flex-1">
         <Suspense fallback={<div className="section-pad container-site" aria-busy="true" />}>
           <Routes>
             <Route path="/" element={<Home />} />

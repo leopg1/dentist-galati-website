@@ -29,15 +29,7 @@ export default function Oferte() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-coral-200/40 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-14 text-center md:py-20">
+        <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Oferte & facilități</p>
             <h1 className="h-display mt-3 text-4xl md:text-5xl">
@@ -51,7 +43,7 @@ export default function Oferte() {
               {heroChips.map(({ icon: Icon, label }) => (
                 <li
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-full border border-plum-200 bg-white px-4 py-2 text-[13.5px] font-bold text-plum-800 shadow-soft"
+                  className="inline-flex items-center gap-2 rounded-full border border-plum-200 bg-white px-4 py-2 text-xs font-bold text-plum-800 shadow-soft"
                 >
                   <Icon className="h-4 w-4 text-coral-600" aria-hidden="true" />
                   {label}
@@ -71,25 +63,21 @@ export default function Oferte() {
                 className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-coral-600/25 blur-3xl"
                 aria-hidden="true"
               />
-              <div
-                className="pointer-events-none absolute -bottom-28 -left-20 h-72 w-72 rounded-full bg-teal-400/20 blur-3xl"
-                aria-hidden="true"
-              />
-              <div className="relative grid items-center gap-10 p-8 md:grid-cols-[1.15fr_1fr] md:p-14">
+              <div className="relative grid items-center gap-10 card-pad-lg md:grid-cols-[1.15fr_1fr]">
                 <div>
-                  <p className="inline-flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.18em] text-teal-300">
+                  <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-teal-300">
                     <HeartHandshake className="h-4 w-4" aria-hidden="true" /> Beneficii exclusive
                   </p>
                   <h2 className="h-display mt-3 text-3xl !text-white md:text-4xl">
                     Parteneriat MedLife
                   </h2>
-                  <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-white/80">
+                  <p className="mt-4 max-w-lg text-base leading-relaxed text-white/80">
                     Ai abonament MedLife? La DentaLine, abonamentul tău se transformă în beneficii
                     concrete, la fiecare vizită:
                   </p>
                   <ul className="mt-6 space-y-3.5">
                     {medlifeBenefits.map(([strong, rest]) => (
-                      <li key={strong} className="flex items-start gap-3 text-[15.5px] text-white/90">
+                      <li key={strong} className="flex items-start gap-3 text-base text-white/90">
                         <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-400/20 text-teal-300">
                           <Check className="h-3.5 w-3.5" aria-hidden="true" />
                         </span>
@@ -100,7 +88,7 @@ export default function Oferte() {
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-6 max-w-lg text-[13.5px] italic leading-relaxed text-white/60">
+                  <p className="mt-6 max-w-lg text-xs italic leading-relaxed text-white/60">
                     Prezintă cardul sau abonamentul MedLife la recepție. Detalii și condiții
                     complete — în clinică sau la telefon.
                   </p>
@@ -109,19 +97,19 @@ export default function Oferte() {
                   </a>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="w-full max-w-xs rounded-3xl border border-white/15 bg-white/10 p-8 text-center backdrop-blur">
-                    <p className="font-display bg-gradient-to-r from-white to-coral-200 bg-clip-text text-7xl font-semibold leading-none text-transparent">
+                  <div className="w-full max-w-xs rounded-3xl border border-white/15 bg-white/10 card-pad text-center backdrop-blur">
+                    <p className="font-display text-7xl font-semibold leading-none text-white">
                       −20%
                     </p>
-                    <p className="mt-3 text-[15px] font-semibold leading-snug text-white/85">
+                    <p className="mt-3 text-base font-semibold leading-snug text-white/85">
                       la tratamentele dentare pentru abonații MedLife
                     </p>
                     <div className="mt-6 h-px bg-white/15" aria-hidden="true" />
-                    <p className="mt-5 text-[14px] leading-relaxed text-white/75">
+                    <p className="mt-5 text-sm leading-relaxed text-white/75">
                       + detartraj & AirFlow gratuit
                       <br />+ consultație gratuită
                     </p>
-                    <p className="mt-4 text-[11.5px] font-bold uppercase tracking-[0.2em] text-teal-300">
+                    <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-teal-300">
                       Condiții în clinică
                     </p>
                   </div>
@@ -130,16 +118,16 @@ export default function Oferte() {
             </div>
           </Reveal>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid gap-6 lg:gap-8 md:grid-cols-2">
             <Reveal delay={0.1}>
-              <div className="card-surface h-full p-8 transition hover:-translate-y-1">
+              <div className="card-surface h-full card-pad-lg transition hover:border-plum-200">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-coral-50 text-coral-600">
                   <CreditCard className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h2 className="mt-5 font-display text-2xl font-semibold text-plum-950 md:text-3xl">
+                <h2 className="card-title mt-5">
                   Plata în rate prin tbi bank
                 </h2>
-                <p className="mt-3 text-[15.5px] leading-relaxed text-plum-900/75">
+                <p className="mt-3 text-base leading-relaxed text-plum-900/75">
                   Tratamentele ample — implanturi, reabilitări protetice, smile makeover — pot fi
                   achitate <strong className="font-bold text-plum-950">în rate</strong>, prin
                   partenerul nostru de finanțare tbi bank. Aplici direct în clinică, răspunsul vine
@@ -148,14 +136,14 @@ export default function Oferte() {
               </div>
             </Reveal>
             <Reveal delay={0.18}>
-              <div className="h-full rounded-3xl border border-teal-100 bg-teal-50 p-8 shadow-soft transition hover:-translate-y-1">
+              <div className="h-full rounded-3xl border border-teal-100 bg-teal-50 card-pad-lg shadow-soft transition">
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-teal-600 shadow-soft">
                   <ReceiptText className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h2 className="mt-5 font-display text-2xl font-semibold text-plum-950 md:text-3xl">
+                <h2 className="card-title mt-5">
                   Plan de tratament transparent
                 </h2>
-                <p className="mt-3 text-[15.5px] leading-relaxed text-plum-900/75">
+                <p className="mt-3 text-base leading-relaxed text-plum-900/75">
                   Înainte de orice tratament primești planul complet, cu etape și costuri — fără
                   surprize pe parcurs. Știi de la început ce facem, de ce și cât costă.
                 </p>

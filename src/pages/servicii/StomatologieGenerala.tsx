@@ -63,15 +63,15 @@ export default function StomatologieGenerala() {
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Tot ce are nevoie zâmbetul tău, zi de zi</h2>
         </Reveal>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {servicii.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05}>
-              <div className="card-surface h-full p-6 transition hover:-translate-y-1">
+              <div className="card-surface h-full card-pad transition hover:border-plum-200">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-plum-100 text-plum-600">
                   <s.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-display text-xl font-semibold text-plum-950">{s.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-plum-900/70">{s.text}</p>
+                <h3 className="mt-4 card-title">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-plum-900/70">{s.text}</p>
               </div>
             </Reveal>
           ))}
@@ -90,11 +90,11 @@ export default function StomatologieGenerala() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="h-display text-3xl md:text-4xl">Un medic care îți explică totul</h2>
-          <p className="mt-4 text-[15.5px] leading-relaxed text-plum-900/75">
+          <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             La DentaLine nu pleci cu întrebări fără răspuns: îți arătăm ce am găsit, îți explicăm opțiunile și
             construim împreună planul de tratament — pentru copii, părinți și bunici deopotrivă.
           </p>
-          <p className="mt-3.5 text-[15.5px] leading-relaxed text-plum-900/75">
+          <p className="mt-3.5 text-base leading-relaxed text-plum-900/75">
             Iar pentru că prevenția e mereu mai simplă decât tratamentul, îți recomandăm controale regulate —
             problemele prinse devreme se rezolvă rapid, simplu și mai ieftin.
           </p>
@@ -104,22 +104,18 @@ export default function StomatologieGenerala() {
       {/* Urgențe */}
       <Reveal>
         <div className="relative overflow-hidden rounded-3xl bg-plum-950 p-8 text-white md:p-10">
-          <div
-            className="pointer-events-none absolute -bottom-24 -right-16 h-64 w-64 rounded-full bg-coral-600/25 blur-3xl"
-            aria-hidden="true"
-          />
           <div className="relative">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-coral-300">
               <AlarmClock className="h-6 w-6" aria-hidden="true" />
             </span>
             <h2 className="h-display mt-5 text-3xl !text-white md:text-4xl">Ai o urgență stomatologică?</h2>
-            <p className="mt-3 max-w-xl text-[15.5px] leading-relaxed text-white/80">
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-white/80">
               Sună-ne direct — facem tot posibilul să te primim în aceeași zi.
             </p>
             <a href={site.phoneHref} className="btn-primary mt-6">
               <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
             </a>
-            <p className="mt-4 text-[13.5px] text-white/60">{site.schedule}</p>
+            <p className="mt-4 text-xs text-white/60">{site.schedule}</p>
           </div>
         </div>
       </Reveal>

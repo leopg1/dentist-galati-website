@@ -113,16 +113,8 @@ export default function Despre() {
   return (
     <>
       {/* Hero: text + imagine cabinet */}
-      <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+      <section className="bg-plum-50">
+        <div className="container-site hero-pad grid items-center gap-12 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
           <Reveal>
             <p className="eyebrow">Despre noi</p>
             <h1 className="h-display mt-3 text-4xl md:text-[52px]">Despre DentaLine Clinic</h1>
@@ -131,7 +123,7 @@ export default function Despre() {
               în jurul unei idei simple: fiecare pacient merită să fie tratat cu grijă, onestitate
               și cea mai bună tehnologie disponibilă.
             </p>
-            <p className="mt-4 max-w-xl text-[15.5px] leading-relaxed text-plum-900/70">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-plum-900/70">
               Clinica a fost fondată de <strong className="font-bold">Dr. Camelia Vasiliu</strong>,
               medic stomatolog cu aproape 20 de ani de experiență în stomatologie generală și peste
               un deceniu dedicat implantologiei dentare. În timp, în jurul ei s-a format o echipă de
@@ -162,7 +154,7 @@ export default function Despre() {
               >
                 <Trophy className="h-4.5 w-4.5" />
               </span>
-              <p className="text-[13.5px] font-bold text-plum-900">
+              <p className="text-xs font-bold text-plum-900">
                 Medalia de Aur · „Șoimii Stomatologiei" 2026
               </p>
             </div>
@@ -188,7 +180,7 @@ export default function Despre() {
               title="Cum lucrăm"
               intro="Cinci principii pe care le respectăm la fiecare tratament — de la prima consultație până la ultimul control."
             />
-            <ul className="mt-10 space-y-7">
+            <ul className="mt-8 space-y-7">
               {principles.map((p, i) => (
                 <Reveal key={p.title} delay={0.05 * i}>
                   <li className="flex items-start gap-4">
@@ -196,8 +188,8 @@ export default function Despre() {
                       <p.icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="text-[16px] font-bold text-plum-950">{p.title}</h3>
-                      <p className="mt-1 text-[14.5px] leading-relaxed text-plum-900/70">{p.text}</p>
+                      <h3 className="text-base font-bold text-plum-950">{p.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-plum-900/70">{p.text}</p>
                     </div>
                   </li>
                 </Reveal>
@@ -211,10 +203,6 @@ export default function Despre() {
       <section className="relative overflow-hidden bg-plum-950">
         <div
           className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-plum-600/30 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-40 -right-24 h-96 w-96 rounded-full bg-teal-400/10 blur-3xl"
           aria-hidden="true"
         />
         <div className="container-site section-pad relative grid items-center gap-12 lg:grid-cols-[minmax(0,360px)_1fr] lg:gap-20">
@@ -234,7 +222,7 @@ export default function Despre() {
               title="Consultația la DentaLine"
               intro="Dr. Camelia Vasiliu îți arată, pas cu pas, cum decurge prima vizită: fără grabă, fără termeni complicați. Iată la ce să te aștepți:"
             />
-            <ol className="mt-9 space-y-6">
+            <ol className="mt-8 space-y-6">
               {consultSteps.map((step, i) => (
                 <Reveal key={step.title} delay={0.08 * i}>
                   <li className="flex items-start gap-5">
@@ -245,8 +233,8 @@ export default function Despre() {
                       {i + 1}
                     </span>
                     <div>
-                      <h3 className="text-[16.5px] font-bold text-white">{step.title}</h3>
-                      <p className="mt-1 text-[14.5px] leading-relaxed text-white/70">{step.text}</p>
+                      <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-white/70">{step.text}</p>
                     </div>
                   </li>
                 </Reveal>
@@ -274,10 +262,10 @@ export default function Despre() {
             title="Recunoaștere"
             intro="Nu ne lăudăm singuri — o fac pacienții, juriile de specialitate și partenerii noștri."
           />
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-3 lg:gap-8">
             {recognition.map((item, i) => (
               <Reveal key={item.value} delay={0.08 * i} className="h-full">
-                <div className="card-surface flex h-full flex-col items-center p-8 text-center transition hover:-translate-y-1">
+                <div className="card-surface card-pad-lg flex h-full flex-col items-center text-center transition hover:border-plum-200">
                   <span
                     className={`inline-flex h-14 w-14 items-center justify-center rounded-full ${item.iconClass}`}
                   >
@@ -286,7 +274,7 @@ export default function Despre() {
                   <h3 className="font-display mt-5 text-3xl font-semibold text-plum-950">
                     {item.value}
                   </h3>
-                  <p className="mt-3 text-[14.5px] leading-relaxed text-plum-900/70">{item.text}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-plum-900/70">{item.text}</p>
                 </div>
               </Reveal>
             ))}

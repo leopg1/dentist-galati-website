@@ -54,17 +54,14 @@ export default function CoroaneZirconiu() {
           <h2 id="zirconiu-atuuri" className="h-display text-3xl md:text-4xl">
             Trei motive pentru care îl recomandăm
           </h2>
-          <div className="mt-7 grid gap-5 sm:grid-cols-3">
+          <div className="mt-7 grid gap-6 sm:grid-cols-3 lg:gap-8">
             {atuuri.map((atu) => (
-              <div
-                key={atu.title}
-                className="card-surface p-6 transition duration-300 hover:-translate-y-1 hover:shadow-lift"
-              >
+              <div key={atu.title} className="card-surface card-pad transition hover:border-plum-200">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-plum-50 text-plum-600">
                   <atu.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-display text-[21px] font-semibold text-plum-950">{atu.title}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-relaxed text-plum-900/70">{atu.text}</p>
+                <h3 className="mt-4 card-title">{atu.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-plum-900/70">{atu.text}</p>
               </div>
             ))}
           </div>
@@ -86,7 +83,7 @@ export default function CoroaneZirconiu() {
                 <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
                   <Check className="h-4 w-4" aria-hidden="true" />
                 </span>
-                <span className="text-[15.5px] font-semibold text-plum-950">{item}</span>
+                <span className="text-base font-semibold text-plum-950">{item}</span>
               </li>
             ))}
           </ul>
@@ -106,14 +103,14 @@ export default function CoroaneZirconiu() {
             <h2 id="zirconiu-digital" className="h-display text-3xl md:text-4xl">
               Amprentă digitală, nu pastă de amprentă
             </h2>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-plum-900/75">
+            <p className="mt-4 text-base leading-relaxed text-plum-900/75">
               Scannerul intraoral 3D înlocuiește pasta clasică de amprentă — fără senzația neplăcută, cu o
               scanare rapidă și confortabilă. Datele ajung digital la laboratorul de tehnică dentară
               partener, cu care lucrăm strâns la fiecare caz.
             </p>
             <ul className="mt-5 space-y-2.5">
               {['Precizie mai mare', 'Adaptare mai bună a lucrării', 'Mai puține ședințe'].map((b) => (
-                <li key={b} className="flex items-start gap-2.5 text-[15px] font-medium text-plum-900/85">
+                <li key={b} className="flex items-start gap-2.5 text-base font-medium text-plum-900/85">
                   <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-coral-50 text-coral-600">
                     <Check className="h-3.5 w-3.5" aria-hidden="true" />
                   </span>

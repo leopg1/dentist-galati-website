@@ -20,6 +20,10 @@ export default function VideoLoop({ src, ariaLabel, poster, className = '' }: Pr
   const videoRef = useRef<HTMLVideoElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const [muted, setMuted] = useState(true)
+  // calculăm o singură dată dacă utilizatorul cere mai puțină mișcare
+  const [reduce] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  )
 
   useEffect(() => {
     const wrap = wrapRef.current
@@ -66,7 +70,7 @@ export default function VideoLoop({ src, ariaLabel, poster, className = '' }: Pr
         ref={videoRef}
         src={src}
         poster={poster}
-        autoPlay
+        autoPlay={!reduce}
         muted
         loop
         playsInline
@@ -80,9 +84,9 @@ export default function VideoLoop({ src, ariaLabel, poster, className = '' }: Pr
         type="button"
         onClick={toggleMute}
         aria-label={muted ? 'Pornește sunetul' : 'Oprește sunetul'}
-        className="absolute bottom-3.5 right-3.5 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full bg-plum-950/60 text-white backdrop-blur-sm transition hover:bg-plum-950/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        className="absolute bottom-3.5 right-3.5 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full bg-plum-950/60 text-white backdrop-blur-sm transition hover:bg-plum-950/85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
-        {muted ? <VolumeX className="h-4.5 w-4.5" aria-hidden="true" /> : <Volume2 className="h-4.5 w-4.5" aria-hidden="true" />}
+        {muted ? <VolumeX className="h-5 w-5" aria-hidden="true" /> : <Volume2 className="h-5 w-5" aria-hidden="true" />}
       </button>
     </div>
   )

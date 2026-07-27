@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { usePageMeta } from '../lib/seo'
-import { site } from '../lib/site'
 import BeforeAfter from '../components/BeforeAfter'
 import CTABand from '../components/CTABand'
+import RatingBadge from '../components/RatingBadge'
 import Reveal from '../components/Reveal'
 import CaseCard from '../components/cazuri/CaseCard'
 import CaseVideo from '../components/cazuri/CaseVideo'
@@ -18,15 +18,7 @@ export default function Cazuri() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -left-32 h-80 w-80 rounded-full bg-coral-200/40 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-16 text-center md:py-24">
+        <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Cazuri — Înainte / După</p>
             <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[56px]">
@@ -37,9 +29,8 @@ export default function Cazuri() {
               transformați cu implanturi, coroane din zirconiu sau fațete ceramice. Toate cazurile sunt
               realizate în clinica noastră, cu acordul pacienților.
             </p>
-            <p className="mx-auto mt-7 inline-flex items-center gap-2 rounded-full border border-plum-100 bg-white px-5 py-2.5 text-[13.5px] font-bold text-plum-900 shadow-soft">
-              <span className="text-gold-500" aria-hidden="true">★</span>
-              {site.rating}/5 din {site.reviewCount} de recenzii Google
+            <p className="mx-auto mt-7 inline-flex items-center rounded-full border border-plum-100 bg-white px-5 py-2.5 shadow-soft">
+              <RatingBadge variant="star" />
             </p>
           </Reveal>
         </div>
@@ -106,7 +97,7 @@ export default function Cazuri() {
                   alt="transformare estetică frontală: fațete și albire"
                   className="shadow-soft"
                 />
-                <p className="mt-2.5 text-[13px] text-plum-900/70">Trage de mâner ca să compari.</p>
+                <p className="mt-2.5 text-xs text-plum-900/70">Trage de mâner ca să compari.</p>
               </div>
             }
           />
@@ -119,17 +110,13 @@ export default function Cazuri() {
           className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-plum-600/30 blur-3xl"
           aria-hidden="true"
         />
-        <div
-          className="pointer-events-none absolute -bottom-40 -right-24 h-96 w-96 rounded-full bg-coral-600/20 blur-3xl"
-          aria-hidden="true"
-        />
         <div className="container-site section-pad relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <p className="font-display text-6xl font-semibold leading-none text-white/20" aria-hidden="true">
               04
             </p>
             <p className="mt-5">
-              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.14em] text-teal-300">
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-teal-300">
                 Smile makeover
               </span>
             </p>
@@ -142,7 +129,7 @@ export default function Cazuri() {
             </p>
             <Link
               to="/servicii/estetica-dentara"
-              className="mt-6 inline-flex items-center gap-2 text-[15px] font-bold text-teal-300 transition hover:gap-3 hover:text-white"
+              className="mt-6 inline-flex items-center gap-2 text-base font-bold text-teal-300 transition hover:gap-3 hover:text-white"
             >
               Vezi serviciul de estetică dentară
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -187,7 +174,7 @@ export default function Cazuri() {
           <Reveal>
             <div className="mx-auto flex max-w-3xl items-start gap-3.5 rounded-3xl border border-plum-100 bg-plum-50 px-6 py-5 sm:items-center">
               <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-teal-500 sm:mt-0" aria-hidden="true" />
-              <p className="text-[13.5px] leading-relaxed text-plum-900/70">
+              <p className="text-xs leading-relaxed text-plum-900/70">
                 Rezultatele variază de la pacient la pacient. Fotografiile prezintă cazuri tratate în clinica
                 noastră, publicate cu acordul pacienților.
               </p>

@@ -43,15 +43,7 @@ export default function Contact() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div
-          className="pointer-events-none absolute -bottom-32 -left-24 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative py-14 text-center md:py-20">
+        <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Contact & programare</p>
             <h1 className="h-display mt-3 text-4xl md:text-5xl">
@@ -78,20 +70,20 @@ export default function Contact() {
             <Reveal>
               <h2 className="h-display text-3xl md:text-4xl">Date de contact</h2>
             </Reveal>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-6 lg:gap-8 sm:grid-cols-2">
               <Reveal className="sm:col-span-2">
-                <div className="card-surface flex items-start gap-4 p-6">
+                <div className="card-surface flex items-start gap-4 card-pad">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-coral-50 text-coral-600">
                     <MapPin className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <h3 className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-plum-900/70">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-plum-900/70">
                       Adresă
                     </h3>
-                    <p className="mt-1.5 text-[15px] font-semibold leading-snug text-plum-950">
+                    <p className="mt-1.5 text-base font-semibold leading-snug text-plum-950">
                       {site.address}
                     </p>
-                    <p className="mt-1.5 text-[13.5px] leading-relaxed text-plum-900/70">
+                    <p className="mt-1.5 text-xs leading-relaxed text-plum-900/70">
                       {site.addressHint}.
                     </p>
                   </div>
@@ -99,12 +91,12 @@ export default function Contact() {
               </Reveal>
 
               <Reveal delay={0.08}>
-                <div className="card-surface flex h-full items-start gap-4 p-6">
+                <div className="card-surface flex h-full items-start gap-4 card-pad">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-teal-50 text-teal-600">
                     <Phone className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <h3 className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-plum-900/70">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-plum-900/70">
                       Telefon / programări
                     </h3>
                     <a
@@ -113,23 +105,23 @@ export default function Contact() {
                     >
                       {site.phone}
                     </a>
-                    <p className="mt-1 text-[13.5px] text-plum-900/70">Apasă pentru apel direct.</p>
+                    <p className="mt-1 text-xs text-plum-900/70">Apasă pentru apel direct.</p>
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.12}>
-                <div className="card-surface flex h-full items-start gap-4 p-6">
+                <div className="card-surface flex h-full items-start gap-4 card-pad">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-plum-50 text-plum-600">
                     <Mail className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div className="min-w-0">
-                    <h3 className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-plum-900/70">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-plum-900/70">
                       E-mail
                     </h3>
                     <a
                       href={`mailto:${site.email}`}
-                      className="mt-1.5 block break-all text-[15px] font-semibold text-plum-950 transition hover:text-coral-700"
+                      className="mt-1.5 block break-all text-base font-semibold text-plum-950 transition hover:text-coral-700"
                     >
                       {site.email}
                     </a>
@@ -138,27 +130,27 @@ export default function Contact() {
               </Reveal>
 
               <Reveal delay={0.16}>
-                <div className="card-surface flex h-full items-start gap-4 p-6">
+                <div className="card-surface flex h-full items-start gap-4 card-pad">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-plum-50 text-gold-500">
                     <Clock className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <h3 className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-plum-900/70">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-plum-900/70">
                       Program
                     </h3>
-                    <p className="mt-1.5 text-[15px] font-semibold text-plum-950">{site.schedule}</p>
-                    <p className="mt-1 text-[13.5px] text-plum-900/70">{site.scheduleNote}</p>
+                    <p className="mt-1.5 text-base font-semibold text-plum-950">{site.schedule}</p>
+                    <p className="mt-1 text-xs text-plum-900/70">{site.scheduleNote}</p>
                   </div>
                 </div>
               </Reveal>
 
               <Reveal delay={0.2}>
-                <div className="card-surface flex h-full items-start gap-4 p-6">
+                <div className="card-surface flex h-full items-start gap-4 card-pad">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-coral-50 text-coral-600">
                     <InstagramIcon className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-plum-900/70">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-plum-900/70">
                       Social
                     </h3>
                     <div className="mt-1.5 space-y-1.5">
@@ -166,7 +158,7 @@ export default function Contact() {
                         href={site.facebook}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-[14.5px] font-semibold text-plum-900/80 transition hover:text-coral-700"
+                        className="flex items-center gap-2 text-sm font-semibold text-plum-900/80 transition hover:text-coral-700"
                       >
                         <FacebookIcon className="h-4 w-4" /> /DrVasiliuCamelia
                       </a>
@@ -174,7 +166,7 @@ export default function Contact() {
                         href={site.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-[14.5px] font-semibold text-plum-900/80 transition hover:text-coral-700"
+                        className="flex items-center gap-2 text-sm font-semibold text-plum-900/80 transition hover:text-coral-700"
                       >
                         <InstagramIcon className="h-4 w-4" /> @dentaline.clinic
                       </a>
@@ -197,7 +189,7 @@ export default function Contact() {
                 href={site.mapsQuery}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-bold text-coral-600 transition hover:text-coral-700"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-coral-600 transition hover:text-coral-700"
               >
                 Deschide în Google Maps <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
               </a>
@@ -208,13 +200,13 @@ export default function Contact() {
 
       {/* Întrebări frecvente — obiecțiile de dinaintea programării */}
       <section className="pb-16 md:pb-20">
-        <div className="container-site max-w-4xl">
+        <div className="container-site max-w-3xl">
           <Reveal>
             <h2 className="h-display text-center text-3xl md:text-4xl">
               Întrebări puse des la telefon
             </h2>
           </Reveal>
-          <div className="mt-8 space-y-3.5">
+          <div className="mt-8 space-y-4">
             {contactFaq.map((item, i) => (
               <Reveal key={item.q} delay={i * 0.05}>
                 <FaqItem question={item.q}>{item.a}</FaqItem>
@@ -225,16 +217,12 @@ export default function Contact() {
       </section>
 
       {/* Urgențe — blocul de închidere al paginii */}
-      <section className="pb-16 md:pb-24">
+      <section className="pt-0 pb-16 md:pb-24">
         <div className="container-site">
           <Reveal>
             <div className="isolate relative overflow-hidden rounded-3xl border border-coral-100 bg-coral-50 px-6 py-12 text-center md:px-16 md:py-16">
               <div
                 className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-coral-200/50 blur-3xl"
-                aria-hidden="true"
-              />
-              <div
-                className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-plum-200/40 blur-3xl"
                 aria-hidden="true"
               />
               <div className="relative">

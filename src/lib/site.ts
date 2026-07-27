@@ -71,16 +71,18 @@ export const services: Service[] = [
     menuTitle: 'Endodonție la microscop',
     short:
       'Salvăm dinți considerați pierduți, cu precizia pe care doar microscopul operator o oferă.',
-    image: '/media/services/microscop-zumax.jpg',
-    imageAlt: 'Microscop operator dentar în clinica DentaLine',
+    image: '/media/services/endodontie-dr-sacara.jpg',
+    imageAlt:
+      'Dr. Mariana Sacara, medicul care se ocupă de endodonție la DentaLine, lucrând la microscopul operator Zumax',
   },
   {
     slug: 'stomatologie-copii',
     title: 'Stomatologie pentru copii',
     menuTitle: 'Stomatologie copii',
     short: 'Primele vizite fără frică, cu răbdare, blândețe și medicul potrivit pentru cei mici.',
-    image: '/media/services/copil-tratament.jpg',
-    imageAlt: 'Medic stomatolog tratând cu blândețe un copil',
+    image: '/media/services/copii-dr-serban.jpg',
+    imageAlt:
+      'Dr. Diana Șerban consultând cu blândețe un copil în clinica DentaLine din Galați',
   },
   {
     slug: 'aligneri',
@@ -136,7 +138,7 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Camelia Vasiliu',
     role: 'Medic stomatolog · Fondator & Director medical',
     photo: '/media/team/dr-camelia-vasiliu.jpg',
-    bio: 'Absolventă a Universității de Medicină și Farmacie „Grigore T. Popa" din Iași (promoția 2006), Dr. Vasiliu practică stomatologia de aproape 20 de ani, dintre care peste un deceniu dedicat implantologiei dentare și chirurgiei dentare avansate. A fondat DentaLine cu convingerea că un cabinet stomatologic poate fi un loc în care vii cu drag, nu cu teamă — iar recenziile pacienților îi dau dreptate.',
+    bio: 'Absolventă a Universității de Medicină și Farmacie „Grigore T. Popa" din Iași (promoția 2006), Dr. Camelia Vasiliu practică stomatologia de aproape 20 de ani, dintre care peste un deceniu dedicat implantologiei și chirurgiei dentare avansate. Preia cazurile complexe — dinți lipsă, arcade întregi de refăcut — și le duce de la prima radiografie până la coroana finală. A fondat DentaLine pornind de la o convingere simplă: un cabinet stomatologic poate fi un loc în care vii cu drag, nu cu teamă. Recenziile pacienților îi dau dreptate.',
     areas: ['Implantologie dentară', 'Chirurgie dentară avansată', 'Coroane din zirconiu', 'Smile makeover'],
     quote:
       'Recomand cu mare încredere serviciile clinicii! Dr. Vasiliu Camelia și Dr. Sacara Mariana sunt minunate și foarte bune în ce fac.',
@@ -147,21 +149,31 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Diana Șerban',
     role: 'Medic stomatolog',
     photo: '/media/team/dr-diana-serban.jpg',
-    bio: 'Blândețea și răbdarea o recomandă în mod special în lucrul cu cei mici — copiii sunt „specialitatea" ei — iar pacienții o laudă în recenzii pentru profesionalism și atenție la detalii. Este medicul care îmbrățișează stomatologia digitală: scanările intraorale 3D fac parte din rutina ei de lucru.',
-    areas: ['Stomatologie pediatrică', 'Stomatologie digitală', 'Stomatologie generală'],
+    bio: 'Cu cei mici are un talent aparte: le explică pe limba lor, nu se grăbește niciodată și îi convinge să plece de la cabinet fără frică — de multe ori, cerând singuri să mai vină. Dr. Diana Șerban se ocupă de stomatologia pentru copii, de tratamentele cu aligneri — pentru copii și pentru adulți — și de fațetele dentare. Lucrează digital: scanarea intraorală 3D face parte din rutina ei, așa că vezi rezultatul înainte să înceapă tratamentul.',
+    areas: [
+      'Stomatologie pediatrică',
+      'Aligneri — copii și adulți',
+      'Fațete & estetică dentară',
+      'Stomatologie digitală',
+    ],
     quote:
       'Am avut onoarea de a fi pacientul dnei dr. Diana Șerban, fiind plăcut impresionat de profesionalismul, grija și empatia față de actul medical și pacient.',
     quoteAuthor: 'Daniel C., recenzie Google',
   },
   {
-    // Numele „Caraman" provine din portretul oficial etichetat furnizat de clinică;
-    // recenziile mai vechi o menționează ca „Dr. Barbu Liliana" (probabil schimbare de nume — de confirmat cu clienta).
-    slug: 'dr-liliana-caraman',
-    name: 'Dr. Liliana Caraman',
+    // S-a căsătorit — numele actual este Barbu. Pe ecusoanele și în materialele mai
+    // vechi ale clinicii apare numele de dinainte, Caraman.
+    slug: 'dr-liliana-barbu',
+    name: 'Dr. Liliana Barbu',
     role: 'Medic stomatolog',
-    photo: '/media/team/dr-liliana-caraman.jpg',
-    bio: 'Pacienții o descriu în recenzii drept „atentă, profesionistă și calmă" — medicul care îți explică totul clar și te face să te simți în siguranță pe scaunul stomatologic, de la prima consultație până la finalul tratamentului.',
-    areas: [],
+    photo: '/media/team/dr-liliana-barbu.jpg',
+    bio: 'Pacienții o descriu în recenzii drept „atentă, profesionistă și calmă" — medicul lângă care te relaxezi din prima consultație. Se ocupă de prevenție și igienizare profesională, de albirea dentară și de estetica din compozit: reconstrucții și fațete modelate direct pe dinte, strat cu strat, până când lucrarea nu se mai deosebește de dintele natural. Tot ea este medicul care îi preia pe pacienții cu abonament MedLife.',
+    areas: [
+      'Prevenție & igienizare profesională',
+      'Albire dentară',
+      'Reconstrucții estetice din compozit',
+      'Fațete din compozit',
+    ],
     quote:
       'Am simțit grijă și respect pe tot parcursul tratamentului, iar explicațiile au fost clare și liniștitoare!',
     quoteAuthor: 'Valentin C., recenzie Google',
@@ -171,8 +183,8 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Mariana Sacara',
     role: 'Medic stomatolog',
     photo: '/media/team/dr-mariana-sacara.jpg',
-    bio: '„Foarte bine pregătită" — așa o descriu pacienții, iar familiile întregi (copii, părinți, bunici) îi trec pragul cu încredere.',
-    areas: [],
+    bio: 'Endodonția la microscop este specialitatea ei — și se vede. Dr. Mariana Sacara găsește și tratează canalele pe care ochiul liber pur și simplu nu le vede, lucrând la microscopul operator de la primul până la ultimul pas, cu răbdarea unui medic care știe că un dinte salvat corect ține zeci de ani. La ea ajung și cazurile dificile trimise de alți colegi: retratamente, canale calcificate, dinți dați deja la extracție. „Foarte bine pregătită", spun pacienții în recenzii — iar familiile întregi îi trec pragul cu încredere.',
+    areas: ['Endodonție la microscop', 'Tratamente de canal complexe'],
     quote: 'Recomand dr. Mariana Săcara pentru orice tratament! E foarte bine pregătită!',
     quoteAuthor: 'Ionica C., recenzie Google',
   },

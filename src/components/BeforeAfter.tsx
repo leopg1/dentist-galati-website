@@ -56,25 +56,24 @@ export default function BeforeAfter({
       }}
     >
       <img src={afterSrc} alt={`După — ${alt}`} className="absolute inset-0 h-full w-full object-cover" draggable={false} />
-      <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img
-          src={beforeSrc}
-          alt={`Înainte — ${alt}`}
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ width: ref.current ? ref.current.offsetWidth : '100%', maxWidth: 'none' }}
-          draggable={false}
-        />
-      </div>
+      {/* Stratul „înainte", tăiat cu clip-path — complet responsiv, fără măsurare în px */}
+      <img
+        src={beforeSrc}
+        alt={`Înainte — ${alt}`}
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        draggable={false}
+      />
       {/* Linia de separare */}
       <div className="absolute inset-y-0 z-10 w-0.5 bg-white shadow-lift" style={{ left: `${pos}%` }} aria-hidden="true">
         <span className="absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-plum-800 shadow-lift">
           <MoveHorizontal className="h-5 w-5" />
         </span>
       </div>
-      <span className="absolute left-4 top-4 z-10 rounded-full bg-plum-950/70 px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider text-white backdrop-blur">
+      <span className="absolute left-4 top-4 z-10 rounded-full bg-plum-950/70 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur">
         Înainte
       </span>
-      <span className="absolute right-4 top-4 z-10 rounded-full bg-coral-600/90 px-3.5 py-1.5 text-[12px] font-bold uppercase tracking-wider text-white backdrop-blur">
+      <span className="absolute right-4 top-4 z-10 rounded-full bg-coral-600/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur">
         După
       </span>
     </div>

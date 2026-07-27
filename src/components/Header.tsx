@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { CalendarCheck, ChevronDown, Clock, MapPin, Menu, Phone, X } from 'lucide-react'
 import { services, site } from '../lib/site'
@@ -19,6 +19,8 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const mobileNavRef = useRef<HTMLElement>(null)
 
   useEffect(() => setOpen(false), [location.pathname])
 
@@ -29,11 +31,25 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Meniul mobil: Escape închide + revine focusul pe buton; focus pe primul link la deschidere
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false)
+        hamburgerRef.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', onKey)
+    mobileNavRef.current?.querySelector<HTMLElement>('a, button, summary')?.focus()
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open])
+
   return (
     <header className="sticky top-0 z-50">
-      {/* Bara de sus */}
-      <div className="hidden bg-plum-950 text-white lg:block">
-        <div className="container-site flex h-9 items-center justify-between text-[13px] font-medium">
+      {/* Bara de sus (doar desktop lat) */}
+      <div className="hidden bg-plum-950 text-white xl:block">
+        <div className="container-site flex h-9 items-center justify-between text-xs font-medium">
           <div className="flex items-center gap-6 text-white/85">
             <span className="inline-flex items-center gap-1.5">
               <MapPin className="h-3.5 w-3.5 text-teal-300" aria-hidden="true" />
@@ -49,7 +65,7 @@ export default function Header() {
             </a>
           </div>
           <div className="flex items-center gap-5">
-            <span className="text-gold-400 font-semibold">★ {site.rating}/5 din {site.reviewCount} de recenzii Google</span>
+            <span className="font-semibold text-gold-400">★ {site.rating}/5 din {site.reviewCount} de recenzii Google</span>
             <a href={site.facebook} target="_blank" rel="noreferrer" className="text-white/85 transition hover:text-white">
               Facebook
             </a>
@@ -67,31 +83,37 @@ export default function Header() {
         <div className="container-site flex h-[76px] items-center justify-between gap-4">
           <Logo />
 
-          <nav className="hidden items-center gap-6 xl:gap-7 lg:flex" aria-label="Navigație principală">
+          <nav className="hidden items-center gap-6 xl:flex 2xl:gap-7" aria-label="Navigație principală">
             {navItems.map((item) =>
               item.dropdown ? (
                 <div key={item.to} className="group relative">
                   <NavLink
                     to={item.to}
+                    aria-haspopup="menu"
                     className={({ isActive }) => `nav-link inline-flex items-center gap-1 py-2 ${isActive ? 'text-coral-600' : ''}`}
                   >
                     {item.label}
-                    <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" aria-hidden="true" />
+                    <ChevronDown
+                      className="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180"
+                      aria-hidden="true"
+                    />
                   </NavLink>
                   <div className="invisible absolute left-1/2 top-full z-50 w-[540px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="card-surface grid grid-cols-2 gap-1 p-3">
+                    <div className="card-surface grid grid-cols-2 gap-1 p-3" role="menu">
                       {services.map((s) => (
                         <Link
                           key={s.slug}
                           to={`/servicii/${s.slug}`}
-                          className="rounded-2xl px-4 py-3 text-[14px] font-semibold text-plum-900/85 transition hover:bg-plum-50 hover:text-coral-700"
+                          role="menuitem"
+                          className="rounded-2xl px-4 py-3 text-sm font-semibold text-plum-900/85 transition hover:bg-plum-50 hover:text-coral-700"
                         >
                           {s.menuTitle}
                         </Link>
                       ))}
                       <Link
                         to="/servicii"
-                        className="col-span-2 mt-1 rounded-2xl bg-plum-50 px-4 py-3 text-center text-[14px] font-bold text-plum-700 transition hover:bg-plum-100"
+                        role="menuitem"
+                        className="col-span-2 mt-1 rounded-2xl bg-plum-50 px-4 py-3 text-center text-sm font-bold text-plum-700 transition hover:bg-plum-100"
                       >
                         Vezi toate serviciile →
                       </Link>
@@ -110,35 +132,47 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="hidden items-center gap-3 lg:flex">
+          <div className="hidden items-center gap-3 xl:flex">
             <Link to="/contact#formular" className="btn-primary !px-6 !py-3">
               <CalendarCheck className="h-4 w-4" aria-hidden="true" />
               Programează-te
             </Link>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen(!open)}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-plum-200 text-plum-800 lg:hidden"
-            aria-expanded={open}
-            aria-label={open ? 'Închide meniul' : 'Deschide meniul'}
-          >
-            {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
-          </button>
+          {/* Mobil / tabletă: apel mereu vizibil + hamburger */}
+          <div className="flex items-center gap-2 xl:hidden">
+            <a
+              href={site.phoneHref}
+              aria-label={`Sună la ${site.phone}`}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-coral-600 text-white shadow-lift transition hover:bg-coral-700 active:scale-95"
+            >
+              <Phone className="h-5 w-5" aria-hidden="true" />
+            </a>
+            <button
+              ref={hamburgerRef}
+              type="button"
+              onClick={() => setOpen(!open)}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-plum-200 text-plum-800"
+              aria-expanded={open}
+              aria-label={open ? 'Închide meniul' : 'Deschide meniul'}
+            >
+              {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+            </button>
+          </div>
         </div>
 
         {/* Meniu mobil */}
         {open && (
           <nav
-            className="max-h-[calc(100dvh-140px)] overflow-y-auto border-t border-plum-100 bg-white pb-6 lg:hidden"
+            ref={mobileNavRef}
+            className="max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-plum-100 bg-white pb-6 xl:hidden"
             aria-label="Navigație mobilă"
           >
             <div className="container-site flex flex-col gap-1 py-4">
               {navItems.map((item) =>
                 item.dropdown ? (
                   <details key={item.to} className="group/acc rounded-2xl">
-                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl px-4 py-3 text-[16px] font-semibold text-plum-900/85 [&::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl px-4 py-3.5 text-base font-semibold text-plum-900/85 [&::-webkit-details-marker]:hidden">
                       Servicii
                       <ChevronDown
                         className="h-4.5 w-4.5 text-plum-400 transition group-open/acc:rotate-180"
@@ -151,7 +185,7 @@ export default function Header() {
                           key={s.slug}
                           to={`/servicii/${s.slug}`}
                           className={({ isActive }) =>
-                            `rounded-xl px-3 py-2.5 text-[14.5px] font-semibold ${isActive ? 'bg-plum-50 text-coral-600' : 'text-plum-900/75'}`
+                            `rounded-xl px-3 py-3 text-sm font-semibold ${isActive ? 'bg-plum-50 text-coral-600' : 'text-plum-900/75'}`
                           }
                         >
                           {s.menuTitle}
@@ -160,7 +194,7 @@ export default function Header() {
                       <NavLink
                         to="/servicii"
                         end
-                        className="rounded-xl px-3 py-2.5 text-[14.5px] font-bold text-plum-700"
+                        className="rounded-xl px-3 py-3 text-sm font-bold text-plum-700"
                       >
                         Toate serviciile →
                       </NavLink>
@@ -172,7 +206,7 @@ export default function Header() {
                     to={item.to}
                     end={item.to === '/'}
                     className={({ isActive }) =>
-                      `rounded-2xl px-4 py-3 text-[16px] font-semibold ${isActive ? 'bg-plum-50 text-coral-600' : 'text-plum-900/85'}`
+                      `rounded-2xl px-4 py-3.5 text-base font-semibold ${isActive ? 'bg-plum-50 text-coral-600' : 'text-plum-900/85'}`
                     }
                   >
                     {item.label}

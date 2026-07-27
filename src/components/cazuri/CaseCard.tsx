@@ -34,12 +34,15 @@ export default function CaseCard({
     <Reveal>
       <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
         <div className={reverse ? 'lg:order-2' : ''}>{media}</div>
-        <div className={reverse ? 'lg:order-1' : ''}>
-          <p className="font-display text-6xl font-semibold leading-none text-plum-200" aria-hidden="true">
+        <div className={`relative isolate ${reverse ? 'lg:order-1' : ''}`}>
+          <span
+            className="pointer-events-none absolute -left-1 -top-8 -z-10 select-none font-display text-[7rem] font-semibold leading-none text-plum-100 md:text-[9rem]"
+            aria-hidden="true"
+          >
             {number}
-          </p>
-          <p className="mt-5">
-            <span className="inline-flex items-center rounded-full border border-coral-100 bg-coral-50 px-3.5 py-1 text-[12px] font-bold uppercase tracking-[0.14em] text-coral-600">
+          </span>
+          <p>
+            <span className="inline-flex items-center rounded-full border border-coral-100 bg-coral-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-coral-600">
               {chip}
             </span>
           </p>
@@ -47,7 +50,7 @@ export default function CaseCard({
           <p className="mt-4 max-w-xl leading-relaxed text-plum-900/75">{description}</p>
           <Link
             to={to}
-            className="mt-6 inline-flex items-center gap-2 text-[15px] font-bold text-plum-700 transition hover:gap-3 hover:text-coral-700"
+            className="mt-6 inline-flex items-center gap-2 text-base font-bold text-plum-700 transition hover:gap-3 hover:text-coral-700"
           >
             {linkLabel}
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

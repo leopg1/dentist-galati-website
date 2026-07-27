@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
+import MedicServiciu from '../../components/servicii/MedicServiciu'
 
 const serviciiIncluse = [
   'Fațete ceramice',
@@ -40,7 +41,7 @@ export default function EsteticaDentara() {
       metaDescription="Fațete ceramice, albire profesională și transformări complete ale zâmbetului, planificate digital. Vezi cazuri reale înainte/după."
       eyebrow="Estetică dentară & Smile makeover"
       title="Estetică dentară: zâmbetul pe care ți-l dorești, natural"
-      intro="„Smile makeover” înseamnă mai mult decât dinți albi: înseamnă armonie între formă, culoare și proporții — construită milimetric pentru chipul tău. La DentaLine, transformările estetice sunt planificate digital și executate cu materiale ceramice premium."
+      intro="„Smile makeover” înseamnă mai mult decât dinți albi: înseamnă armonie între formă, culoare și proporții — construită milimetric pentru chipul tău. La DentaLine, fațetele și transformările estetice sunt în grija Dr. Diana Șerban: planificate digital și executate cu materiale ceramice premium."
       heroImage="/media/cases/colaj-zambete-bw.jpg"
       heroImageAlt="Colaj alb-negru cu zâmbete transformate prin estetică dentară la DentaLine"
       badge="Zâmbet planificat digital, dinainte să începem"
@@ -62,12 +63,12 @@ export default function EsteticaDentara() {
             {serviciiIncluse.map((serviciu) => (
               <li
                 key={serviciu}
-                className="card-surface flex items-center gap-3.5 px-5 py-4 transition duration-300 hover:-translate-y-1 hover:shadow-lift"
+                className="card-surface flex items-center gap-3.5 px-5 py-4 transition hover:border-plum-200"
               >
                 <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coral-50 text-coral-600">
                   <Sparkles className="h-4.5 w-4.5" aria-hidden="true" />
                 </span>
-                <span className="text-[15.5px] font-semibold text-plum-950">{serviciu}</span>
+                <span className="text-base font-semibold text-plum-950">{serviciu}</span>
               </li>
             ))}
           </ul>
@@ -80,14 +81,14 @@ export default function EsteticaDentara() {
           <h2 id="estetica-proces" className="h-display text-3xl md:text-4xl">
             Patru pași până la zâmbetul final
           </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
             {pasi.map((pas, i) => (
               <div key={pas.title} className="rounded-3xl bg-white p-6 shadow-soft">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-plum-100 font-display text-lg font-semibold text-plum-700">
                   {i + 1}
                 </span>
-                <h3 className="mt-3 font-display text-[21px] font-semibold text-plum-950">{pas.title}</h3>
-                <p className="mt-1.5 text-[14.5px] leading-relaxed text-plum-900/70">{pas.text}</p>
+                <h3 className="mt-3 card-title">{pas.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-plum-900/70">{pas.text}</p>
               </div>
             ))}
           </div>
@@ -120,11 +121,32 @@ export default function EsteticaDentara() {
             <Link to="/cazuri" className="btn-primary mt-7">
               Vezi cazurile înainte/după <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-            <p className="mt-4 text-[13px] text-white/55">
+            <p className="mt-4 text-xs text-white/55">
               Cazuri tratate în clinica noastră, publicate cu acordul pacienților.
             </p>
           </div>
         </section>
+      </Reveal>
+
+      {/* Medicul care se ocupă de fațete */}
+      <Reveal>
+        <MedicServiciu
+          name="Dr. Diana Șerban"
+          role="Medic stomatolog · Fațete și estetică dentară"
+          photo="/media/team/dr-diana-serban.jpg"
+          photoAlt="Dr. Diana Șerban, medic stomatolog la DentaLine Clinic Galați"
+          quote="Am avut onoarea de a fi pacientul dnei dr. Diana Șerban, fiind plăcut impresionat de profesionalismul, grija și empatia față de actul medical și pacient."
+          quoteAuthor="Daniel C., recenzie Google"
+        >
+          <p>
+            Dr. Diana Șerban se ocupă de fațetele dentare și de tratamentele de estetică dentară, de la
+            planificarea digitală a zâmbetului până la proba și lipirea fațetelor ceramice.
+          </p>
+          <p>
+            Scanarea intraorală 3D îi permite să îți arate forma și proporțiile noului zâmbet înainte să
+            atingem dinții — vezi rezultatul, apoi decizi.
+          </p>
+        </MedicServiciu>
       </Reveal>
     </ServiceLayout>
   )

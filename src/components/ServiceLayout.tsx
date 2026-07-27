@@ -4,6 +4,7 @@ import { Check, ChevronRight, Phone } from 'lucide-react'
 import { services, site } from '../lib/site'
 import { usePageMeta } from '../lib/seo'
 import CTABand from './CTABand'
+import RatingBadge from './RatingBadge'
 import Reveal from './Reveal'
 
 type Props = {
@@ -48,13 +49,9 @@ export default function ServiceLayout({
     <>
       {/* Hero serviciu */}
       <section className="relative overflow-hidden bg-plum-50">
-        <div
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full bg-plum-200/50 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site relative grid items-center gap-12 py-14 md:py-20 lg:grid-cols-[1.1fr_1fr]">
+        <div className="container-site relative grid items-center gap-12 hero-pad lg:grid-cols-[1.1fr_1fr]">
           <Reveal>
-            <nav className="flex items-center gap-1.5 text-[13px] font-semibold text-plum-900/60" aria-label="Breadcrumb">
+            <nav className="flex items-center gap-1.5 text-xs font-semibold text-plum-900/60" aria-label="Breadcrumb">
               <Link to="/" className="transition hover:text-coral-700">Acasă</Link>
               <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
               <Link to="/servicii" className="transition hover:text-coral-700">Servicii</Link>
@@ -65,7 +62,7 @@ export default function ServiceLayout({
             {highlights && (
               <ul className="mt-6 space-y-2.5">
                 {highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-2.5 text-[15px] font-medium text-plum-900/85">
+                  <li key={h} className="flex items-start gap-2.5 text-base font-medium text-plum-900/85">
                     <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
                       <Check className="h-3.5 w-3.5" aria-hidden="true" />
                     </span>
@@ -92,14 +89,9 @@ export default function ServiceLayout({
             />
             <div className="card-surface absolute -bottom-5 left-5 hidden items-center gap-3 px-5 py-3.5 sm:flex">
               {badge ? (
-                <p className="text-[13.5px] font-bold text-plum-900">{badge}</p>
+                <p className="text-xs font-bold text-plum-900">{badge}</p>
               ) : (
-                <>
-                  <span className="text-gold-500 text-lg" aria-hidden="true">★</span>
-                  <p className="text-[13.5px] font-bold text-plum-900">
-                    {site.rating}/5 · {site.reviewCount} de recenzii Google
-                  </p>
-                </>
+                <RatingBadge variant="star" />
               )}
             </div>
           </Reveal>
@@ -112,8 +104,8 @@ export default function ServiceLayout({
           <div className="min-w-0 space-y-14">{children}</div>
 
           <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
-            <div className="card-surface p-6">
-              <h2 className="font-display text-2xl font-semibold text-plum-950">Alte servicii</h2>
+            <div className="card-surface card-pad">
+              <h2 className="card-title">Alte servicii</h2>
               <ul className="mt-4 space-y-1">
                 {services
                   .filter((s) => s.slug !== slug)
@@ -122,7 +114,7 @@ export default function ServiceLayout({
                     <li key={s.slug}>
                       <Link
                         to={`/servicii/${s.slug}`}
-                        className="flex items-center justify-between rounded-xl px-3 py-2.5 text-[14.5px] font-semibold text-plum-900/80 transition hover:bg-plum-50 hover:text-coral-700"
+                        className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-semibold text-plum-900/80 transition hover:bg-plum-50 hover:text-coral-700"
                       >
                         {s.menuTitle}
                         <ChevronRight className="h-4 w-4 text-plum-300" aria-hidden="true" />
@@ -131,15 +123,15 @@ export default function ServiceLayout({
                   ))}
               </ul>
             </div>
-            <div className="rounded-3xl bg-gradient-to-br from-plum-600 to-plum-800 p-6 text-white shadow-lift">
-              <h2 className="font-display text-2xl font-semibold">Ai o întrebare?</h2>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-white/80">
+            <div className="card-pad rounded-3xl bg-gradient-to-br from-plum-600 to-plum-800 text-white shadow-lift">
+              <h2 className="card-title !text-white">Ai o întrebare?</h2>
+              <p className="mt-2 text-sm leading-relaxed text-white/80">
                 Sună-ne și îți răspundem pe loc — sau scrie-ne și te contactăm noi.
               </p>
               <a href={site.phoneHref} className="btn-primary mt-5 w-full">
                 <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
               </a>
-              <p className="mt-3 text-center text-[13px] text-white/60">{site.schedule}</p>
+              <p className="mt-3 text-center text-xs text-white/60">{site.schedule}</p>
             </div>
           </aside>
         </div>

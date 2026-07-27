@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backup local al portretelor originale (înainte de decuparea textului ars în poză)
+.photo-originals

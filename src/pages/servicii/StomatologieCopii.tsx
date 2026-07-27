@@ -47,8 +47,8 @@ export default function StomatologieCopii() {
         </>
       }
       intro="La DentaLine, cei mici sunt pacienți cu drepturi depline: au medicul lor blând (Dr. Diana Șerban), timpul lor, ritmul lor — și chiar și o mascotă-dinte care îi așteaptă în cabinet."
-      heroImage="/media/services/copil-tratament.jpg"
-      heroImageAlt="Copil zâmbind în timpul unui tratament stomatologic blând la DentaLine"
+      heroImage="/media/services/copii-consult-serban.jpg"
+      heroImageAlt="Dr. Diana Șerban consultând un copil relaxat, pe scaunul stomatologic din clinica DentaLine"
       badge="Medicul celor mici: Dr. Diana Șerban"
       highlights={[
         'Medic dedicat celor mici: Dr. Diana Șerban',
@@ -62,15 +62,15 @@ export default function StomatologieCopii() {
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Ce facem pentru cei mici</h2>
         </Reveal>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {servicii.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06} className={i === servicii.length - 1 ? 'sm:col-span-2' : ''}>
-              <div className="card-surface h-full p-6 transition hover:-translate-y-1">
+              <div className="card-surface h-full card-pad transition hover:border-plum-200">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-coral-100 text-coral-600">
                   <s.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
-                <h3 className="mt-4 font-display text-xl font-semibold text-plum-950">{s.title}</h3>
-                <p className="mt-2 text-[14.5px] leading-relaxed text-plum-900/70">{s.text}</p>
+                <h3 className="mt-4 card-title">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-plum-900/70">{s.text}</p>
               </div>
             </Reveal>
           ))}
@@ -89,17 +89,17 @@ export default function StomatologieCopii() {
             />
             <div className="flex flex-col justify-center p-7 md:p-9">
               <h2 className="h-display text-3xl">Dr. Diana Șerban</h2>
-              <p className="mt-1 text-[13.5px] font-semibold uppercase tracking-wide text-plum-900/50">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-plum-900/50">
                 Medic stomatolog · Stomatologie pediatrică
               </p>
-              <p className="mt-4 text-[15px] leading-relaxed text-plum-900/75">
+              <p className="mt-4 text-base leading-relaxed text-plum-900/75">
                 Dacă întrebi părinții din sala de așteptare, ți-o descriu la fel: medicul care nu grăbește
                 niciun copil. Blândă și răbdătoare, cu o atenție la detalii pe care pacienții o laudă
                 constant în recenzii.
               </p>
-              <blockquote className="mt-5 border-l-2 border-coral-300 pl-4 text-[14px] italic leading-relaxed text-plum-900/65">
+              <blockquote className="mt-5 border-l-2 border-coral-300 pl-4 text-sm italic leading-relaxed text-plum-900/65">
                 „{drSerban.quote}"
-                <footer className="mt-2 not-italic text-[13px] font-semibold text-plum-900/50">
+                <footer className="mt-2 not-italic text-xs font-semibold text-plum-900/50">
                   — {drSerban.quoteAuthor}
                 </footer>
               </blockquote>
@@ -120,7 +120,7 @@ export default function StomatologieCopii() {
         </Reveal>
         <Reveal delay={0.1}>
           <h2 className="h-display text-3xl md:text-4xl">Vezi cum lucrăm cu cei mici</h2>
-          <p className="mt-4 text-[15.5px] leading-relaxed text-plum-900/75">
+          <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             Fără grabă, fără instrumente înfricoșătoare scoase brusc, fără presiune. Dr. Diana Șerban transformă
             fiecare vizită într-o experiență blândă, pe ritmul copilului — iar cei mici pleacă din cabinet cu
             zâmbetul pe buze.
@@ -132,7 +132,7 @@ export default function StomatologieCopii() {
               className="aspect-[4/3] w-full rounded-3xl object-cover shadow-soft"
               loading="lazy"
             />
-            <figcaption className="mt-2.5 text-[13px] font-medium text-plum-900/60">
+            <figcaption className="mt-2.5 text-xs font-medium text-plum-900/60">
               În salon îi așteaptă pe cei mici și mascota-dinte a clinicii.
             </figcaption>
           </figure>
@@ -146,8 +146,8 @@ export default function StomatologieCopii() {
             <Baby className="h-6 w-6" aria-hidden="true" />
           </span>
           <div>
-            <h2 className="font-display text-2xl font-semibold text-plum-950">Sfatul nostru pentru părinți</h2>
-            <p className="mt-2.5 text-[15.5px] leading-relaxed text-plum-900/75">
+            <h2 className="card-title">Sfatul nostru pentru părinți</h2>
+            <p className="mt-2.5 text-base leading-relaxed text-plum-900/75">
               Prima vizită e bine să aibă loc <strong className="font-semibold text-plum-950">în jurul vârstei de
               2–3 ani</strong> sau la erupția primilor dinți — ca o „vizită de cunoaștere", nu de urgență. Așa,
               cabinetul devine un loc familiar, iar copilul învață de mic că dentistul e un prieten.
