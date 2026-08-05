@@ -221,7 +221,7 @@ export const assistants: TeamMember[] = [
     name: 'Anemona Antoneac',
     role: 'Asistentă medicală',
     photo: '/media/team/asist-anemona-antoneac-hd.jpg',
-    bio: 'Calmă și atentă la fiecare detaliu — lângă ea, până și prima vizită pare simplă.',
+    bio: 'Face echipă cu Dr. Liliana Barbu: pregătește ședințele de igienizare și albire și are grijă să te simți în largul tău înainte să înceapă orice.',
     areas: [],
   },
   {
@@ -229,7 +229,7 @@ export const assistants: TeamMember[] = [
     name: 'Cristina Jalba',
     role: 'Asistentă medicală',
     photo: '/media/team/asist-cristina-jalba-hd.jpg',
-    bio: 'Instrumentar, sterilizare, pregătirea fiecărei ședințe — nimic nu trece neverificat pe lângă ea.',
+    bio: 'Asistenta Dr. Mariana Sacara la tratamentele de canal: pregătește microscopul și instrumentarul și îi este a doua pereche de ochi la fiecare etapă.',
     areas: [],
   },
   {
