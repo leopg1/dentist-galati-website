@@ -6,12 +6,12 @@ const beneficii = [
   {
     icon: MapPin,
     title: 'Totul într-un singur loc',
-    text: 'Radiografia se face pe loc, în timpul consultației — fără drumuri la alt centru de radiologie.',
+    text: 'Radiografia se face pe loc, în timpul consultației, fără drumuri la alt centru de radiologie.',
   },
   {
     icon: Eye,
     title: 'Planuri de tratament vizuale',
-    text: 'Îți arătăm imaginile pe ecran și îți explicăm exact ce vedem — înțelegi fiecare decizie.',
+    text: 'Îți arătăm imaginile pe ecran și îți explicăm exact ce vedem: înțelegi fiecare decizie.',
   },
   {
     icon: Ruler,
@@ -25,20 +25,21 @@ export default function RadiologieDigitala() {
     <ServiceLayout
       slug="radiologie-digitala"
       metaTitle="Radiologie digitală & Scanare 3D Galați — DentaLine"
-      metaDescription="Radiografie digitală pe loc și amprentă digitală cu scanner intraoral 3D: diagnostic precis, fără drumuri în plus. DentaLine Clinic Galați."
+      metaDescription="Radiografie digitală pe loc și amprentă digitală cu scaner intraoral 3D: diagnostic precis, fără drumuri în plus. DentaLine Clinic Galați."
       eyebrow="Diagnostic digital"
       title={
         <>
-          Diagnostic digital — <span className="text-coral-600">vedem ce alții nu văd</span>
+          Radiografie și amprentă 3D, <span className="text-coral-600">direct în clinică</span>
         </>
       }
-      intro="Un tratament corect începe cu un diagnostic precis. În clinică dispunem de radiologie digitală (DigiRay), cu radiografii făcute pe loc și doze mici de radiații, și de scanner intraoral SHINING 3D, care înlocuiește amprenta clasică cu o scanare rapidă și confortabilă."
+      intro="Un tratament corect începe cu un diagnostic precis. În clinică dispunem de radiologie digitală (DigiRay), cu radiografii făcute pe loc și doze mici de radiații, și de scaner intraoral SHINING 3D, care înlocuiește amprenta clasică cu o scanare rapidă și confortabilă."
       heroImage="/media/services/scanare-3d.jpg"
-      heroImageAlt="Scanare intraorală 3D cu scanner digital în clinica DentaLine"
-      badge="Radiografia se face pe loc, în cabinet"
+      heroImageAlt="Scanare intraorală 3D cu scaner digital în clinica DentaLine"
+      heroImageClassName="object-[center_15%]"
+      badge="Scaner intraoral SHINING 3D"
       highlights={[
         'Radiografii digitale pe loc, cu doze mici de radiații',
-        'Scanner intraoral SHINING 3D — fără pasta clasică de amprentă',
+        'Amprentă digitală 3D, fără pasta clasică',
         'Diagnostic precis, plan de tratament complet din prima vizită',
       ]}
       ctaTitle="Vino cu problema, pleci cu planul complet"
@@ -51,7 +52,7 @@ export default function RadiologieDigitala() {
         <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
           <Reveal>
             <div className="card-surface h-full card-pad transition hover:border-plum-200">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-plum-100 text-plum-600">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
                 <ScanLine className="h-6 w-6" aria-hidden="true" />
               </span>
               <h3 className="mt-4 card-title">Radiologie digitală DigiRay</h3>
@@ -66,10 +67,10 @@ export default function RadiologieDigitala() {
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
                 <Scan className="h-6 w-6" aria-hidden="true" />
               </span>
-              <h3 className="mt-4 card-title">Scanner intraoral SHINING 3D</h3>
+              <h3 className="mt-4 card-title">Scaner intraoral SHINING 3D</h3>
               <p className="mt-2.5 text-sm leading-relaxed text-plum-900/70">
-                Fără pasta clasică de amprentă: scannerul creează modelul digital 3D al dinților printr-o scanare
-                rapidă și confortabilă, cu precizie milimetrică.
+                Fără pasta clasică de amprentă: scanerul creează modelul digital 3D al dinților în câteva
+                minute, cu precizie milimetrică.
               </p>
             </div>
           </Reveal>
@@ -93,12 +94,12 @@ export default function RadiologieDigitala() {
 
       {/* Beneficii */}
       <Reveal>
-        <div className="rounded-3xl bg-plum-50 p-7 md:p-9">
+        <div className="rounded-3xl bg-plum-50 card-pad-lg">
           <h2 className="h-display text-3xl md:text-4xl">De ce contează diagnosticul digital</h2>
           <div className="mt-7 grid gap-6 sm:grid-cols-3 lg:gap-8">
             {beneficii.map((b) => (
               <div key={b.title} className="rounded-2xl bg-white p-5 shadow-soft">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-coral-100 text-coral-600">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-coral-100 text-coral-600">
                   <b.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="mt-3.5 card-title">{b.title}</h3>

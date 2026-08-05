@@ -7,7 +7,7 @@ import MedicServiciu from '../../components/servicii/MedicServiciu'
 const pasi = [
   {
     title: 'Scanare 3D a dinților',
-    text: 'Fără pastă de amprentă: scannerul intraoral creează modelul digital exact al dinților tăi.',
+    text: 'Fără pastă de amprentă: scanerul intraoral creează modelul digital exact al dinților tăi.',
   },
   {
     title: 'Plan digital cu rezultatul final',
@@ -19,7 +19,7 @@ const pasi = [
   },
   {
     title: 'Retenția rezultatului',
-    text: 'La final, menținem noua poziție a dinților — ca zâmbetul tău drept să rămână așa.',
+    text: 'La final, menținem noua poziție a dinților, ca zâmbetul tău drept să rămână așa.',
   },
 ]
 
@@ -27,17 +27,17 @@ const avantaje = [
   {
     icon: EyeOff,
     title: 'Estetic',
-    text: 'Gutierele sunt aproape invizibile — nimeni nu le observă în conversații sau fotografii.',
+    text: 'Gutierele transparente se văd greu în conversații sau în fotografii.',
   },
   {
     icon: UtensilsCrossed,
     title: 'Igienă ușoară',
-    text: 'Le scoți la masă și la periaj — fără restricții alimentare și fără zone greu de curățat.',
+    text: 'Le scoți la masă și la periaj: fără restricții alimentare și fără zone greu de curățat.',
   },
   {
     icon: CalendarCheck,
     title: 'Mai puține urgențe',
-    text: 'Fără bracket-uri dezlipite sau sârme rupte — mai puține vizite neprevăzute decât la aparatul clasic.',
+    text: 'Fără bracket-uri dezlipite sau sârme rupte, deci mai puține vizite neprevăzute decât la aparatul clasic.',
   },
 ]
 
@@ -53,12 +53,13 @@ export default function Aligneri() {
           Aparat dentar invizibil — <span className="text-coral-600">îndreaptă-ți dinții discret</span>
         </>
       }
-      intro="Gutierele transparente (alignerii) îndreaptă dinții fără bracket-uri metalice: sunt detașabile, aproape invizibile și confortabile — soluția preferată de adulți și adolescenți. La DentaLine, tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban, atât pentru adulți, cât și pentru copii."
+      intro="Gutierele transparente (alignerii) îndreaptă dinții fără bracket-uri metalice: sunt detașabile, discrete și confortabile, alese tot mai des de adulți și adolescenți. La DentaLine, tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban, atât pentru adulți, cât și pentru copii."
       heroImage="/media/services/medic-serban-la-lucru.jpg"
       heroImageAlt="Dr. Diana Șerban în timpul unui tratament, în clinica DentaLine din Galați"
-      badge="Plan 3D cu rezultatul vizibil de la început"
+      heroImageClassName="object-[center_35%]"
+      badge="Coordonat de Dr. Diana Șerban"
       highlights={[
-        'Aproape invizibili — nimeni nu îi observă',
+        'Greu de observat chiar de aproape',
         'Detașabili: îi scoți la masă și la periaj',
         'Plan digital 3D cu rezultatul vizibil de la început',
       ]}
@@ -92,12 +93,12 @@ export default function Aligneri() {
 
       {/* Avantaje */}
       <Reveal>
-        <div className="rounded-3xl bg-plum-50 p-7 md:p-9">
+        <div className="rounded-3xl bg-plum-50 card-pad-lg">
           <h2 className="h-display text-3xl md:text-4xl">Avantajele față de aparatul clasic</h2>
           <div className="mt-7 grid gap-6 sm:grid-cols-3 lg:gap-8">
             {avantaje.map((a) => (
               <div key={a.title} className="rounded-2xl bg-white p-5 shadow-soft">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-600">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
                   <a.icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h3 className="mt-3.5 card-title">{a.title}</h3>
@@ -109,12 +110,12 @@ export default function Aligneri() {
       </Reveal>
 
       {/* Video aligneri */}
-      <div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(0,300px)]">
+      <div className="grid items-center gap-8 md:grid-cols-[1.1fr_minmax(0,340px)]">
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Vezi alignerii în acțiune</h2>
           <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             Subțiri, transparenți și croiți milimetric pe dinții tăi. În clinică îți arătăm planul digital 3D și
-            simularea rezultatului final — știi exact ce urmează, înainte să începi tratamentul.
+            simularea rezultatului final: știi exact ce urmează, înainte să începi tratamentul.
           </p>
         </Reveal>
         <Reveal delay={0.1}>
@@ -138,7 +139,7 @@ export default function Aligneri() {
           quoteAuthor="Daniel C., recenzie Google"
         >
           <p>
-            Tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban — atât pentru adulți, cât și
+            Tratamentele cu aligneri sunt coordonate de Dr. Diana Șerban, atât pentru adulți, cât și
             pentru copii și adolescenți. Totul pornește de la o scanare intraorală 3D, fără pastă de
             amprentă, pe baza căreia construim planul digital și vezi rezultatul final încă de la prima
             ședință.

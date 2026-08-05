@@ -21,8 +21,12 @@ type Props = {
   /** Beneficii scurte afișate sub intro, în hero. */
   highlights?: string[]
   ctaTitle?: string
+  /** Text specific serviciului pentru banda CTA de final (altfel se folosește textul implicit). */
+  ctaText?: string
   /** Text specific serviciului pentru cardul plutitor de sub imaginea hero; fără badge se afișează ratingul. */
   badge?: string
+  /** Clase suplimentare pentru imaginea hero (ex. object-position, ca fețele să nu fie tăiate). */
+  heroImageClassName?: string
 }
 
 /**
@@ -41,7 +45,9 @@ export default function ServiceLayout({
   children,
   highlights,
   ctaTitle,
+  ctaText,
   badge,
+  heroImageClassName,
 }: Props) {
   usePageMeta(metaTitle, metaDescription)
 
@@ -84,7 +90,7 @@ export default function ServiceLayout({
             <img
               src={heroImage}
               alt={heroImageAlt}
-              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift"
+              className={`aspect-[4/3] w-full rounded-3xl object-cover shadow-lift ${heroImageClassName ?? ''}`.trim()}
               loading="eager"
             />
             <div className="card-surface absolute -bottom-5 left-5 hidden items-center gap-3 px-5 py-3.5 sm:flex">
@@ -109,7 +115,6 @@ export default function ServiceLayout({
               <ul className="mt-4 space-y-1">
                 {services
                   .filter((s) => s.slug !== slug)
-                  .slice(0, 6)
                   .map((s) => (
                     <li key={s.slug}>
                       <Link
@@ -123,21 +128,24 @@ export default function ServiceLayout({
                   ))}
               </ul>
             </div>
-            <div className="card-pad rounded-3xl bg-gradient-to-br from-plum-600 to-plum-800 text-white shadow-lift">
-              <h2 className="card-title !text-white">Ai o întrebare?</h2>
-              <p className="mt-2 text-sm leading-relaxed text-white/80">
-                Sună-ne și îți răspundem pe loc — sau scrie-ne și te contactăm noi.
+            <div className="card-pad rounded-3xl bg-gradient-to-br from-plum-50 via-white to-teal-50/60 shadow-soft ring-1 ring-plum-100">
+              <h2 className="card-title">Ai o întrebare?</h2>
+              <p className="mt-2 text-sm leading-relaxed text-plum-900/75">
+                Sună-ne și îți răspundem pe loc, sau scrie-ne și te contactăm noi.
               </p>
               <a href={site.phoneHref} className="btn-primary mt-5 w-full">
                 <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
               </a>
-              <p className="mt-3 text-center text-xs text-white/60">{site.schedule}</p>
+              <Link to={`/contact?serviciu=${slug}#formular`} className="btn-secondary mt-3 w-full">
+                Scrie-ne online
+              </Link>
+              <p className="mt-3 text-center text-xs text-plum-900/60">{site.schedule}</p>
             </div>
           </aside>
         </div>
       </section>
 
-      <CTABand title={ctaTitle} />
+      <CTABand title={ctaTitle} text={ctaText} />
     </>
   )
 }

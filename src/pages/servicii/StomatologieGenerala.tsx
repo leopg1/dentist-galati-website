@@ -1,4 +1,5 @@
-import { AlarmClock, ClipboardList, HeartPulse, Phone, Scissors, ShieldCheck, Sparkles } from 'lucide-react'
+import { AlarmClock, CircleMinus, ClipboardList, HeartPulse, Phone, ShieldCheck, Sparkles } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import ServiceLayout from '../../components/ServiceLayout'
 import Reveal from '../../components/Reveal'
 import { site } from '../../lib/site'
@@ -12,7 +13,7 @@ const servicii = [
   {
     icon: Sparkles,
     title: 'Obturații fizionomice',
-    text: 'Plombe estetice din materiale moderne, în culoarea dintelui — nu se văd.',
+    text: 'Plombe estetice din materiale moderne, în aceeași culoare cu dintele.',
   },
   {
     icon: ShieldCheck,
@@ -20,19 +21,19 @@ const servicii = [
     text: 'Oprim caria din stadii incipiente, înainte să ajungă la nerv.',
   },
   {
-    icon: Scissors,
+    icon: CircleMinus,
     title: 'Extracții',
     text: 'Când un dinte nu mai poate fi salvat, extracția se face blând, sub anestezie locală.',
   },
   {
     icon: HeartPulse,
     title: 'Afecțiuni gingivale',
-    text: 'Tratăm gingiile inflamate sau sângerânde — sănătatea dinților începe de la gingii.',
+    text: 'Tratăm gingiile inflamate sau sângerânde. Sănătatea dinților începe de la gingii.',
   },
   {
     icon: AlarmClock,
     title: 'Urgențe stomatologice',
-    text: 'Durere acută? Facem tot posibilul să te primim cât mai repede.',
+    text: 'Durere acută? Îți dăm prioritate la programare.',
   },
 ]
 
@@ -51,6 +52,7 @@ export default function StomatologieGenerala() {
       intro="Partea de stomatologie pe care o faci toată viața: carii, plombe, extracții, dureri apărute peste noapte. Aici se rezolvă corect, cu materiale moderne și explicații clare."
       heroImage="/media/clinic/tratament-vertical.jpg"
       heroImageAlt="Medic stomatolog tratând un pacient în cabinetul modern DentaLine"
+      badge="Urgențe tratate cu prioritate"
       highlights={[
         'Tratament corect, materiale moderne',
         'Explicații clare, la fiecare pas',
@@ -92,30 +94,35 @@ export default function StomatologieGenerala() {
           <h2 className="h-display text-3xl md:text-4xl">Un medic care îți explică totul</h2>
           <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             La DentaLine nu pleci cu întrebări fără răspuns: îți arătăm ce am găsit, îți explicăm opțiunile și
-            construim împreună planul de tratament — pentru copii, părinți și bunici deopotrivă.
+            construim împreună planul de tratament, pentru copii, părinți și bunici deopotrivă.
           </p>
           <p className="mt-3.5 text-base leading-relaxed text-plum-900/75">
-            Iar pentru că prevenția e mereu mai simplă decât tratamentul, îți recomandăm controale regulate —
-            problemele prinse devreme se rezolvă rapid, simplu și mai ieftin.
+            Iar pentru că prevenția e mereu mai simplă decât tratamentul, îți recomandăm controale regulate:
+            problemele prinse devreme se rezolvă mai repede și mai ieftin.
           </p>
         </Reveal>
       </div>
 
       {/* Urgențe */}
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-plum-950 p-8 text-white md:p-10">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-coral-50 via-white to-plum-50 p-8 ring-1 ring-coral-100 md:p-10">
           <div className="relative">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-coral-300">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-coral-100 text-coral-600">
               <AlarmClock className="h-6 w-6" aria-hidden="true" />
             </span>
-            <h2 className="h-display mt-5 text-3xl !text-white md:text-4xl">Ai o urgență stomatologică?</h2>
-            <p className="mt-3 max-w-xl text-base leading-relaxed text-white/80">
-              Sună-ne direct — facem tot posibilul să te primim în aceeași zi.
+            <h2 className="h-display mt-5 text-3xl md:text-4xl">Ai o urgență stomatologică?</h2>
+            <p className="mt-3 max-w-xl text-base leading-relaxed text-plum-900/75">
+              Sună-ne direct: facem tot posibilul să te primim în aceeași zi.
             </p>
-            <a href={site.phoneHref} className="btn-primary mt-6">
-              <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
-            </a>
-            <p className="mt-4 text-xs text-white/60">{site.schedule}</p>
+            <div className="mt-6 flex flex-wrap gap-3.5">
+              <a href={site.phoneHref} className="btn-primary">
+                <Phone className="h-4 w-4" aria-hidden="true" /> {site.phone}
+              </a>
+              <Link to="/contact" className="btn-secondary">
+                Vezi programul și adresa
+              </Link>
+            </div>
+            <p className="mt-4 text-xs text-plum-900/60">{site.schedule}</p>
           </div>
         </div>
       </Reveal>

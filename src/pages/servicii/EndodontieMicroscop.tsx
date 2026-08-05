@@ -2,6 +2,7 @@ import { AlertCircle, Check, Microscope, Phone } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import Reveal from '../../components/Reveal'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
+import FaqItem from '../../components/contact/FaqItem'
 import { site } from '../../lib/site'
 
 const semne = [
@@ -13,15 +14,15 @@ const semne = [
 ]
 
 const beneficii = [
-  'Precizie maximă la fiecare canal tratat',
-  'Șanse mai mari de salvare a dintelui',
-  'Tratamente minim invazive',
-  'Adesea, totul într-o singură ședință',
+  'Vedem și tratăm canale ascunse, greu de găsit altfel',
+  'Păstrăm mai mult din structura sănătoasă a dintelui',
+  'Instrumentele fracturate pe canal pot fi, de regulă, îndepărtate',
+  'Control vizual la final: verificăm fiecare canal înainte de obturare',
 ]
 
 /** Tipurile de cazuri pe care le preluăm prin trimitere de la alți medici stomatologi. */
 const cazuriTrimise = [
-  'Retratamente endodontice — tratamente de canal vechi sau eșuate',
+  'Retratamente endodontice: tratamente de canal vechi sau eșuate',
   'Canale calcificate sau cu anatomie dificilă',
   'Instrumente fracturate pe canal',
   'Leziuni periapicale persistente',
@@ -36,11 +37,15 @@ export default function EndodontieMicroscop() {
       metaTitle="Endodonție la microscop Galați — DentaLine"
       metaDescription="Tratamente de canal la microscopul operator Zumax: salvăm dinți considerați pierduți, minim invaziv. Programează-te în Galați."
       eyebrow="Endodonție la microscop"
-      title="Endodonție la microscop — salvăm dinți considerați pierduți"
+      title={
+        <>
+          Tratamente de canal la microscop — <span className="text-coral-600">salvăm dinți considerați pierduți</span>
+        </>
+      }
       intro="Un tratament de canal făcut corect poate ține un dinte pe loc zeci de ani. La DentaLine, endodonția este specialitatea Dr. Mariana Sacara: lucrează la microscopul operator Zumax, cu mărire și iluminare care scot la iveală canale imposibil de văzut cu ochiul liber."
       heroImage="/media/services/endodontie-tratament-microscop.jpg"
       heroImageAlt="Tratament de canal la microscopul operator Zumax, cu izolare cu digă, în clinica DentaLine din Galați"
-      badge="Dr. Mariana Sacara · endodonție la microscop"
+      badge="Dr. Mariana Sacara · tratamente de canal"
       highlights={[
         'Microscop operator Zumax, cu mărire și iluminare',
         'Șanse mai mari de salvare a dintelui',
@@ -61,7 +66,7 @@ export default function EndodontieMicroscop() {
                 key={semn}
                 className="card-surface flex items-center gap-3.5 px-5 py-4 transition hover:border-plum-200"
               >
-                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-coral-50 text-coral-600">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-coral-50 text-coral-600">
                   <AlertCircle className="h-4.5 w-4.5" aria-hidden="true" />
                 </span>
                 <span className="text-base font-semibold leading-snug text-plum-950">{semn}</span>
@@ -85,8 +90,9 @@ export default function EndodontieMicroscop() {
               Ce câștigi când tratăm la microscop
             </h2>
             <p className="mt-4 text-base leading-relaxed text-plum-900/75">
-              Mărirea și iluminarea microscopului operator ne lasă să vedem și să tratăm canale pe
-              care ochiul liber pur și simplu nu le poate găsi. Asta se traduce direct în rezultate:
+              Mărirea și iluminarea microscopului operator transformă fiecare etapă a tratamentului
+              de canal: lucrăm la detalii pe care ochiul liber pur și simplu nu le distinge.
+              Concret, pentru dintele tău asta înseamnă:
             </p>
             <ul className="mt-6 space-y-3.5">
               {beneficii.map((beneficiu) => (
@@ -109,14 +115,14 @@ export default function EndodontieMicroscop() {
       <Reveal>
         <section
           aria-label="Despre microscopul operator"
-          className="flex flex-col items-start gap-5 rounded-3xl bg-gradient-to-br from-plum-800 to-plum-950 p-7 text-white shadow-lift sm:flex-row sm:items-center md:p-9"
+          className="flex flex-col items-start gap-5 rounded-3xl bg-gradient-to-br from-plum-50 via-white to-coral-50/60 card-pad-lg shadow-soft ring-1 ring-plum-100 sm:flex-row sm:items-center"
         >
-          <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-teal-300">
+          <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-teal-100 text-teal-600">
             <Microscope className="h-7 w-7" aria-hidden="true" />
           </span>
-          <p className="text-base leading-relaxed text-white/85">
-            <strong className="font-bold text-white">Microscopul operator Zumax</strong> face parte din
-            dotarea clinicii — alături de radiologia digitală și scannerul intraoral 3D, ne ajută să
+          <p className="text-base leading-relaxed text-plum-900/75">
+            <strong className="font-bold text-plum-950">Microscopul operator Zumax</strong> face parte
+            din dotarea clinicii: alături de radiologia digitală și scanerul intraoral 3D, ne ajută să
             punem un diagnostic precis și să tratăm minim invaziv, conservând cât mai mult din dintele
             natural.
           </p>
@@ -142,11 +148,36 @@ export default function EndodontieMicroscop() {
         </MedicServiciu>
       </Reveal>
 
+      {/* FAQ */}
+      <Reveal>
+        <section aria-labelledby="endo-faq">
+          <h2 id="endo-faq" className="h-display text-3xl md:text-4xl">
+            Întrebările pe care ni le pui cel mai des
+          </h2>
+          <div className="mt-7 space-y-4">
+            <FaqItem question="Doare tratamentul de canal?">
+              Tratamentul se face sub anestezie locală, așa că, de regulă, nu doare. Pentru mulți
+              pacienți, el este chiar cel care oprește durerea cu care au venit la cabinet.
+            </FaqItem>
+            <FaqItem question="Cât durează un tratament de canal la microscop?">
+              Depinde de dinte și de complexitatea canalelor: adesea reușim să încheiem totul într-o
+              singură ședință, iar retratamentele sau cazurile dificile pot avea nevoie de două.
+              Afli calendarul exact după consultație.
+            </FaqItem>
+            <FaqItem question="Cât rezistă un dinte tratat pe canal?">
+              Un dinte tratat corect și restaurat la timp, de regulă cu o coroană, poate rezista
+              mulți ani. Controalele regulate ne ajută să îl urmărim și să intervenim din timp dacă
+              este nevoie.
+            </FaqItem>
+          </div>
+        </section>
+      </Reveal>
+
       {/* Trimiteri de la medici stomatologi */}
       <Reveal>
         <section
           aria-labelledby="endo-trimiteri"
-          className="rounded-3xl bg-gradient-to-br from-teal-50 via-white to-plum-50 p-7 ring-1 ring-teal-100 md:p-9"
+          className="rounded-3xl bg-gradient-to-br from-teal-50 via-white to-plum-50 card-pad-lg ring-1 ring-teal-100"
         >
           <p className="eyebrow !text-teal-600">Pentru medici stomatologi</p>
           <h2 id="endo-trimiteri" className="h-display mt-3 text-3xl md:text-4xl">

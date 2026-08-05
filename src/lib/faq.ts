@@ -20,7 +20,7 @@ export const faqItems: FaqItem[] = [
     a: 'Da! Dr. Diana Șerban se ocupă cu blândețe de cei mici — de la vizite de acomodare la tratamente complete.',
   },
   {
-    q: 'Fac radiografia în altă parte?',
+    q: 'Trebuie să fac radiografia în altă parte?',
     a: 'Nu e nevoie — avem radiologie digitală în clinică, iar radiografia se face pe loc, în timpul consultației.',
   },
   {

@@ -1,4 +1,4 @@
-import { BadgePercent, HeartHandshake, Phone, Sparkles, Star, Waves, Wind } from 'lucide-react'
+import { BadgePercent, Brush, HeartHandshake, Phone, Sparkles, Waves, Wind } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ServiceLayout from '../../components/ServiceLayout'
 import Reveal from '../../components/Reveal'
@@ -14,10 +14,10 @@ const include = [
   {
     icon: Wind,
     title: 'AirFlow',
-    text: 'Jet cu pulbere fină care îndepărtează petele de cafea, ceai și tutun — dinții își recapătă culoarea.',
+    text: 'Jet cu pulbere fină care îndepărtează petele de cafea, ceai și tutun, iar dinții își recapătă culoarea.',
   },
   {
-    icon: Sparkles,
+    icon: Brush,
     title: 'Periaj profesional',
     text: 'Lustruim suprafețele dentare, pentru un smalț neted pe care placa aderă mai greu.',
   },
@@ -27,9 +27,9 @@ const include = [
     text: 'Îți arătăm tehnica de periaj și accesoriile potrivite pentru dinții tăi, nu sfaturi generice.',
   },
   {
-    icon: Star,
+    icon: Sparkles,
     title: 'Albire profesională (opțional)',
-    text: 'După igienizare, poți opta pentru albirea profesională — un zâmbet vizibil mai luminos.',
+    text: 'După igienizare, poți opta pentru albirea profesională, pentru un zâmbet vizibil mai luminos.',
   },
 ]
 
@@ -45,16 +45,17 @@ export default function Igienizare() {
           Igienizare profesională — <span className="text-coral-600">fundația oricărui zâmbet sănătos</span>
         </>
       }
-      intro="Detartrajul și periajul profesional la 6 luni previn caria, boala parodontală și respirația neplăcută — și mențin rezultatele oricărui tratament. Este cea mai bună investiție pe care o poți face în dinții tăi, iar la DentaLine e în grija Dr. Liliana Barbu."
+      intro="Detartrajul și periajul profesional la 6 luni previn caria, boala parodontală și respirația neplăcută, și mențin rezultatele oricărui tratament. Este cea mai bună investiție pe care o poți face în dinții tăi, iar la DentaLine e în grija Dr. Liliana Barbu."
       heroImage="/media/services/detartraj-macro.jpg"
       heroImageAlt="Detartraj profesional cu ultrasunete, prim-plan macro"
-      badge="Detartraj + AirFlow gratuite pentru abonații MedLife"
+      badge="Detartraj și AirFlow gratuit pentru abonații MedLife"
       highlights={[
         'Detartraj cu ultrasunete + AirFlow',
         'Recomandată la fiecare 6 luni',
         'Îndepărtează petele de cafea, ceai și tutun',
       ]}
       ctaTitle="Programează-ți igienizarea semestrială"
+      ctaText="Sună-ne și îți găsim ora potrivită — durează 40–50 de minute și pleci cu dinții curați."
     >
       {/* Ce include */}
       <div>
@@ -81,11 +82,11 @@ export default function Igienizare() {
         <Reveal>
           <h2 className="h-display text-3xl md:text-4xl">Igienizarea, la DentaLine</h2>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-plum-900/75">
-            Instrumentar modern, mâini blânde și atenție la fiecare detaliu — igienizarea profesională nu doar
+            Instrumentar modern, mâini blânde și atenție la fiecare detaliu. Igienizarea profesională nu doar
             curăță, ci și menține rezultatele tratamentelor tale pe termen lung.
           </p>
         </Reveal>
-        <div className="mt-7 grid gap-5 sm:grid-cols-2">
+        <div className="mt-7 grid gap-6 sm:grid-cols-2 lg:gap-8">
           <Reveal>
             <img
               src="/media/services/igienizare-2.jpg"

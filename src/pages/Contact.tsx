@@ -46,12 +46,12 @@ export default function Contact() {
         <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Contact & programare</p>
-            <h1 className="h-display mt-3 text-4xl md:text-5xl">
+            <h1 className="h-display mt-3 text-4xl md:text-[52px]">
               Contact — te așteptăm cu zâmbetul pregătit
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-plum-900/70">
               Sună-ne, scrie-ne sau vino direct în clinică — ne găsești pe Bulevardul Brăilei, „la
-              Ultimul Leu". Răspundem rapid și găsim împreună ora potrivită pentru tine.
+              Ultimul Leu”. Răspundem rapid și găsim împreună ora potrivită pentru tine.
             </p>
           </Reveal>
         </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                     </h3>
                     <a
                       href={`mailto:${site.email}`}
-                      className="mt-1.5 block break-all text-base font-semibold text-plum-950 transition hover:text-coral-700"
+                      className="mt-1.5 block whitespace-nowrap text-sm font-semibold text-plum-950 transition [overflow-wrap:normal] hover:text-coral-700 md:text-base"
                     >
                       {site.email}
                     </a>

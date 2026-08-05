@@ -2,13 +2,14 @@ import { Baby, GraduationCap, Heart, ShieldCheck, Smile, Sparkles } from 'lucide
 import ServiceLayout from '../../components/ServiceLayout'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
-import { doctors } from '../../lib/site'
+import MedicServiciu from '../../components/servicii/MedicServiciu'
+import { doctors, testimonials } from '../../lib/site'
 
 const servicii = [
   {
     icon: Smile,
     title: 'Consultații și acomodare',
-    text: 'Obișnuim copilul cu cabinetul, în ritmul lui — fără grabă și fără presiune.',
+    text: 'Obișnuim copilul cu cabinetul, în ritmul lui, fără grabă și fără presiune.',
   },
   {
     icon: ShieldCheck,
@@ -28,31 +29,32 @@ const servicii = [
   {
     icon: GraduationCap,
     title: 'Educație pentru periaj corect',
-    text: 'Îi învățăm pe cei mici cum să se spele pe dinți corect — și cu plăcere.',
+    text: 'Îi învățăm pe cei mici cum să se spele pe dinți corect, chiar cu plăcere.',
   },
 ]
 
 export default function StomatologieCopii() {
   const drSerban = doctors.find((d) => d.slug === 'dr-diana-serban')!
+  const recenzieTincuta = testimonials.find((t) => t.author === 'Tincuța T.')!
 
   return (
     <ServiceLayout
       slug="stomatologie-copii"
       metaTitle="Dentist copii Galați — Pedodonție DentaLine"
       metaDescription="Stomatologie pentru copii cu blândețe și răbdare: sigilări, tratamente carii, vizite de acomodare. Dr. Diana Șerban, Galați."
-      eyebrow="Pedodonție"
+      eyebrow="Stomatologie pentru copii"
       title={
         <>
           Stomatologie pentru copii — <span className="text-coral-600">prima vizită, fără lacrimi</span>
         </>
       }
-      intro="La DentaLine, cei mici sunt pacienți cu drepturi depline: au medicul lor blând (Dr. Diana Șerban), timpul lor, ritmul lor — și chiar și o mascotă-dinte care îi așteaptă în cabinet."
+      intro="La DentaLine, cei mici sunt pacienți cu drepturi depline: au medicul lor blând (Dr. Diana Șerban), timpul lor și chiar o mascotă-dinte care îi așteaptă în cabinet."
       heroImage="/media/services/copii-consult-serban.jpg"
       heroImageAlt="Dr. Diana Șerban consultând un copil relaxat, pe scaunul stomatologic din clinica DentaLine"
       badge="Medicul celor mici: Dr. Diana Șerban"
       highlights={[
-        'Medic dedicat celor mici: Dr. Diana Șerban',
-        'Vizite de acomodare, în ritmul copilului',
+        'Prima vizită: acomodare și joacă, nu tratament',
+        'Răbdare și explicații pe limba copilului',
         'Prevenție: sigilări, fluorizări, educație pentru periaj',
       ]}
       ctaTitle="Programează-i celui mic o vizită de acomodare"
@@ -77,35 +79,22 @@ export default function StomatologieCopii() {
         </div>
       </div>
 
-      {/* Dr. Diana Șerban */}
+      {/* Medicul care se ocupă de cei mici */}
       <Reveal>
-        <div className="overflow-hidden rounded-3xl bg-plum-50">
-          <div className="grid gap-0 sm:grid-cols-[240px_1fr]">
-            <img
-              src={drSerban.photo}
-              alt="Dr. Diana Șerban, medicul dedicat copiilor la DentaLine"
-              className="aspect-[3/4] h-full w-full object-cover object-top"
-              loading="lazy"
-            />
-            <div className="flex flex-col justify-center p-7 md:p-9">
-              <h2 className="h-display text-3xl">Dr. Diana Șerban</h2>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-plum-900/50">
-                Medic stomatolog · Stomatologie pediatrică
-              </p>
-              <p className="mt-4 text-base leading-relaxed text-plum-900/75">
-                Dacă întrebi părinții din sala de așteptare, ți-o descriu la fel: medicul care nu grăbește
-                niciun copil. Blândă și răbdătoare, cu o atenție la detalii pe care pacienții o laudă
-                constant în recenzii.
-              </p>
-              <blockquote className="mt-5 border-l-2 border-coral-300 pl-4 text-sm italic leading-relaxed text-plum-900/65">
-                „{drSerban.quote}"
-                <footer className="mt-2 not-italic text-xs font-semibold text-plum-900/50">
-                  — {drSerban.quoteAuthor}
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
+        <MedicServiciu
+          name="Dr. Diana Șerban"
+          role="Medic stomatolog · Stomatologia copiilor"
+          photo={drSerban.photo}
+          photoAlt="Dr. Diana Șerban, medicul dedicat copiilor la DentaLine"
+          quote={recenzieTincuta.text}
+          quoteAuthor={`${recenzieTincuta.author}, recenzie ${recenzieTincuta.source}`}
+        >
+          <p>
+            Dacă întrebi părinții din sala de așteptare, ți-o descriu la fel: medicul care nu grăbește
+            niciun copil. Blândă și răbdătoare, cu o atenție la detalii pe care pacienții o laudă
+            constant în recenzii.
+          </p>
+        </MedicServiciu>
       </Reveal>
 
       {/* Video pedodonție */}
@@ -122,7 +111,7 @@ export default function StomatologieCopii() {
           <h2 className="h-display text-3xl md:text-4xl">Vezi cum lucrăm cu cei mici</h2>
           <p className="mt-4 text-base leading-relaxed text-plum-900/75">
             Fără grabă, fără instrumente înfricoșătoare scoase brusc, fără presiune. Dr. Diana Șerban transformă
-            fiecare vizită într-o experiență blândă, pe ritmul copilului — iar cei mici pleacă din cabinet cu
+            fiecare vizită într-o experiență blândă, pe ritmul copilului, iar cei mici pleacă din cabinet cu
             zâmbetul pe buze.
           </p>
           <figure className="mt-6">
@@ -141,7 +130,7 @@ export default function StomatologieCopii() {
 
       {/* Sfat pentru părinți */}
       <Reveal>
-        <div className="flex flex-col gap-5 rounded-3xl bg-teal-50 p-7 sm:flex-row sm:items-start md:p-9">
+        <div className="flex flex-col gap-5 rounded-3xl bg-teal-50 card-pad-lg sm:flex-row sm:items-start">
           <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-white text-teal-600 shadow-soft">
             <Baby className="h-6 w-6" aria-hidden="true" />
           </span>
@@ -149,7 +138,7 @@ export default function StomatologieCopii() {
             <h2 className="card-title">Sfatul nostru pentru părinți</h2>
             <p className="mt-2.5 text-base leading-relaxed text-plum-900/75">
               Prima vizită e bine să aibă loc <strong className="font-semibold text-plum-950">în jurul vârstei de
-              2–3 ani</strong> sau la erupția primilor dinți — ca o „vizită de cunoaștere", nu de urgență. Așa,
+              2–3 ani</strong> sau la erupția primilor dinți — ca o „vizită de cunoaștere”, nu de urgență. Așa,
               cabinetul devine un loc familiar, iar copilul învață de mic că dentistul e un prieten.
             </p>
           </div>

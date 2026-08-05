@@ -21,7 +21,7 @@ export default function Cazuri() {
         <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Cazuri — Înainte / După</p>
-            <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[56px]">
+            <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[52px]">
               Rezultate reale, pacienți reali
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-plum-900/75">
@@ -72,12 +72,17 @@ export default function Cazuri() {
             linkLabel="Despre coroanele din zirconiu"
             reverse
             media={
-              <img
-                src="/media/cases/inainte-dupa-implant-2.jpg"
-                alt="Colaj înainte și după: transformare cu coroane din zirconiu stratificat cu ceramică"
-                className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift"
-                loading="lazy"
-              />
+              <div className="relative">
+                <img
+                  src="/media/cases/inainte-dupa-implant-2.jpg"
+                  alt="Colaj înainte și după: transformare cu coroane din zirconiu stratificat cu ceramică"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift"
+                  loading="lazy"
+                />
+                <span className="absolute bottom-4 right-4 z-10 rounded-full bg-coral-600/90 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-white backdrop-blur">
+                  După
+                </span>
+              </div>
             }
           />
 
@@ -104,44 +109,47 @@ export default function Cazuri() {
         </div>
       </section>
 
-      {/* Cazul 04 — bandă închisă, smile makeover */}
-      <section className="relative overflow-hidden bg-plum-950">
-        <div
-          className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-plum-600/30 blur-3xl"
-          aria-hidden="true"
-        />
-        <div className="container-site section-pad relative grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      {/* Cazul 04 — banda luminoasă, smile makeover */}
+      <section>
+        <div className="container-site">
           <Reveal>
-            <p className="font-display text-6xl font-semibold leading-none text-white/20" aria-hidden="true">
-              04
-            </p>
-            <p className="mt-5">
-              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-teal-300">
-                Smile makeover
-              </span>
-            </p>
-            <h2 className="h-display mt-3 text-3xl !text-white md:text-4xl">
-              Smile makeover — colecția noastră de zâmbete
-            </h2>
-            <p className="mt-4 max-w-xl leading-relaxed text-white/75">
-              Fiecare zâmbet din colaj a trecut prin aceeași planificare digitală — și toate au
-              început cu o consultație obișnuită.
-            </p>
-            <Link
-              to="/servicii/estetica-dentara"
-              className="mt-6 inline-flex items-center gap-2 text-base font-bold text-teal-300 transition hover:gap-3 hover:text-white"
-            >
-              Vezi serviciul de estetică dentară
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <img
-              src="/media/cases/colaj-zambete-bw.jpg"
-              alt="Colaj alb-negru cu zâmbetele pacienților după transformări complete de tip smile makeover"
-              className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift"
-              loading="lazy"
-            />
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-plum-50 via-white to-coral-50/60 shadow-soft ring-1 ring-plum-100">
+              <div className="relative grid items-center gap-10 px-7 py-12 md:px-12 md:py-16 lg:grid-cols-2 lg:gap-16 lg:px-16">
+                <div className="relative isolate">
+                  <span
+                    className="pointer-events-none absolute -left-1 -top-8 -z-10 select-none font-display text-[7rem] font-semibold leading-none text-plum-100 md:text-[9rem]"
+                    aria-hidden="true"
+                  >
+                    04
+                  </span>
+                  <p>
+                    <span className="inline-flex items-center rounded-full border border-coral-100 bg-coral-50 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.14em] text-coral-600">
+                      Smile makeover
+                    </span>
+                  </p>
+                  <h2 className="h-display mt-3 text-3xl md:text-4xl">
+                    Colecția noastră de zâmbete
+                  </h2>
+                  <p className="mt-4 max-w-xl leading-relaxed text-plum-900/75">
+                    Fiecare zâmbet din colaj a trecut prin aceeași planificare digitală, iar toate
+                    au început cu o consultație obișnuită.
+                  </p>
+                  <Link
+                    to="/servicii/estetica-dentara"
+                    className="mt-6 inline-flex items-center gap-2 text-base font-bold text-plum-700 transition hover:gap-3 hover:text-coral-700"
+                  >
+                    Vezi serviciul de estetică dentară
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </div>
+                <img
+                  src="/media/cases/colaj-zambete-bw.jpg"
+                  alt="Colaj alb-negru cu zâmbetele pacienților după transformări complete de tip smile makeover"
+                  className="aspect-[4/3] w-full rounded-3xl object-cover shadow-lift"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

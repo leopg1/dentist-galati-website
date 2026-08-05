@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
+import MedicServiciu from '../../components/servicii/MedicServiciu'
 import FaqItem from '../../components/contact/FaqItem'
 
 const probleme = [
@@ -20,7 +21,7 @@ const probleme = [
   },
   {
     title: 'Coroane pe implant',
-    text: 'Coroane din zirconiu înșurubate pe implant — fără ciment, ușor de întreținut.',
+    text: 'Coroane din zirconiu înșurubate pe implant, fără ciment și ușor de întreținut.',
   },
 ]
 
@@ -50,7 +51,7 @@ const faq = [
   },
   {
     q: 'Cât durează intervenția?',
-    a: 'Inserarea propriu-zisă durează adesea sub o oră per implant. Integrarea în os durează, de regulă, 3–6 luni — primești calendarul complet la consultație.',
+    a: 'Inserarea propriu-zisă durează adesea sub o oră per implant. Integrarea în os durează, de regulă, 3–6 luni; primești calendarul complet la consultație.',
   },
   {
     q: 'Cât rezistă un implant dentar?',
@@ -65,13 +66,17 @@ export default function Implantologie() {
       metaTitle="Implant dentar Galați — DentaLine Clinic"
       metaDescription="Implant dentar în Galați cu medic cu peste un deceniu de experiență în implantologie. Flux digital, coroane zirconiu pe implant. ☎ 0742 038 270"
       eyebrow="Implantologie dentară"
-      title="Implant dentar în Galați — recâștigă-ți zâmbetul complet"
+      title={
+        <>
+          Implant dentar în Galați — <span className="text-coral-600">recâștigă-ți zâmbetul complet</span>
+        </>
+      }
       intro="Un dinte lipsă nu înseamnă doar un gol în zâmbet: în timp, afectează mestecarea, dinții vecini și osul. Implantul dentar este cea mai apropiată soluție de dintele natural — iar la DentaLine, implantologia este specialitatea casei, practicată de Dr. Camelia Vasiliu de peste un deceniu."
       heroImage="/media/cases/inainte-dupa-implant.jpg"
       heroImageAlt="Caz clinic înainte și după: reabilitare protetică fixă pe implanturi realizată la DentaLine"
-      badge="Peste un deceniu de implantologie"
+      badge="Dr. Camelia Vasiliu · implantologie"
       highlights={[
-        'Specialitatea casei — peste un deceniu de implantologie',
+        'Specialitatea casei: peste un deceniu de implantologie',
         'Flux complet digital: scanare 3D și radiografie în cabinet',
         'Soluții fixe pentru un dinte lipsă sau pentru arcada întreagă',
         'Același medic te însoțește la fiecare etapă, până la coroana finală',
@@ -100,7 +105,7 @@ export default function Implantologie() {
 
       {/* Procesul în 4 pași */}
       <Reveal>
-        <section aria-labelledby="implant-proces" className="rounded-3xl bg-plum-50 p-7 md:p-10">
+        <section aria-labelledby="implant-proces" className="rounded-3xl bg-plum-50 card-pad-lg">
           <h2 id="implant-proces" className="h-display text-3xl md:text-4xl">
             Drumul tău, pas cu pas
           </h2>
@@ -126,33 +131,13 @@ export default function Implantologie() {
         </section>
       </Reveal>
 
-      {/* De ce la DentaLine */}
+      {/* Caz real + flux digital — bandă luminoasă integrată */}
       <Reveal>
         <section
-          aria-labelledby="implant-dece"
-          className="rounded-3xl bg-gradient-to-br from-plum-800 to-plum-950 p-7 text-white shadow-lift md:p-10"
+          aria-labelledby="implant-caz"
+          className="grid items-center gap-8 overflow-hidden rounded-3xl bg-gradient-to-br from-plum-50 via-white to-teal-50/60 card-pad-lg shadow-soft ring-1 ring-plum-100 md:grid-cols-[minmax(0,280px)_1fr]"
         >
-          <h2 id="implant-dece" className="h-display text-3xl !text-white md:text-4xl">
-            Implantologie cu flux complet digital
-          </h2>
-          <p className="mt-5 max-w-2xl leading-relaxed text-white/80">
-            Scanner intraoral 3D și radiologie digitală direct în cabinet, un singur medic care se
-            ocupă de cazul tău la fiecare etapă, până la coroana finală — iar cazurile noastre
-            „înainte/după” vorbesc de la sine.
-          </p>
-          <Link
-            to="/cazuri"
-            className="mt-7 inline-flex items-center gap-2 rounded-full border-2 border-white/40 px-6 py-3 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
-          >
-            Vezi cazurile înainte/după <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
-        </section>
-      </Reveal>
-
-      {/* Caz real — video */}
-      <Reveal>
-        <section aria-labelledby="implant-caz" className="grid items-center gap-8 md:grid-cols-[minmax(0,300px)_1fr]">
-          <div className="mx-auto w-full max-w-[300px]">
+          <div className="mx-auto w-full max-w-[280px]">
             <VideoLoop
               src="/media/videos/caz-implant.mp4"
               poster="/media/videos/posters/caz-implant.jpg"
@@ -161,20 +146,48 @@ export default function Implantologie() {
             />
           </div>
           <div>
-            <h2 id="implant-caz" className="h-display text-3xl md:text-4xl">
+            <p className="eyebrow !text-teal-600">Caz real din clinică</p>
+            <h2 id="implant-caz" className="h-display mt-3 text-3xl md:text-4xl">
               Reabilitare totală pe implanturi
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-plum-900/75">
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-plum-900/75">
               Pacientul a venit cu o proteză mobilă și a plecat cu dinți ficși: o mandibulă fără
               dinți, reabilitată cu o lucrare protetică fixă completă pe implanturi, într-un singur
-              plan de tratament. Urmărește transformarea în videoclipul alăturat.
+              plan de tratament. De la scanarea 3D la radiografiile de control, fiecare etapă s-a
+              făcut în cabinet, pe flux complet digital.
             </p>
-            <p className="mt-4 text-xs leading-relaxed text-plum-900/70">
+            <Link to="/cazuri" className="btn-secondary mt-7">
+              Vezi cazurile înainte/după <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <p className="mt-4 text-xs leading-relaxed text-plum-900/60">
               Caz tratat în clinica noastră, publicat cu acordul pacientului. Rezultatele diferă în
               funcție de fiecare caz.
             </p>
           </div>
         </section>
+      </Reveal>
+
+      {/* Medicul care se ocupă de implantologie */}
+      <Reveal>
+        <MedicServiciu
+          name="Dr. Camelia Vasiliu"
+          role="Medic stomatolog · Implantologie și chirurgie dentară"
+          photo="/media/team/dr-camelia-vasiliu.jpg"
+          photoAlt="Dr. Camelia Vasiliu, medic stomatolog și fondator DentaLine Clinic Galați"
+          quote="Recomand cu mare încredere serviciile clinicii! Dr. Vasiliu Camelia și Dr. Sacara Mariana sunt minunate și foarte bune în ce fac."
+          quoteAuthor="Vasilica I., recenzie Google"
+        >
+          <p>
+            Implantologia este domeniul în care Dr. Camelia Vasiliu lucrează de peste un deceniu: de
+            la implanturi pentru un singur dinte până la reabilitări complete pe arcadă. Fiecare caz
+            pornește de la un plan digital, construit pe radiografia și scanarea 3D făcute în
+            cabinet, pe care ți-l explică pe înțeles înainte de orice intervenție.
+          </p>
+          <p>
+            La fel de important: aceeași doamnă doctor te însoțește la fiecare etapă, de la prima
+            consultație până la coroana finală.
+          </p>
+        </MedicServiciu>
       </Reveal>
 
       {/* FAQ */}

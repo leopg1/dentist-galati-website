@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import { Info } from 'lucide-react'
 import { site } from '../lib/site'
 import { usePageMeta } from '../lib/seo'
 import Reveal from '../components/Reveal'
@@ -54,28 +53,19 @@ export default function Confidentialitate() {
       <section className="section-pad">
         <div className="container-site">
           <Reveal className="mx-auto max-w-3xl">
-            <div className="flex items-start gap-3.5 rounded-3xl border border-plum-200 bg-plum-50 p-5 text-sm leading-relaxed text-plum-900/80">
-              <Info className="mt-0.5 h-5 w-5 shrink-0 text-plum-500" aria-hidden="true" />
-              <p>
-                <strong className="font-bold text-plum-950">Notă:</strong> acest document este o
-                versiune-schelet, pregătită în scop demonstrativ. Versiunea finală va fi completată
-                și avizată de un consilier juridic înainte de lansarea site-ului.
-              </p>
-            </div>
-
-            <div className="mt-12 space-y-12">
+            <div className="space-y-12">
               <LegalSection title="1. Cine este operatorul de date">
                 <p>
                   Operatorul datelor tale cu caracter personal este{' '}
                   <strong className="font-bold text-plum-950">{site.legalName}</strong> („
-                  {site.name}"), {site.cui}, înregistrată la Registrul Comerțului sub nr.{' '}
+                  {site.name}”), {site.cui}, înregistrată la Registrul Comerțului sub nr.{' '}
                   {site.regCom}, cu punct de lucru în {site.address}.
                 </p>
               </LegalSection>
 
               <LegalSection title="2. Ce date colectăm">
                 <p>
-                  Prin formularul „Cere o programare" de pe pagina de contact colectăm doar datele
+                  Prin formularul „Cere o programare” de pe pagina de contact colectăm doar datele
                   pe care ni le oferi tu:
                 </p>
                 <ul className="space-y-2">
@@ -85,9 +75,19 @@ export default function Confidentialitate() {
                   <Li>serviciul dorit și conținutul mesajului tău (opțional).</Li>
                 </ul>
                 <p>
-                  Site-ul nu colectează alte date personale în mod automat, cu excepția eventualelor
-                  cookie-uri strict necesare funcționării, detaliate separat în politica de
-                  cookies.
+                  Site-ul nu setează cookie-uri proprii de marketing sau de statistică și nu
+                  colectează alte date personale în mod automat. Singura excepție este harta Google
+                  Maps integrată în pagina de contact, care poate seta cookie-uri Google la
+                  încărcare; modul în care Google le folosește este descris în{' '}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-coral-600 underline underline-offset-2 transition hover:text-coral-700"
+                  >
+                    politica de confidențialitate Google
+                  </a>
+                  .
                 </p>
               </LegalSection>
 
@@ -125,7 +125,7 @@ export default function Confidentialitate() {
                 <ul className="space-y-2">
                   <Li>dreptul de acces la date;</Li>
                   <Li>dreptul la rectificarea datelor inexacte;</Li>
-                  <Li>dreptul la ștergerea datelor („dreptul de a fi uitat");</Li>
+                  <Li>dreptul la ștergerea datelor („dreptul de a fi uitat”);</Li>
                   <Li>dreptul la restricționarea prelucrării;</Li>
                   <Li>dreptul la portabilitatea datelor;</Li>
                   <Li>dreptul la opoziție;</Li>

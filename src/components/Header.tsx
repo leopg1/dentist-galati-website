@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { CalendarCheck, ChevronDown, Clock, MapPin, Menu, Phone, X } from 'lucide-react'
 import { services, site } from '../lib/site'
 import Logo from './Logo'
+import RatingBadge from './RatingBadge'
 
 const navItems = [
   { to: '/', label: 'Acasă' },
@@ -65,7 +66,7 @@ export default function Header() {
             </a>
           </div>
           <div className="flex items-center gap-5">
-            <span className="font-semibold text-gold-400">★ {site.rating}/5 din {site.reviewCount} de recenzii Google</span>
+            <RatingBadge variant="star" className="!text-xs !text-gold-400" />
             <a href={site.facebook} target="_blank" rel="noreferrer" className="text-white/85 transition hover:text-white">
               Facebook
             </a>
@@ -89,7 +90,6 @@ export default function Header() {
                 <div key={item.to} className="group relative">
                   <NavLink
                     to={item.to}
-                    aria-haspopup="menu"
                     className={({ isActive }) => `nav-link inline-flex items-center gap-1 py-2 ${isActive ? 'text-coral-600' : ''}`}
                   >
                     {item.label}
@@ -99,12 +99,11 @@ export default function Header() {
                     />
                   </NavLink>
                   <div className="invisible absolute left-1/2 top-full z-50 w-[540px] -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-                    <div className="card-surface grid grid-cols-2 gap-1 p-3" role="menu">
+                    <div className="card-surface grid grid-cols-2 gap-1 p-3">
                       {services.map((s) => (
                         <Link
                           key={s.slug}
                           to={`/servicii/${s.slug}`}
-                          role="menuitem"
                           className="rounded-2xl px-4 py-3 text-sm font-semibold text-plum-900/85 transition hover:bg-plum-50 hover:text-coral-700"
                         >
                           {s.menuTitle}
@@ -112,7 +111,6 @@ export default function Header() {
                       ))}
                       <Link
                         to="/servicii"
-                        role="menuitem"
                         className="col-span-2 mt-1 rounded-2xl bg-plum-50 px-4 py-3 text-center text-sm font-bold text-plum-700 transition hover:bg-plum-100"
                       >
                         Vezi toate serviciile →
@@ -152,7 +150,7 @@ export default function Header() {
               ref={hamburgerRef}
               type="button"
               onClick={() => setOpen(!open)}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-plum-200 text-plum-800"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-plum-200 text-plum-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral-500"
               aria-expanded={open}
               aria-label={open ? 'Închide meniul' : 'Deschide meniul'}
             >

@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom'
 import { Check, CreditCard, HeartHandshake, Phone, ReceiptText } from 'lucide-react'
 import { site } from '../lib/site'
 import { faqItems } from '../lib/faq'
 import { usePageMeta } from '../lib/seo'
 import Reveal from '../components/Reveal'
-import SectionHeading from '../components/SectionHeading'
 import CTABand from '../components/CTABand'
 import FaqItem from '../components/contact/FaqItem'
 
@@ -32,7 +32,7 @@ export default function Oferte() {
         <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Oferte & facilități</p>
-            <h1 className="h-display mt-3 text-4xl md:text-5xl">
+            <h1 className="h-display mt-3 text-4xl md:text-[52px]">
               Tratamente accesibile, fără compromisuri
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-plum-900/70">
@@ -58,59 +58,52 @@ export default function Oferte() {
       <section className="section-pad">
         <div className="container-site">
           <Reveal>
-            <div className="isolate relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum-600 via-plum-700 to-plum-900 text-white shadow-lift">
-              <div
-                className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-coral-600/25 blur-3xl"
-                aria-hidden="true"
-              />
-              <div className="relative grid items-center gap-10 card-pad-lg md:grid-cols-[1.15fr_1fr]">
+            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-plum-50 via-white to-teal-50/60 shadow-soft ring-1 ring-plum-100">
+              <div className="relative grid items-center gap-10 px-7 py-12 md:grid-cols-[1.15fr_1fr] md:px-12 md:py-16 lg:px-16">
                 <div>
-                  <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-teal-300">
+                  <p className="eyebrow !text-teal-600">
                     <HeartHandshake className="h-4 w-4" aria-hidden="true" /> Beneficii exclusive
                   </p>
-                  <h2 className="h-display mt-3 text-3xl !text-white md:text-4xl">
+                  <h2 className="h-display mt-3 text-3xl md:text-4xl">
                     Parteneriat MedLife
                   </h2>
-                  <p className="mt-4 max-w-lg text-base leading-relaxed text-white/80">
+                  <p className="mt-4 max-w-lg text-base leading-relaxed text-plum-900/70">
                     Ai abonament MedLife? La DentaLine, abonamentul tău se transformă în beneficii
                     concrete, la fiecare vizită:
                   </p>
                   <ul className="mt-6 space-y-3.5">
                     {medlifeBenefits.map(([strong, rest]) => (
-                      <li key={strong} className="flex items-start gap-3 text-base text-white/90">
-                        <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-400/20 text-teal-300">
+                      <li key={strong} className="flex items-start gap-3 text-base text-plum-900/80">
+                        <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-100 text-teal-600">
                           <Check className="h-3.5 w-3.5" aria-hidden="true" />
                         </span>
                         <span>
-                          <strong className="font-bold text-white">{strong}</strong>
+                          <strong className="font-bold text-plum-950">{strong}</strong>
                           {rest}
                         </span>
                       </li>
                     ))}
                   </ul>
-                  <p className="mt-6 max-w-lg text-xs italic leading-relaxed text-white/60">
+                  <p className="mt-6 max-w-lg text-xs italic leading-relaxed text-plum-900/60">
                     Prezintă cardul sau abonamentul MedLife la recepție. Detalii și condiții
-                    complete — în clinică sau la telefon.
+                    complete, în clinică sau la telefon.
                   </p>
-                  <a href={site.phoneHref} className="btn-primary mt-7">
-                    <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte
-                  </a>
+                  <div className="mt-7 flex flex-wrap gap-4">
+                    <a href={site.phoneHref} className="btn-primary">
+                      <Phone className="h-4 w-4" aria-hidden="true" /> Întreabă-ne de oferte
+                    </a>
+                    <Link to="/contact#formular" className="btn-secondary">
+                      Cere o programare online
+                    </Link>
+                  </div>
                 </div>
                 <div className="flex items-center justify-center">
-                  <div className="w-full max-w-xs rounded-3xl border border-white/15 bg-white/10 card-pad text-center backdrop-blur">
-                    <p className="font-display text-7xl font-semibold leading-none text-white">
+                  <div className="w-full max-w-xs rounded-3xl border border-plum-100 bg-white card-pad text-center shadow-hair">
+                    <p className="font-display text-7xl font-semibold leading-none text-plum-950">
                       −20%
                     </p>
-                    <p className="mt-3 text-base font-semibold leading-snug text-white/85">
-                      la tratamentele dentare pentru abonații MedLife
-                    </p>
-                    <div className="mt-6 h-px bg-white/15" aria-hidden="true" />
-                    <p className="mt-5 text-sm leading-relaxed text-white/75">
-                      + detartraj & AirFlow gratuit
-                      <br />+ consultație gratuită
-                    </p>
-                    <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-teal-300">
-                      Condiții în clinică
+                    <p className="mt-3 text-base font-semibold leading-snug text-plum-900/75">
+                      la tratamentele dentare, pentru abonații MedLife
                     </p>
                   </div>
                 </div>
@@ -128,23 +121,23 @@ export default function Oferte() {
                   Plata în rate prin tbi bank
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-plum-900/75">
-                  Tratamentele ample — implanturi, reabilitări protetice, smile makeover — pot fi
-                  achitate <strong className="font-bold text-plum-950">în rate</strong>, prin
-                  partenerul nostru de finanțare tbi bank. Aplici direct în clinică, răspunsul vine
-                  rapid.
+                  Un implant sau o reabilitare completă nu trebuie plătite dintr-o dată. Prin
+                  partenerul nostru de finanțare tbi bank poți împărți costul{' '}
+                  <strong className="font-bold text-plum-950">în rate lunare</strong>: depui
+                  cererea direct în clinică și primești răspunsul rapid.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={0.18}>
-              <div className="h-full rounded-3xl border border-teal-100 bg-teal-50 card-pad-lg shadow-soft transition">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-teal-600 shadow-soft">
+              <div className="card-surface h-full card-pad-lg transition hover:border-plum-200">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-teal-50 text-teal-600">
                   <ReceiptText className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <h2 className="card-title mt-5">
                   Plan de tratament transparent
                 </h2>
                 <p className="mt-3 text-base leading-relaxed text-plum-900/75">
-                  Înainte de orice tratament primești planul complet, cu etape și costuri — fără
+                  Înainte de orice tratament primești planul complet, cu etape și costuri, fără
                   surprize pe parcurs. Știi de la început ce facem, de ce și cât costă.
                 </p>
               </div>
@@ -153,15 +146,19 @@ export default function Oferte() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ — același layout ca pe Contact: heading centrat, max-w-3xl */}
       <section className="section-pad bg-plum-50">
-        <div className="container-site">
-          <SectionHeading
-            eyebrow="Întrebări frecvente"
-            title="Ai întrebări? Avem răspunsuri"
-            intro="Cele mai frecvente întrebări pe care le primim la telefon și la recepție — cu răspunsuri deschise, fără limbaj de lemn."
-          />
-          <div className="mx-auto mt-12 max-w-3xl space-y-4">
+        <div className="container-site max-w-3xl">
+          <Reveal>
+            <h2 className="h-display text-center text-3xl md:text-4xl">
+              Ai întrebări? Avem răspunsuri
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-center leading-relaxed text-plum-900/70">
+              Cele mai frecvente întrebări pe care le primim la telefon și la recepție, cu
+              răspunsuri deschise, fără limbaj de lemn.
+            </p>
+          </Reveal>
+          <div className="mt-8 space-y-4">
             {faqItems.map((item, i) => (
               <Reveal key={item.q} delay={Math.min(i * 0.05, 0.25)}>
                 <FaqItem question={item.q}>{item.a}</FaqItem>

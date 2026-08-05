@@ -1,7 +1,7 @@
 /**
  * Datele centrale ale site-ului DentaLine Clinic.
  * Sursa de adevăr: DentaLine-Site-Continut.md (cercetare 17.07.2026).
- * NU inventați date noi — tot ce e marcat „de confirmat" rămâne formulat prudent.
+ * NU inventați date noi — tot ce e marcat „de confirmat” rămâne formulat prudent.
  */
 
 export const site = {
@@ -14,12 +14,13 @@ export const site = {
   phoneHref: 'tel:+40742038270',
   email: 'vasiliu.camelia@yahoo.com',
   address: 'Strada Arad, Nr. 6, Bloc PS13B, Parter, Ap. 40, Galați 800323',
-  addressShort: 'Bd. Brăilei, Bl. PS13B — „la Ultimul Leu"',
-  addressHint: 'Pe Bulevardul Brăilei, zona „Ultimul Leu", vizavi de Școala Gimnazială Nr. 7',
+  addressShort: 'Bd. Brăilei, Bl. PS13B — „la Ultimul Leu”',
+  addressHint: 'Pe Bulevardul Brăilei, zona „Ultimul Leu”, vizavi de Școala Gimnazială Nr. 7',
   schedule: 'Luni – Vineri: 8:00 – 20:00',
   scheduleNote: 'Sună-ne pentru confirmarea disponibilității',
   rating: '4,8',
   reviewCount: 129,
+  googleReviewUrl: 'https://www.google.com/maps/search/?api=1&query=DentaLine+Clinic+Galati',
   facebook: 'https://www.facebook.com/DrVasiliuCamelia/',
   instagram: 'https://www.instagram.com/dentaline.clinic/',
   mapsQuery:
@@ -117,7 +118,7 @@ export const services: Service[] = [
     short:
       'Radiografie digitală pe loc și scanare intraorală 3D — diagnostic precis, fără drumuri în plus.',
     image: '/media/services/scanare-3d.jpg',
-    imageAlt: 'Scanare intraorală 3D cu scanner digital',
+    imageAlt: 'Scanare intraorală 3D cu scaner digital',
   },
 ]
 
@@ -138,7 +139,7 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Camelia Vasiliu',
     role: 'Medic stomatolog · Fondator & Director medical',
     photo: '/media/team/dr-camelia-vasiliu.jpg',
-    bio: 'Absolventă a Universității de Medicină și Farmacie „Grigore T. Popa" din Iași (promoția 2006), Dr. Camelia Vasiliu practică stomatologia de aproape 20 de ani, dintre care peste un deceniu dedicat implantologiei și chirurgiei dentare avansate. Preia cazurile complexe — dinți lipsă, arcade întregi de refăcut — și le duce de la prima radiografie până la coroana finală. A fondat DentaLine pornind de la o convingere simplă: un cabinet stomatologic poate fi un loc în care vii cu drag, nu cu teamă. Recenziile pacienților îi dau dreptate.',
+    bio: 'Absolventă a Universității de Medicină și Farmacie „Grigore T. Popa” din Iași (promoția 2006), Dr. Camelia Vasiliu practică stomatologia de aproape 20 de ani, dintre care peste un deceniu dedicat implantologiei și chirurgiei dentare avansate. Preia cazurile complexe — dinți lipsă, arcade întregi de refăcut — și le duce de la prima radiografie până la coroana finală. A fondat DentaLine pornind de la o convingere simplă: un cabinet stomatologic poate fi un loc în care vii cu drag, nu cu teamă. Recenziile pacienților îi dau dreptate.',
     areas: ['Implantologie dentară', 'Chirurgie dentară avansată', 'Coroane din zirconiu', 'Smile makeover'],
     quote:
       'Recomand cu mare încredere serviciile clinicii! Dr. Vasiliu Camelia și Dr. Sacara Mariana sunt minunate și foarte bune în ce fac.',
@@ -167,7 +168,7 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Liliana Barbu',
     role: 'Medic stomatolog',
     photo: '/media/team/dr-liliana-barbu.jpg',
-    bio: 'Pacienții o descriu în recenzii drept „atentă, profesionistă și calmă" — medicul lângă care te relaxezi din prima consultație. Se ocupă de prevenție și igienizare profesională, de albirea dentară și de estetica din compozit: reconstrucții și fațete modelate direct pe dinte, strat cu strat, până când lucrarea nu se mai deosebește de dintele natural. Tot ea este medicul care îi preia pe pacienții cu abonament MedLife.',
+    bio: 'Pacienții o descriu în recenzii drept „atentă, profesionistă și calmă” — medicul lângă care te relaxezi din prima consultație. Se ocupă de prevenție și igienizare profesională, de albirea dentară și de estetica din compozit: reconstrucții și fațete modelate direct pe dinte, strat cu strat, până când lucrarea nu se mai deosebește de dintele natural. Tot ea este medicul care îi preia pe pacienții cu abonament MedLife.',
     areas: [
       'Prevenție & igienizare profesională',
       'Albire dentară',
@@ -183,9 +184,9 @@ export const doctors: TeamMember[] = [
     name: 'Dr. Mariana Sacara',
     role: 'Medic stomatolog',
     photo: '/media/team/dr-mariana-sacara.jpg',
-    bio: 'Endodonția la microscop este specialitatea ei — și se vede. Dr. Mariana Sacara găsește și tratează canalele pe care ochiul liber pur și simplu nu le vede, lucrând la microscopul operator de la primul până la ultimul pas, cu răbdarea unui medic care știe că un dinte salvat corect ține zeci de ani. La ea ajung și cazurile dificile trimise de alți colegi: retratamente, canale calcificate, dinți dați deja la extracție. „Foarte bine pregătită", spun pacienții în recenzii — iar familiile întregi îi trec pragul cu încredere.',
+    bio: 'Endodonția la microscop este specialitatea ei — și se vede. Dr. Mariana Sacara găsește și tratează canalele pe care ochiul liber pur și simplu nu le vede, lucrând la microscopul operator de la primul până la ultimul pas, cu răbdarea unui medic care știe că un dinte salvat corect ține zeci de ani. La ea ajung și cazurile dificile trimise de alți colegi: retratamente, canale calcificate, dinți dați deja la extracție. „Foarte bine pregătită”, spun pacienții în recenzii — iar familiile întregi îi trec pragul cu încredere.',
     areas: ['Endodonție la microscop', 'Tratamente de canal complexe'],
-    quote: 'Recomand dr. Mariana Săcara pentru orice tratament! E foarte bine pregătită!',
+    quote: 'Recomand dr. Mariana Sacara pentru orice tratament! E foarte bine pregătită!',
     quoteAuthor: 'Ionica C., recenzie Google',
   },
 ]
@@ -202,7 +203,7 @@ export const assistants: TeamMember[] = [
   {
     slug: 'asist-andreea-patriche',
     name: 'Andreea Patriche',
-    role: 'Asistent medical',
+    role: 'Asistentă medicală',
     photo: '/media/team/asist-andreea-patriche.jpg',
     bio: 'Grijulie și organizată — pregătește fiecare cabinet ca totul să decurgă perfect.',
     areas: [],
@@ -215,6 +216,30 @@ export const assistants: TeamMember[] = [
     bio: 'Ține evidența fiecărui pacient și are grijă ca nimeni să nu aștepte mai mult decât trebuie.',
     areas: [],
   },
+  {
+    slug: 'asist-anemona-antoneac',
+    name: 'Anemona Antoneac',
+    role: 'Asistentă medicală',
+    photo: '/media/team/asist-anemona-antoneac-hd.jpg',
+    bio: 'Calmă și atentă la fiecare detaliu — lângă ea, până și prima vizită pare simplă.',
+    areas: [],
+  },
+  {
+    slug: 'asist-cristina-jalba',
+    name: 'Cristina Jalba',
+    role: 'Asistentă medicală',
+    photo: '/media/team/asist-cristina-jalba-hd.jpg',
+    bio: 'Instrumentar, sterilizare, pregătirea fiecărei ședințe — nimic nu trece neverificat pe lângă ea.',
+    areas: [],
+  },
+  {
+    slug: 'asist-georgiana-andrei',
+    name: 'Georgiana Andrei',
+    role: 'Asistentă medicală',
+    photo: '/media/team/asist-georgiana-andrei-hd.jpg',
+    bio: 'Lucrează cot la cot cu Dr. Camelia Vasiliu, de la prima consultație până la lucrarea finală.',
+    areas: [],
+  },
 ]
 
 export type Testimonial = {
@@ -223,7 +248,7 @@ export type Testimonial = {
   source: string
 }
 
-/** Recenzii reale Google/MedAtlas — diacritice normalizate, „…" = trunchiere Google. */
+/** Recenzii reale Google/MedAtlas — diacritice normalizate, „…” = trunchiere Google. */
 export const testimonials: Testimonial[] = [
   {
     text: 'Recomand cu mare încredere serviciile clinicii! Dr. Vasiliu Camelia și Dr. Sacara Mariana sunt minunate și foarte bune în ce fac. Clinica este foarte curată!',
@@ -251,7 +276,7 @@ export const testimonials: Testimonial[] = [
     source: 'Google',
   },
   {
-    text: 'Recomand dr. Mariana Săcara pentru orice tratament! E foarte bine pregătită!',
+    text: 'Recomand dr. Mariana Sacara pentru orice tratament! E foarte bine pregătită!',
     author: 'Ionica C.',
     source: 'Google',
   },
@@ -271,10 +296,3 @@ export const testimonials: Testimonial[] = [
     source: 'Google',
   },
 ]
-
-export const stats = [
-  { value: '20', label: 'de ani de experiență ai medicului fondator' },
-  { value: '4', label: 'doamne doctor, o singură echipă' },
-  { value: '4,8★', label: `din ${site.reviewCount} de recenzii Google` },
-  { value: '9,8/10', label: 'Medalia de Aur „Șoimii Stomatologiei" 2026' },
-] as const

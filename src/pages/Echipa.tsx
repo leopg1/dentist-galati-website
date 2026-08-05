@@ -1,7 +1,8 @@
-import { HeartHandshake, Sparkles, Star, Stethoscope } from 'lucide-react'
-import { assistants, doctors, site } from '../lib/site'
+import { HeartHandshake, Sparkles, Stethoscope } from 'lucide-react'
+import { assistants, doctors } from '../lib/site'
 import { usePageMeta } from '../lib/seo'
 import CTABand from '../components/CTABand'
+import RatingBadge from '../components/RatingBadge'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
 import DoctorCard from '../components/despre/DoctorCard'
@@ -9,7 +10,6 @@ import DoctorCard from '../components/despre/DoctorCard'
 const heroBadges = [
   { icon: Stethoscope, label: '4 doamne doctor' },
   { icon: HeartHandshake, label: 'Echipă 100% feminină' },
-  { icon: Star, label: `${site.rating}/5 din ${site.reviewCount} de recenzii Google` },
 ]
 
 export default function Echipa() {
@@ -41,6 +41,9 @@ export default function Echipa() {
                   {badge.label}
                 </li>
               ))}
+              <li className="inline-flex items-center rounded-full border border-plum-100 bg-white px-4 py-2 shadow-soft">
+                <RatingBadge variant="star" className="!text-xs !font-bold" />
+              </li>
             </ul>
           </Reveal>
         </div>
@@ -53,7 +56,7 @@ export default function Echipa() {
             align="left"
             eyebrow="Specializări complementare"
             title="Medicii noștri"
-            intro="Una pune implanturi de peste zece ani, alta e medicul preferat al copiilor — împreună acoperă tot ce are nevoie o familie."
+            intro="Una pune implanturi de peste zece ani, alta e medicul preferat al copiilor. Împreună acoperă tot ce are nevoie o familie."
           />
           <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:gap-8">
             {doctors.map((doctor, i) => (
@@ -116,7 +119,7 @@ export default function Echipa() {
           <Reveal delay={0.1} className="mx-auto mt-12 max-w-4xl md:mt-16">
             <img
               src="/media/team/echipa-completa.jpg"
-              alt="Echipa completă DentaLine Clinic Galați — medici și asistente, în cabinet"
+              alt="Echipa completă DentaLine Clinic Galați: medici și asistente, în cabinet"
               loading="lazy"
               className="w-full rounded-3xl object-cover shadow-lift"
             />
@@ -126,7 +129,7 @@ export default function Echipa() {
 
       <CTABand
         title="Vino să ne cunoști personal"
-        text="Programează o consultație — te întâmpinăm cu explicații clare, răbdare și un plan de tratament construit pentru tine."
+        text="Programează o consultație. Te întâmpinăm cu explicații clare, cu răbdare și cu un plan de tratament construit pentru tine."
       />
     </>
   )

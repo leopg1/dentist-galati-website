@@ -14,7 +14,7 @@ const labelClass = 'mb-1.5 block text-xs font-bold text-plum-900'
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 /**
- * Formular „Cere o programare" — DEMO: nu trimite date nicăieri; la submit
+ * Formular „Cere o programare” — DEMO: nu trimite date nicăieri; la submit
  * afișează mesajul de succes. Preia serviciul din query (?serviciu=slug).
  * Structura de stări (sending / sent / error) e pregătită pentru un backend real.
  */
@@ -48,7 +48,7 @@ export default function ContactForm() {
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-teal-100 text-teal-600">
             <CheckCircle2 className="h-7 w-7" aria-hidden="true" />
           </span>
-          <p className="mt-4 font-display text-2xl font-semibold text-teal-900">Cererea ta a fost trimisă</p>
+          <p className="mt-4 font-sans text-2xl font-bold tracking-[-0.01em] text-teal-900">Cererea ta a fost trimisă</p>
           <p className="mx-auto mt-2.5 max-w-md text-base leading-relaxed text-teal-800">
             Mulțumim! Te sunăm de regulă în aceeași zi lucrătoare pentru confirmarea programării. Pentru
             urgențe, sună-ne direct la{' '}

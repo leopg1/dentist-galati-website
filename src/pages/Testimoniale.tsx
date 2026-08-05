@@ -3,14 +3,12 @@ import { usePageMeta } from '../lib/seo'
 import { site, testimonials } from '../lib/site'
 import CTABand from '../components/CTABand'
 import Reveal from '../components/Reveal'
-import Stars from '../components/cazuri/Stars'
-
-const GOOGLE_REVIEW_URL = 'https://www.google.com/maps/search/?api=1&query=DentaLine+Clinic+Galati'
+import Stars from '../components/Stars'
 
 export default function Testimoniale() {
   usePageMeta(
     'Testimoniale — Recenzii pacienți DentaLine Clinic Galați',
-    'Ce spun pacienții despre DentaLine: 4,8 din 5 stele, din 129 de recenzii pe Google. Păreri reale despre medicii clinicii stomatologice din Galați.',
+    `Ce spun pacienții despre DentaLine: ${site.rating} din 5 stele, din ${site.reviewCount} de recenzii pe Google. Păreri reale despre medicii clinicii stomatologice din Galați.`,
   )
 
   return (
@@ -20,7 +18,7 @@ export default function Testimoniale() {
         <div className="container-site relative hero-pad text-center">
           <Reveal>
             <p className="eyebrow">Testimoniale</p>
-            <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[56px]">
+            <h1 className="h-display mx-auto mt-4 max-w-3xl text-4xl md:text-[52px]">
               Ce spun pacienții despre noi
             </h1>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-7">
@@ -28,7 +26,7 @@ export default function Testimoniale() {
                 {site.rating}
               </p>
               <div className="flex flex-col items-center gap-2.5 sm:items-start">
-                <Stars starClassName="h-6 w-6" />
+                <Stars value={4.8} starClassName="h-6 w-6" />
                 <p className="text-base font-semibold text-plum-900/70">
                   din {site.reviewCount} de recenzii pe Google
                 </p>
@@ -48,55 +46,41 @@ export default function Testimoniale() {
           <h2 className="sr-only">Recenziile pacienților</h2>
           <div className="columns-1 gap-6 md:columns-2 lg:columns-3 lg:gap-8">
             {testimonials.map((t, i) => {
-              /* Două carduri închise la culoare — puncte de ancorare vizuală în grilă. */
-              const dark = i === 1 || i === 6
+              /* Două carduri cu gradient cald — puncte de ancorare vizuală în grilă. */
+              const accent = i === 1 || i === 6
               return (
                 <Reveal key={t.author} delay={Math.min(i * 0.05, 0.25)} className="mb-6 break-inside-avoid lg:mb-8">
                   <figure
-                    className={`relative card-pad rounded-3xl transition ${
-                      dark ? 'bg-plum-950 shadow-soft' : 'card-surface'
+                    className={`relative card-pad rounded-3xl ${
+                      accent
+                        ? 'bg-gradient-to-br from-plum-50 via-white to-teal-50/60 shadow-soft ring-1 ring-plum-100'
+                        : 'card-surface'
                     }`}
                   >
                     <span
                       className={`pointer-events-none absolute right-6 top-2 select-none font-display text-7xl leading-none ${
-                        dark ? 'text-white/10' : 'text-plum-100'
+                        accent ? 'text-plum-200/70' : 'text-plum-100'
                       }`}
                       aria-hidden="true"
                     >
                       „
                     </span>
                     <Stars />
-                    <blockquote
-                      className={`relative mt-4 text-base leading-relaxed ${
-                        dark ? 'text-white/90' : 'text-plum-900/80'
-                      }`}
-                    >
-                      „{t.text}"
+                    <blockquote className="relative mt-4 text-base leading-relaxed text-plum-900/80">
+                      „{t.text}”
                     </blockquote>
-                    <figcaption
-                      className={`mt-5 flex items-center gap-3 border-t pt-4 ${
-                        dark ? 'border-white/15' : 'border-plum-100'
-                      }`}
-                    >
+                    <figcaption className="mt-5 flex items-center gap-3 border-t border-plum-100 pt-4">
                       <span
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-display text-lg font-semibold ${
-                          dark ? 'bg-white/10 text-white' : 'bg-plum-100 text-plum-700'
+                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full font-display text-lg font-semibold text-plum-700 ${
+                          accent ? 'bg-white shadow-soft' : 'bg-plum-100'
                         }`}
                         aria-hidden="true"
                       >
                         {t.author.charAt(0)}
                       </span>
                       <span>
-                        <span
-                          className={`block text-sm font-bold ${dark ? 'text-white' : 'text-plum-950'}`}
-                        >
-                          {t.author}
-                        </span>
-                        <span
-                          className={`block text-xs font-medium ${
-                            dark ? 'text-white/60' : 'text-plum-900/70'
-                          }`}
-                        >
+                        <span className="block text-sm font-bold text-plum-950">{t.author}</span>
+                        <span className="block text-xs font-medium text-plum-900/70">
                           Recenzie {t.source}
                         </span>
                       </span>
@@ -114,10 +98,6 @@ export default function Testimoniale() {
         <div className="container-site">
           <Reveal>
             <div className="relative overflow-hidden rounded-3xl border border-plum-100 bg-plum-50 px-6 py-12 text-center md:py-16">
-              <div
-                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-coral-200/40 blur-3xl"
-                aria-hidden="true"
-              />
               <div className="relative">
                 <Stars starClassName="h-5 w-5" className="justify-center" />
                 <h2 className="h-display mx-auto mt-5 max-w-2xl text-3xl md:text-4xl">
@@ -128,7 +108,7 @@ export default function Testimoniale() {
                   ușor.
                 </p>
                 <a
-                  href={GOOGLE_REVIEW_URL}
+                  href={site.googleReviewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary mt-8"
@@ -146,7 +126,7 @@ export default function Testimoniale() {
       <div className="container-site pb-14">
         <p className="mx-auto max-w-2xl text-center text-xs leading-relaxed text-plum-900/70">
           Citatele sunt preluate din recenziile publice Google ale clinicii; diacriticele și punctuația au
-          fost ușor normalizate pentru afișarea pe site, iar „…" marchează trunchierile din Google. Sensul
+          fost ușor normalizate pentru afișarea pe site, iar „…” marchează trunchierile din Google. Sensul
           recenziilor este neatins, iar originalele pot fi consultate integral pe fișa Google DentaLine
           Clinic.
         </p>

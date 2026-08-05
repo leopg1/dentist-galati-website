@@ -33,7 +33,7 @@ export default function CTABand({
       />
       <div className="container-site section-pad relative text-center">
         <Reveal>
-          <h2 className="h-display mx-auto max-w-3xl text-4xl !text-white md:text-5xl">{title}</h2>
+          <h2 className="h-display mx-auto max-w-3xl text-4xl !text-white md:text-5xl [text-wrap:balance]">{title}</h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/75">{text}</p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a href={site.phoneHref} className="btn-primary">
@@ -45,10 +45,11 @@ export default function CTABand({
           </div>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-medium text-white/65">
             <RatingBadge light variant="star" />
-            <span className="inline-flex items-center gap-1.5">
-              <MapPin className="h-4 w-4 text-teal-300" aria-hidden="true" />
-              {site.addressShort} · {site.schedule}
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+              <MapPin className="h-4 w-4 shrink-0 text-teal-300" aria-hidden="true" />
+              {site.addressShort}
             </span>
+            <span className="whitespace-nowrap">{site.schedule}</span>
           </div>
         </Reveal>
       </div>

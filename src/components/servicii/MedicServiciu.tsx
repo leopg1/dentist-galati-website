@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 type Props = {
   name: string
-  /** Ex.: „Medic stomatolog · Endodonție la microscop". */
+  /** Ex.: „Medic stomatolog · Endodonție la microscop”. */
   role: string
   photo: string
   photoAlt: string
@@ -15,7 +15,7 @@ type Props = {
 }
 
 /**
- * Blocul „Cine te tratează" de pe paginile de servicii: portret + medicul
+ * Blocul „Cine te tratează” de pe paginile de servicii: portret + medicul
  * responsabil de serviciul respectiv. Folosit identic pe toate paginile,
  * ca pacientul să știe de fiecare dată cine îl tratează.
  */
@@ -45,7 +45,7 @@ export default function MedicServiciu({
           <div className="mt-4 space-y-4 text-base leading-relaxed text-plum-900/75">{children}</div>
           {quote && (
             <figure className="mt-5 border-l-2 border-coral-300 pl-4">
-              <blockquote className="quote-serif">„{quote}"</blockquote>
+              <blockquote className="quote-serif">„{quote}”</blockquote>
               {quoteAuthor && (
                 <figcaption className="mt-2 text-xs font-semibold text-plum-900/70">
                   — {quoteAuthor}

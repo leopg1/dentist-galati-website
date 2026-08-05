@@ -28,7 +28,7 @@ export default function Footer() {
         <div>
           <Logo light />
           <p className="mt-5 max-w-xs text-base leading-relaxed text-white/70">
-            „Implant, Zirconia sau Ceramică: zâmbetul tău începe aici." Estetică dentară și
+            „Implant, zirconiu sau ceramică: zâmbetul tău începe aici.” Estetică dentară și
             implantologie, în inima Galațiului.
           </p>
           <div className="mt-6 flex gap-3">
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Servicii">
-          <h2 className="font-display text-xl font-semibold">Servicii</h2>
+          <h2 className="font-sans text-base font-bold">Servicii</h2>
           <ul className="mt-4 space-y-0.5 text-base text-white/70">
             {services.slice(0, 7).map((s) => (
               <li key={s.slug}>
@@ -72,7 +72,7 @@ export default function Footer() {
         </nav>
 
         <nav aria-label="Meniu">
-          <h2 className="font-display text-xl font-semibold">Clinica</h2>
+          <h2 className="font-sans text-base font-bold">Clinica</h2>
           <ul className="mt-4 space-y-0.5 text-base text-white/70">
             <li><Link to="/despre" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Despre noi</Link></li>
             <li><Link to="/echipa" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Echipa medicală</Link></li>
@@ -84,7 +84,7 @@ export default function Footer() {
         </nav>
 
         <div>
-          <h2 className="font-display text-xl font-semibold">Contact</h2>
+          <h2 className="font-sans text-base font-bold">Contact</h2>
           <ul className="mt-5 space-y-3.5 text-base text-white/70">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-teal-300" aria-hidden="true" />

@@ -16,9 +16,10 @@ import {
 import { services, site, testimonials } from '../lib/site'
 import { usePageMeta } from '../lib/seo'
 import CTABand from '../components/CTABand'
-import RatingBadge from '../components/RatingBadge'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
+import ServiceCard from '../components/ServiceCard'
+import Stars from '../components/Stars'
 
 /* ─────────────────────────── Date locale secțiuni ─────────────────────────── */
 
@@ -33,14 +34,14 @@ const whyCards = [
   {
     icon: Microscope,
     title: 'Tehnologie care face diferența',
-    text: 'Endodonție la microscop Zumax, amprentă digitală cu scanner 3D, radiologie digitală în cabinet — diagnostic precis, tratamente minim invazive.',
+    text: 'Endodonție la microscop Zumax, amprentă digitală cu scaner 3D și radiologie digitală în cabinet, pentru diagnostic precis și tratamente minim invazive.',
     iconClass: 'bg-teal-100 text-teal-700',
     span: 'lg:col-span-3',
   },
   {
     icon: HeartHandshake,
     title: 'O echipă care pune suflet',
-    text: 'Dr. Vasiliu, Dr. Șerban, Dr. Barbu și Dr. Sacara — fiecare cu propriile recenzii de 5 stele de la pacienții ei.',
+    text: 'Dr. Vasiliu, Dr. Șerban, Dr. Barbu și Dr. Sacara, fiecare cu propriile recenzii de 5 stele de la pacienții ei.',
     iconClass: 'bg-coral-100 text-coral-600',
     span: 'lg:col-span-2',
   },
@@ -118,8 +119,8 @@ export default function Home() {
               Zâmbetul tău începe aici.
             </h1>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-white/85 md:mt-6 md:text-xl">
-              Estetică dentară și implantologie în Galați. O echipă de medici dedicate, tehnologie
-              digitală de ultimă generație și grija de care ai nevoie la fiecare vizită.
+              Estetică dentară și implantologie în Galați. O echipă de doamne doctor dedicate,
+              cu tehnologie digitală de ultimă generație și grijă reală la fiecare vizită.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3 md:mt-9 md:gap-4">
               <a href={site.phoneHref} className="btn-primary">
@@ -140,7 +141,7 @@ export default function Home() {
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <Trophy className="h-5 w-5 text-gold-400" aria-hidden="true" />
-                Medalia de Aur „Șoimii Stomatologiei" 2026
+                Medalia de Aur „Șoimii Stomatologiei” 2026
               </li>
               <li className="inline-flex items-center gap-2.5">
                 <Handshake className="h-5 w-5 text-teal-300" aria-hidden="true" />
@@ -151,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 3. Preview servicii ────────────────────────────────────────────── */}
+      {/* ── 2. Preview servicii ────────────────────────────────────────────── */}
       <section className="section-pad bg-plum-50">
         <div className="container-site">
           <SectionHeading
@@ -161,34 +162,7 @@ export default function Home() {
           />
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:mt-16 lg:gap-8">
             {services.slice(0, 6).map((service, i) => (
-              <Reveal key={service.slug} delay={(i % 3) * 0.08} className="h-full">
-                <Link
-                  to={`/servicii/${service.slug}`}
-                  className="group card-surface card-hover flex h-full flex-col overflow-hidden"
-                >
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img
-                      src={service.image}
-                      alt={service.imageAlt}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="flex flex-1 flex-col card-pad">
-                    <h3 className="card-title">{service.title}</h3>
-                    <p className="mt-2.5 text-base leading-relaxed text-plum-900/70">
-                      {service.short}
-                    </p>
-                    <span className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-bold text-coral-600">
-                      Află mai mult
-                      <ArrowRight
-                        className="h-4 w-4 transition group-hover:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
+              <ServiceCard key={service.slug} service={service} delay={(i % 3) * 0.08} />
             ))}
           </div>
           <Reveal className="mt-12 text-center">
@@ -199,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 5. Preview „Despre" ────────────────────────────────────────────── */}
+      {/* ── 3. Preview „Despre” ────────────────────────────────────────────── */}
       <section className="section-pad">
         <div className="container-site grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <Reveal className="relative mx-auto w-full max-w-md lg:max-w-none">
@@ -218,7 +192,7 @@ export default function Home() {
               <div>
                 <p className="text-sm font-bold text-plum-950">Medalia de Aur — 9,8/10</p>
                 <p className="text-xs font-medium text-plum-900/70">
-                  „Șoimii Stomatologiei" 2026
+                  „Șoimii Stomatologiei” 2026
                 </p>
               </div>
             </div>
@@ -234,7 +208,7 @@ export default function Home() {
               <blockquote className="mt-7 border-l-2 border-coral-400 pl-6">
                 <p className="font-display text-2xl font-medium leading-snug text-plum-900 md:text-[1.7rem]">
                   „Sunt Dr. Vasiliu Camelia, medic stomatolog, și împreună cu echipa mea te invit
-                  să descoperi experiența de a avea un zâmbet sănătos și frumos."
+                  să descoperi experiența de a avea un zâmbet sănătos și frumos.”
                 </p>
               </blockquote>
               <p className="mt-6 text-lg leading-relaxed text-plum-900/70">
@@ -251,7 +225,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. Testimoniale preview ────────────────────────────────────────── */}
+      {/* ── 4. Testimoniale preview ────────────────────────────────────────── */}
       <section className="section-pad bg-plum-50">
         <div className="container-site">
           <SectionHeading
@@ -269,7 +243,8 @@ export default function Home() {
                   >
                     „
                   </span>
-                  <RatingBadge />
+                  {/* Stelele stau în dreapta, ghilimeaua decorativă în stânga — nu se ating nici pe mobil */}
+                  <Stars className="justify-end" />
                   <blockquote className="mt-4 flex-1">
                     <p className="leading-relaxed text-plum-900/80">{t.text}</p>
                   </blockquote>
@@ -289,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 2. De ce DentaLine ─────────────────────────────────────────────── */}
+      {/* ── 5. De ce DentaLine ─────────────────────────────────────────────── */}
       <section className="section-pad">
         <div className="container-site">
           <SectionHeading
@@ -314,11 +289,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. Banda MedLife & tbi bank ────────────────────────────────────── */}
+      {/* ── 6. Banda MedLife & tbi bank ────────────────────────────────────── */}
       <section className="section-pad">
         <div className="container-site">
           <Reveal>
-            <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-plum-50 via-white to-teal-50/60 shadow-soft ring-1 ring-plum-100">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-plum-50 via-white to-teal-50/60 shadow-soft ring-1 ring-plum-100">
               <div className="relative grid gap-10 px-7 py-12 md:px-12 md:py-16 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-16 lg:px-16">
                 <div>
                   <p className="eyebrow !text-teal-600">Oferte & facilități</p>
@@ -355,8 +330,9 @@ export default function Home() {
                       <p className="font-bold text-plum-950">Plata în rate prin tbi bank</p>
                     </div>
                     <p className="mt-3.5 leading-relaxed text-plum-900/70">
-                      Tratamentele ample — implanturi, reabilitări protetice, smile makeover — pot
-                      fi achitate în rate. Aplici direct în clinică, răspunsul vine rapid.
+                      Un implant, o reabilitare protetică sau un smile makeover se pot plăti și în
+                      rate lunare, prin tbi bank. Cererea se completează la noi în clinică, iar
+                      răspunsul ajunge rapid.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-4">
@@ -374,7 +350,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 8. CTA final ───────────────────────────────────────────────────── */}
+      {/* ── 7. CTA final ───────────────────────────────────────────────────── */}
       <CTABand />
     </>
   )
