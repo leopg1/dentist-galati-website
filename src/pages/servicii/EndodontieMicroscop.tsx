@@ -1,6 +1,7 @@
 import { AlertCircle, Check, Microscope, Phone } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
 import Reveal from '../../components/Reveal'
+import VideoLoop from '../../components/VideoLoop'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
 import FaqItem from '../../components/contact/FaqItem'
 import { site } from '../../lib/site'
@@ -147,6 +148,27 @@ export default function EndodontieMicroscop() {
           </p>
         </MedicServiciu>
       </Reveal>
+
+      {/* Video: microscopul în acțiune */}
+      <div className="grid items-center gap-8 md:grid-cols-[1.1fr_minmax(0,340px)]">
+        <Reveal>
+          <h2 className="h-display text-3xl md:text-4xl">Microscopul, în acțiune</h2>
+          <p className="mt-4 text-base leading-relaxed text-plum-900/75">
+            Așa arată un tratament de canal la DentaLine: Dr. Mariana Sacara lucrează privind prin
+            microscopul operator, nu „din ochi”. Sub mărire și iluminare puternică, detaliile fine —
+            un canal ascuns, o fisură, un rest de obturație veche — devin vizibile și pot fi tratate
+            cu calm și precizie.
+          </p>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <VideoLoop
+            src="/media/videos/endo-microscop.mp4"
+            poster="/media/videos/posters/endo-microscop.jpg"
+            ariaLabel="Videoclip: Dr. Mariana Sacara lucrând la microscopul operator"
+            className="mx-auto aspect-[9/16] max-h-[560px] w-full rounded-3xl shadow-lift"
+          />
+        </Reveal>
+      </div>
 
       {/* FAQ */}
       <Reveal>
