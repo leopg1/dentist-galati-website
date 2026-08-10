@@ -82,21 +82,21 @@ export default function Home() {
     <>
       {/* ── 1. HERO cu video de fundal ─────────────────────────────────────── */}
       <section className="relative flex min-h-[calc(100svh-76px)] items-center overflow-hidden bg-plum-950 lg:min-h-[88svh]">
-        {/* Fundal static pe mobil — nu încărcăm video pe telefon */}
+        {/* Cadru static afișat imediat, sub video, până când acesta începe redarea */}
         <img
           src="/media/clinic/hero-poster.jpg"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover lg:hidden"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <video
           ref={heroVideoRef}
-          className="absolute inset-0 hidden h-full w-full object-cover lg:block"
+          className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          preload="none"
+          preload="auto"
           poster="/media/clinic/hero-poster.jpg"
           aria-hidden="true"
         >
