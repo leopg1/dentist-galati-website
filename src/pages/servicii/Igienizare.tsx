@@ -1,6 +1,7 @@
 import { BadgePercent, Brush, HeartHandshake, Phone, Sparkles, Waves, Wind } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import ServiceLayout from '../../components/ServiceLayout'
+import ArticleTeaser from '../../components/articole/ArticleTeaser'
 import Reveal from '../../components/Reveal'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
 import { site } from '../../lib/site'
@@ -151,6 +152,11 @@ export default function Igienizare() {
             </div>
           </div>
         </div>
+      </Reveal>
+
+      {/* Trimitere către articolul legat de acest serviciu */}
+      <Reveal>
+        <ArticleTeaser slug="gingii-care-sangereaza" label="Despre gingiile care sângerează, pe larg:" />
       </Reveal>
     </ServiceLayout>
   )

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
+import ArticleTeaser from '../../components/articole/ArticleTeaser'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
@@ -204,6 +205,11 @@ export default function Implantologie() {
             ))}
           </div>
         </section>
+      </Reveal>
+
+      {/* Trimitere către articolul legat de acest serviciu */}
+      <Reveal>
+        <ArticleTeaser slug="implant-dentar-pas-cu-pas" label="Etapele unui implant, explicate pe îndelete:" />
       </Reveal>
     </ServiceLayout>
   )

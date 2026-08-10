@@ -1,5 +1,6 @@
 import { AlertCircle, Check, Microscope, Phone } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
+import ArticleTeaser from '../../components/articole/ArticleTeaser'
 import Reveal from '../../components/Reveal'
 import VideoLoop from '../../components/VideoLoop'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
@@ -230,6 +231,11 @@ export default function EndodontieMicroscop() {
             </p>
           </div>
         </section>
+      </Reveal>
+
+      {/* Trimitere către articolul legat de acest serviciu */}
+      <Reveal>
+        <ArticleTeaser slug="durere-de-dinte-ce-faci" label="Dacă te doare acum, citește și:" />
       </Reveal>
     </ServiceLayout>
   )

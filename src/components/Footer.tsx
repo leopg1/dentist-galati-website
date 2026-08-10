@@ -78,6 +78,7 @@ export default function Footer() {
             <li><Link to="/echipa" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Echipa medicală</Link></li>
             <li><Link to="/cazuri" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Cazuri — Înainte / După</Link></li>
             <li><Link to="/testimoniale" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Testimoniale</Link></li>
+            <li><Link to="/articole" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Articole & sfaturi</Link></li>
             <li><Link to="/oferte" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Oferte & facilități</Link></li>
             <li><Link to="/contact" className="inline-block py-2 transition hover:text-coral-300 active:opacity-70">Contact & programare</Link></li>
           </ul>

@@ -7,6 +7,13 @@
 export const site = {
   name: 'DentaLine Clinic',
   tagline: 'Estetică dentară și Implantologie',
+  /**
+   * Domeniul canonic al site-ului — SURSA UNICĂ pentru canonical, Open Graph și JSON-LD.
+   * Vechiul domeniu drvasiliucamelia.ro a EXPIRAT; nu îl mai folosiți nicăieri.
+   * ⚠️ La cumpărarea domeniului final, schimbați valoarea AICI și, în paralel, în
+   * index.html (og:image, og:url, JSON-LD), public/sitemap.xml și public/robots.txt.
+   */
+  url: 'https://dentist-galati-website.vercel.app',
   legalName: 'DR. VASILIU CAMELIA MEDIC DENTIST SRL',
   cui: 'CUI 37983546',
   regCom: 'J17/1336/2017',

@@ -13,8 +13,10 @@ import {
   Star,
   Trophy,
 } from 'lucide-react'
+import { articles } from '../lib/articles'
 import { services, site, testimonials } from '../lib/site'
 import { usePageMeta } from '../lib/seo'
+import ArticleCard from '../components/articole/ArticleCard'
 import CTABand from '../components/CTABand'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
@@ -350,7 +352,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. CTA final ───────────────────────────────────────────────────── */}
+      {/* ── 7. De pe blog ──────────────────────────────────────────────────── */}
+      <section className="border-t border-plum-100 bg-plum-50/40 section-pad">
+        <div className="container-site">
+          <SectionHeading
+            eyebrow="De pe blog"
+            title="Întrebările din cabinet, explicate pe îndelete"
+            intro="Frica de dentist, durerea care apare noaptea, prima vizită a copilului — le răspundem pe larg, chiar medicii care se ocupă de ele."
+          />
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 md:mt-16">
+            {articles.slice(0, 3).map((a, i) => (
+              <ArticleCard key={a.slug} article={a} delay={i * 0.08} />
+            ))}
+          </div>
+          <Reveal className="mt-12 text-center">
+            <Link to="/articole" className="btn-secondary">
+              Vezi toate articolele <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 8. CTA final ───────────────────────────────────────────────────── */}
       <CTABand />
     </>
   )

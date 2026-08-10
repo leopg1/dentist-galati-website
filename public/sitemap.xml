@@ -1,109 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://drvasiliucamelia.ro/</loc>
+    <loc>https://dentist-galati-website.vercel.app/</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/despre</loc>
+    <loc>https://dentist-galati-website.vercel.app/despre</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/echipa</loc>
+    <loc>https://dentist-galati-website.vercel.app/echipa</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/implantologie</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/implantologie</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/estetica-dentara</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/estetica-dentara</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/coroane-zirconiu</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/coroane-zirconiu</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/endodontie-microscop</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/endodontie-microscop</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/stomatologie-copii</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/stomatologie-copii</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/aligneri</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/aligneri</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/igienizare</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/igienizare</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/stomatologie-generala</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/stomatologie-generala</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/servicii/radiologie-digitala</loc>
+    <loc>https://dentist-galati-website.vercel.app/servicii/radiologie-digitala</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/cazuri</loc>
+    <loc>https://dentist-galati-website.vercel.app/cazuri</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/testimoniale</loc>
+    <loc>https://dentist-galati-website.vercel.app/testimoniale</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/oferte</loc>
+    <loc>https://dentist-galati-website.vercel.app/oferte</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/contact</loc>
+    <loc>https://dentist-galati-website.vercel.app/articole</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/aligneri-sau-aparat-dentar-fix</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/gingii-care-sangereaza</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/prima-vizita-la-dentist-a-copilului</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/implant-dentar-pas-cu-pas</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/durere-de-dinte-ce-faci</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/articole/frica-de-dentist</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dentist-galati-website.vercel.app/contact</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://drvasiliucamelia.ro/confidentialitate</loc>
+    <loc>https://dentist-galati-website.vercel.app/confidentialitate</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

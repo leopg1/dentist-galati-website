@@ -12,6 +12,7 @@ const navItems = [
   { to: '/servicii', label: 'Servicii', dropdown: true },
   { to: '/cazuri', label: 'Cazuri' },
   { to: '/testimoniale', label: 'Testimoniale' },
+  { to: '/articole', label: 'Articole' },
   { to: '/oferte', label: 'Oferte' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -84,6 +85,7 @@ export default function Header() {
         <div className="container-site flex h-[76px] items-center justify-between gap-4">
           <Logo />
 
+          {/* 9 elemente încap la 1280px cu gap-6 (verificat: ~57px liberi până la butonul de programare) */}
           <nav className="hidden items-center gap-6 xl:flex 2xl:gap-7" aria-label="Navigație principală">
             {navItems.map((item) =>
               item.dropdown ? (

@@ -1,5 +1,6 @@
 import { CalendarCheck, EyeOff, UtensilsCrossed } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
+import ArticleTeaser from '../../components/articole/ArticleTeaser'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
@@ -149,6 +150,11 @@ export default function Aligneri() {
             planificate.
           </p>
         </MedicServiciu>
+      </Reveal>
+
+      {/* Trimitere către articolul legat de acest serviciu */}
+      <Reveal>
+        <ArticleTeaser slug="aligneri-sau-aparat-dentar-fix" label="Comparația cu aparatul dentar fix:" />
       </Reveal>
     </ServiceLayout>
   )

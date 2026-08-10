@@ -1,5 +1,6 @@
 import { Baby, GraduationCap, Heart, ShieldCheck, Smile, Sparkles } from 'lucide-react'
 import ServiceLayout from '../../components/ServiceLayout'
+import ArticleTeaser from '../../components/articole/ArticleTeaser'
 import VideoLoop from '../../components/VideoLoop'
 import Reveal from '../../components/Reveal'
 import MedicServiciu from '../../components/servicii/MedicServiciu'
@@ -143,6 +144,11 @@ export default function StomatologieCopii() {
             </p>
           </div>
         </div>
+      </Reveal>
+
+      {/* Trimitere către articolul legat de acest serviciu */}
+      <Reveal>
+        <ArticleTeaser slug="prima-vizita-la-dentist-a-copilului" label="Cum pregătești prima vizită, pas cu pas:" />
       </Reveal>
     </ServiceLayout>
   )

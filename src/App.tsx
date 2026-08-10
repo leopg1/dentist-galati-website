@@ -20,6 +20,8 @@ const StomatologieGenerala = lazy(() => import('./pages/servicii/StomatologieGen
 const RadiologieDigitala = lazy(() => import('./pages/servicii/RadiologieDigitala'))
 const Cazuri = lazy(() => import('./pages/Cazuri'))
 const Testimoniale = lazy(() => import('./pages/Testimoniale'))
+const Articole = lazy(() => import('./pages/Articole'))
+const ArticleRoute = lazy(() => import('./pages/articole/ArticleRoute'))
 const Oferte = lazy(() => import('./pages/Oferte'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Confidentialitate = lazy(() => import('./pages/Confidentialitate'))
@@ -54,6 +56,8 @@ export default function App() {
             <Route path="/servicii/radiologie-digitala" element={<RadiologieDigitala />} />
             <Route path="/cazuri" element={<Cazuri />} />
             <Route path="/testimoniale" element={<Testimoniale />} />
+            <Route path="/articole" element={<Articole />} />
+            <Route path="/articole/:slug" element={<ArticleRoute />} />
             <Route path="/oferte" element={<Oferte />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/confidentialitate" element={<Confidentialitate />} />
